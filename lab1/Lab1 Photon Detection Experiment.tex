@@ -1,0 +1,911 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Lab1 Photon Detection Experiment}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    Data collection steps specified
+\href{https://sites.google.com/site/ay120fall2014/home/equipment/photomultiplier-tube-experiment}{here}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{cd} \PY{n}{lab1}\PY{o}{/}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[Errno 2] No such file or directory: 'lab1/'
+/Users/dorislee/Desktop/Fall2014/AY120/lab1
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{ls}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Interim Report.aux
+Interim Report.bbl
+Interim Report.blg
+Interim Report.dvi
+Interim Report.ipynb
+Interim Report.log
+Interim Report.out
+Interim Report.pdf
+Interim Report.synctex.gz
+Interim Report.tex
+{\color{blue}Interim Report\_files}/
+Lab1 Photon Detection Experiment.ipynb
+{\color{red}msjidlmh\_140906\_1051\_40.csv}*
+{\color{red}msjidlmh\_140906\_1052\_40.csv}*
+{\color{red}msjidlmh\_140906\_1057\_50.csv}*
+stat-2014.pdf
+    \end{Verbatim}
+
+    The 1st dataset is 10,000 counts for a lower intensity LED
+
+2nd set 10,000 max LED
+
+3rd set 100,000 max LED
+
+
+    \subsection{Third set of data}
+
+
+    loading with dtype int32 prevents floating point approx of data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{int32}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{x}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} array([[         2,  900614011],
+               [         2,  900777882],
+               [         2,  901107082],
+               \ldots, 
+               [         2, 1126061486],
+               [         2, 1126859426],
+               [         2, 1129439366]], dtype=int32)
+\end{Verbatim}
+        
+    {[}channel\#\_on\_coinpro, \#of\_clock\_ticks,\ldots{}{]}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{x}\PY{o}{.}\PY{n}{shape} \PY{c}{\PYZsh{}(row,column)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} (99834, 2)
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([901975055, 902918148, 903850129], dtype=int32)
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{t}\PY{o}{=}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{t}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} array([ 900614011,  900777882,  901107082, \ldots, 1126061486, 1126859426,
+               1129439366], dtype=int32)
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt} 
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} \PY{n}{inline}
+\end{Verbatim}
+
+    Negative clock tick since anything above INTEGER.MAX (on 32-bit counter)
+is negative before it rolls over and start again
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Event number}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Clock tick}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} <matplotlib.text.Text at 0x10cbf0a50>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_16_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{dt} \PY{o}{=} \PY{n}{t}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{t}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{c}{\PYZsh{}time elapsed between subsequent clock ticks. }
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{dt}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Event number}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Interval [Clock ticks]}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} <matplotlib.text.Text at 0x10ccfda10>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_18_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    One fewer element since n-1 interval for n data points
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{dt}\PY{o}{.}\PY{n}{size}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} 99833
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{dt}\PY{p}{)} \PY{c}{\PYZsh{}longest interval}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} 7016465
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{c}{\PYZsh{} plt.figure()}
+         \PY{c}{\PYZsh{} plt.plot(dt,\PYZsq{}o\PYZsq{})}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{dt}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:} [<matplotlib.lines.Line2D at 0x10ead07d0>]
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_23_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c}{\PYZsh{}mean interval between counts }
+         \PY{n+nb}{sum}\PY{p}{(}\PY{n}{dt}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} 561571
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} 561571.82698105834
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{dt}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{dt}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} 561571.8269810583
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{1000}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} 555452.77800000005
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{c}{\PYZsh{} \PYZsh{}supress values for display purposes (shown below)}
+         \PY{c}{\PYZsh{} nstep = 1000}
+         \PY{c}{\PYZsh{} for i in arange(len(dt))[0::nstep]:}
+         \PY{c}{\PYZsh{}     print i, i+nstep\PYZhy{}1,np.mean(dt[i:i+nstep])}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} define an empty array}
+         \PY{n}{i} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{dt}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+         \PY{n}{nstep} \PY{o}{=} \PY{l+m+mi}{1000}
+         \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{p}{:}\PY{n}{nstep}\PY{p}{]}\PY{p}{:} \PY{c}{\PYZsh{} iterate in strides of nstep}
+              \PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{n}{j}\PY{p}{:}\PY{n}{j}\PY{o}{+}\PY{n}{nstep}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} compute the mean}
+              \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{marr}\PY{p}{,}\PY{n}{m}\PY{p}{)} \PY{c}{\PYZsh{} append the new value }
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{marr}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Mean Interval[clock ticks]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Start Index}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} <matplotlib.text.Text at 0x10eaea190>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_29_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c}{\PYZsh{} np.set\PYZus{}printoptions(threshold=\PYZsq{}nan\PYZsq{})}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{k}{print}\PY{p}{(}\PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[ 163871  329200  867973 \ldots,  153388  797940 2579940]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}26}]:} 717378.07999999996
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Mean Interval[clock ticks]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Number of intervals averaged}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{i}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/Users/dorislee/.virtualenvs/py27dev/lib/python2.7/site-packages/numpy/core/\_methods.py:55: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/Users/dorislee/.virtualenvs/py27dev/lib/python2.7/site-packages/numpy/core/\_methods.py:67: RuntimeWarning: invalid value encountered in double\_scalars
+  ret = ret.dtype.type(ret / rcount)
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_33_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsubsection{Standard deviation of the mean}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{mu} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{marr}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{float}\PY{p}{(}\PY{n}{marr}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+         \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{(}\PY{n}{marr} \PY{o}{\PYZhy{}} \PY{n}{mu}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{float}\PY{p}{(}\PY{n}{marr}\PY{o}{.}\PY{n}{size}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.}\PY{p}{)}\PY{p}{)}
+         \PY{c}{\PYZsh{} mu}
+         \PY{c}{\PYZsh{} marr}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}28}]:} 20603.501496860637
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{400}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}29}]:} array([  0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100, 110, 120,
+                130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250,
+                260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390])
+\end{Verbatim}
+        
+    Looping through \texttt{nstep} so that we can change the size of the
+dataset chunk and compute the mean for each. Then use the mean that we
+found as the average so that values in \texttt{marr} has something to
+compare against.
+
+    \[ s=\sqrt{\frac{\displaystyle  \sum^N_{i=1}(\mu_i-\mu)^2}{N-1}}\]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)} 
+         \PY{n}{i} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{dt}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+         \PY{n}{stdlist} \PY{o}{=}\PY{p}{[}\PY{p}{]}
+         \PY{n}{nsteplist}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{nstep} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{400}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{:}
+             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{p}{:}\PY{n}{nstep}\PY{p}{]}\PY{p}{:} \PY{c}{\PYZsh{} iterate in strides of nstep}
+                  \PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{n}{j}\PY{p}{:}\PY{n}{j}\PY{o}{+}\PY{n}{nstep}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} compute the mean}
+                  \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{marr}\PY{p}{,}\PY{n}{m}\PY{p}{)} \PY{c}{\PYZsh{} append the new value }
+             \PY{n}{mu} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{marr}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{float}\PY{p}{(}\PY{n}{marr}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+             \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{(}\PY{n}{marr} \PY{o}{\PYZhy{}} \PY{n}{mu}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{float}\PY{p}{(}\PY{n}{marr}\PY{o}{.}\PY{n}{size}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.}\PY{p}{)}\PY{p}{)}
+             \PY{n}{nsteplist}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{nstep}\PY{p}{)}
+             \PY{n}{stdlist}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{std}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{nstep}\PY{p}{,}\PY{n}{std}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Standard deviation of the mean [ticks]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Number of events averaged}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}30}]:} <matplotlib.text.Text at 0x10eae8f10>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_39_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{stdlist}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{stdlist}\PY{p}{)}
+         \PY{n}{nsteplist}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{nsteplist}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Standard deviation of the mean [ticks]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{1/sqrt(N)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{x} \PY{o}{=} \PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{nsteplist}\PY{p}{)}
+         \PY{n}{y} \PY{o}{=} \PY{n}{stdlist}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{c}{\PYZsh{} Best fit line}
+         \PY{n}{par} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{polyfit}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{full}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{n}{slope}\PY{o}{=}\PY{n}{par}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{intercept}\PY{o}{=}\PY{n}{par}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{n}{xl} \PY{o}{=} \PY{p}{[}\PY{n+nb}{min}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{]}
+         \PY{n}{yl} \PY{o}{=} \PY{p}{[}\PY{n}{slope}\PY{o}{*}\PY{n}{xi} \PY{o}{+} \PY{n}{intercept}  \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{xl}\PY{p}{]}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xl}\PY{p}{,} \PY{n}{yl}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}g}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}31}]:} [<matplotlib.lines.Line2D at 0x10ef584d0>]
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_40_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsubsection{Making this into a function}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{k}{def} \PY{n+nf}{analysis}\PY{p}{(}\PY{n+nb}{file}\PY{p}{)}\PY{p}{:}
+             \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{n+nb}{file}\PY{p}{,}\PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
+             \PY{n}{t} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{n}{dt} \PY{o}{=}\PY{n}{t}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{t}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{c}{\PYZsh{} compute the means in chunks }
+             \PY{n}{i} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{dt}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+             \PY{n}{nstep} \PY{o}{=} \PY{l+m+mi}{1000}
+             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{p}{:}\PY{n}{nstep}\PY{p}{]}\PY{p}{:}
+              \PY{k}{print} \PY{n}{j}\PY{p}{,}\PY{n}{j}\PY{o}{+}\PY{n}{nstep}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{n}{j}\PY{p}{:}\PY{n}{j}\PY{o}{+}\PY{n}{nstep}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{analysis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0 999 555452.778
+1000 1999 597135.841
+2000 2999 542797.276
+3000 3999 558470.47
+4000 4999 544881.541
+5000 5999 573785.981
+6000 6999 574061.433
+7000 7999 578426.408
+8000 8999 550215.818
+9000 9999 571491.436
+10000 10999 578744.182
+11000 11999 596600.726
+12000 12999 575520.835
+13000 13999 573208.063
+14000 14999 546286.923
+15000 15999 567412.665
+16000 16999 577758.239
+17000 17999 573553.447
+18000 18999 564401.297
+19000 19999 533986.038
+20000 20999 562237.172
+21000 21999 533298.463
+22000 22999 564829.357
+23000 23999 541756.96
+24000 24999 576087.031
+25000 25999 550400.191
+26000 26999 586678.489
+27000 27999 558120.568
+28000 28999 555992.977
+29000 29999 532481.423
+30000 30999 549902.214
+31000 31999 552302.405
+32000 32999 581472.049
+33000 33999 551075.376
+34000 34999 557701.751
+35000 35999 533194.871
+36000 36999 568800.173
+37000 37999 544585.168
+38000 38999 535735.14
+39000 39999 564729.522
+40000 40999 612567.202
+41000 41999 581254.289
+42000 42999 553221.384
+43000 43999 580952.305
+44000 44999 595748.908
+45000 45999 597770.962
+46000 46999 611520.242
+47000 47999 551422.026
+48000 48999 575320.718
+49000 49999 538905.724
+50000 50999 590354.71
+51000 51999 565957.955
+52000 52999 555602.656
+53000 53999 573099.737
+54000 54999 562461.465
+55000 55999 534274.542
+56000 56999 580074.55
+57000 57999 602183.842
+58000 58999 566025.519
+59000 59999 543752.779
+60000 60999 535494.821
+61000 61999 595776.634
+62000 62999 537939.644
+63000 63999 551574.298
+64000 64999 592691.557
+65000 65999 532334.077
+66000 66999 562711.659
+67000 67999 565828.481
+68000 68999 557014.785
+69000 69999 567572.839
+70000 70999 526143.046
+71000 71999 525709.37
+72000 72999 569712.658
+73000 73999 568531.083
+74000 74999 563883.953
+75000 75999 555915.245
+76000 76999 559383.991
+77000 77999 511857.622
+78000 78999 546499.89
+79000 79999 549505.776
+80000 80999 576812.011
+81000 81999 561537.576
+82000 82999 572956.939
+83000 83999 570037.454
+84000 84999 562622.693
+85000 85999 569213.782
+86000 86999 551019.965
+87000 87999 581243.346
+88000 88999 554361.012
+89000 89999 580690.206
+90000 90999 511030.938
+91000 91999 562774.815
+92000 92999 543426.552
+93000 93999 517651.371
+94000 94999 546977.83
+95000 95999 577116.1
+96000 96999 558127.988
+97000 97999 555894.077
+98000 98999 547243.611
+99000 99999 574473.344538
+    \end{Verbatim}
+
+
+    \paragraph{Adding plotting functions to analysis method}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{k}{def} \PY{n+nf}{analysis}\PY{p}{(}\PY{n+nb}{file}\PY{p}{)}\PY{p}{:}
+             \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{n+nb}{file}\PY{p}{,}\PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
+             \PY{n}{t} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{n}{dt} \PY{o}{=}\PY{n}{t}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{t}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Event number}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Clock tick}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{c}{\PYZsh{}clock cycle plot}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Event number}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Interval [Clock ticks]}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{dt}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{)} \PY{c}{\PYZsh{} interval plot}
+             \PY{c}{\PYZsh{} Mean Interval Plot}
+             \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} define an empty array}
+             \PY{n}{i} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{dt}\PY{o}{.}\PY{n}{size}\PY{p}{)}
+             \PY{n}{nstep} \PY{o}{=} \PY{l+m+mi}{1000}
+             \PY{n}{jlist}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{p}{:}\PY{n}{nstep}\PY{p}{]}\PY{p}{:} \PY{c}{\PYZsh{} iterate in strides of nstep}
+                  \PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dt}\PY{p}{[}\PY{n}{j}\PY{p}{:}\PY{n}{j}\PY{o}{+}\PY{n}{nstep}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} compute the mean}
+                  \PY{n}{marr} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{marr}\PY{p}{,}\PY{n}{m}\PY{p}{)} \PY{c}{\PYZsh{} append the new value }
+                  \PY{n}{jlist}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{j}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}            
+             \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Mean Interval[clock ticks]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Start Index}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{jlist}\PY{p}{,}\PY{n}{marr}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{analysis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)} \PY{c}{\PYZsh{}truncating the ouput for display purposes}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_46_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_46_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_46_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{First Set of Data}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{analysis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1051\PYZus{}40.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_48_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_48_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_48_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Second Set of Data}
+
+
+    This makes sense because there is the same number of event as dataset 1
+but they have higher intensity so there are more photons coming at the
+same time. Therefore it only took \textasciitilde{}2 clock cycles for
+the 10,000 photon count to run out.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{analysis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1052\PYZus{}40.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_51_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_51_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_51_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Third Set of Data}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{analysis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_53_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_53_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_53_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    When \texttt{dtype=\textquotesingle{}int32} is left out, the datalist
+assumes the default return type of \texttt{loadtxt} (floating point).
+Since floating point numbers are stored with limited precision in
+Python, it is forced to approximate the integer as a float. As a result,
+the last few digits of the integer may be off. Since the values of two
+neighboring data points we are subtracting to obtain \texttt{dt} usually
+lie very close since they occur right after another, therefore errors
+introduced by the floating point approximation results in a visible
+difference when we are trying to compare its difference with a
+subsequent datapoint as shown in the plot below.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{int32}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{x}
+         \PY{n}{t} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{k}{print} \PY{n}{t}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[         2  900614011]
+ [         2  900777882]
+ [         2  901107082]
+ \ldots, 
+ [         2 1126061486]
+ [         2 1126859426]
+ [         2 1129439366]]
+[ 900614011  900777882  901107082 \ldots, 1126061486 1126859426 1129439366]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{msjidlmh\PYZus{}140906\PYZus{}1057\PYZus{}50.csv}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{x}
+         \PY{n}{t} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{k}{print} \PY{n}{t}
+         \PY{n}{dt} \PY{o}{=}\PY{n}{t}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{t}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{k}{print} \PY{n}{dt}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Event number}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Interval [Clock ticks]}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{dt}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}}\PY{p}{)} \PY{c}{\PYZsh{} interval plot}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[  2.00000000e+00   9.00614011e+08]
+ [  2.00000000e+00   9.00777882e+08]
+ [  2.00000000e+00   9.01107082e+08]
+ \ldots, 
+ [  2.00000000e+00   1.12606149e+09]
+ [  2.00000000e+00   1.12685943e+09]
+ [  2.00000000e+00   1.12943937e+09]]
+[  9.00614011e+08   9.00777882e+08   9.01107082e+08 \ldots,   1.12606149e+09
+   1.12685943e+09   1.12943937e+09]
+[  163871.   329200.   867973. \ldots,   153388.   797940.  2579940.]
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}40}]:} [<matplotlib.lines.Line2D at 0x10ee64450>]
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Lab1 Photon Detection Experiment_files/Lab1 Photon Detection Experiment_56_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
