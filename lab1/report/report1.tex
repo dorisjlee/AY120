@@ -1,32 +1,40 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
  \usepackage{gensymb}
-\title{Lab 1: Photon Counting \& the Statistics of Light}
-\author{Jung Lin (Doris) Lee}
-\date{September 2014}
-
+ \usepackage{amsmath}
+\title{Photon Counting \& the Statistics of Light}
+\author{Jung Lin (Doris) Lee\\ Group partners: Jennifer Ito, Manuel Silvia}
+\date{\today}
 \begin{document}
 \maketitle
-
+\begin{abstract}
+abstract here
+\end{abstract}
 \section{Introduction\label{intro}}
-\indent Photon statistics are the fundamental basis to optical astronomy since they constitut e what 
+\indent Photon statistics are the fundamental basis to optical astronomy since they constitute the data we collect in optical astronomy. 
 are important to astronomy because 
 optical astronomy 
 galaxy morphology, 
-Large sky surveys such as the Sloan Digital Sky Survey and the Dark Energy Survey   imaging data in the optical wavelength
+Large sky surveys such as the Sloan Digital Sky Survey(SDSS; York et al.) and the Dark Energy Survey (DES; The Dark Energy Collaboration) imaging data in the optical wavelength.
 \indent In this experiment, we recorded the arrival of photons from an LED and analyze
- In section 2, I will describe the experimental method that my group used to take the data and the results that we obtained. Subsequently, section 3 introduces the various statistical measures that we can use to describe the findings and observation on  a single dataset, including the effect of binning the data into histograms. Section 4 describes the two probability density functions that are relavant to these histograms and dataset.
+ In section 2, I will describe the experimental method that my group used to take the data and the results that we obtained. Subsequently, section 3 introduces the various statistical measures that we can use to describe the findings and observation on  a single dataset, including the effect of binning the data into histograms. Section 4 describes the two probability density functions that are relevant to these histograms and dataset.
 \section{Experiments\label{experiment}}
 	\subsection{Methods}
-The arrival of a photon is registered by the photomultiplier tube (PMT) , data acquisition is conducted by the CoinPro software
-% describe afterpulse and how to remove them;Measures taken to alleviate systematics effects 
-Sometimes afterpulses can seen immediately after the original pulse.  We eliminate this systematic effects by cutting away 
+\indent The arrival of a photon is registered by the photomultiplier tube (PMT), and data was acquired using the CoinPro software. The resulting processed data file is a series of time stamps of when the data arrived. Since CoinPro is ran on a 32-bit machine, we can see the cycling through of time in FIG REF. Although absolute time stamp is the recorded quantity, it is often more useful to consider the time elapsed between two consecutive events ($\texttt{dt}$) as plotted in Fig. in order to get a sense of  the photon arrival rate for some sample waiting time.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figures/interval_scatterplot}
+\caption{With the removal of after pulse event, we can see that there is a decline in the number of events. This makes sense because we are doing an interval cut at 3000 clock ticks, which should result in a clear boundary at y=3000 but this can not be seen due to the large range of interval value that the y-axis spans over. The data representation in Fig. \ref{fitted_histo_gate_or_no} better shows the the effect of gating afterpulses. }
+\label{scatterplot}
+\end{figure}
+\\
+\indent Sometimes noise pulses resembling Fig.\ref{afterpulse} can be observed after the original pulse. These events are caused by  the ionization of residual gas molecules in the PMT's vacuum chamber.  We eliminate this systematic effects by cutting away data with subsequent pulses lie within the time frame of 2.5$\mu$s  after an original pulse as shown in Fig.\ref{fitted_histo_gate_or_no}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/afterpulse}
-\caption{The two peaks can be seen  there is a gradual decline of ticks in the next ~3000 clock ticks.}
+\includegraphics[width=1\textwidth]{figures/afterpulse}
+\caption{With histogram of bin size = 500,000, the two peaks (original and afterpulse) as well as a gradual decline of ticks in the next \~3000 clock ticks can be seen here.}
 \label{afterpulse}
 \end{figure}
    \subsection{Changing LED Brightness}
@@ -38,11 +46,34 @@ Sometimes afterpulses can seen immediately after the original pulse.  We elimina
 \label{changeLED}
 \end{figure}
 \section{Descriptive Statistics and Histograms\label{stats}}
-
+Since the Poisson distributuon is discrete, the mean converges to the expected value ad the number of trials(N) is large. In Fig. we take 
 \section{Photon Statistics\label{pstats}}
- 	\subsection{Exponential Distribution}
- 	\subsection{Poisson Distribution}
- 	Unlike the continuous exponential distribution, Poisson dsitribution is a discrete probability distribution that arise from (\_). The underllying process is the same (rare event for very large N) btu the experiement method is different. In our case the wayh we post-process the data is different.
-\section{Conclusion\label{end}}
 
+ 	\subsection{Exponential Distribution}
+ 	Exponential distribution described by Eq.\ref{exp_distr} governs the histogram of $\texttt{dt}$, the elapsed time between photon arrival event.
+\begin{equation} \label{exp_distr}
+ P(t,\tau)=\frac{1}{\tau}e^{-\frac{t}{\tau}}
+\end{equation}
+ 	 A defining characteristic of the exponential distribution is that it is continous``memorylessness``. In this case, the photon arrival rate at some moment in time,t, is not dependent on the photon arrival rate prior to time t.  The green curve in Fig.\ref{fitted_histo_gate_or_no} is the plotted from the analytical solution shown in Eq.\ref{int_exp}, which is obtained from integrating the exponential distribution with a step-size $\Delta t =1.42x10^7$and  $\tau$ set as the mean of the $\texttt{dt}$ dataset .  
+ 	 \begin{equation}\label{int_exp}
+ 	 \int^{t+\Delta t}_\tau\frac{1}{\tau}e^\frac{t}{\tau}dt=-e^\frac{t+\Delta t}{\tau}+e^\frac{t}{\tau}
+	\end{equation} 	  
+Since the exponential distribution is a unity-normalized PDF, this result is scaled by the number of events to fit the histogram.
+ 	\begin{figure}[h]
+		\includegraphics[width=0.5\textwidth]{figures/fitted_histo}
+		\includegraphics[width=0.5\textwidth]{figures/fitted_histo_with_gating}
+		\caption{Histogram of bin size = 50 before (left) and after (right) cutting away the afterpulses.}
+		\label{fitted_histo_gate_or_no}
+	\end{figure}
+ 	\subsection{Poisson Distribution}
+ 	Although closely-related, the Poisson distribution is unlike the exponential distribution in that it is a discrete probability distribution that arises from measuring the number of events that occur within a fixed sampling interval . The underlying process is the same (rare event for very large N) but the experiment method is different. In this case, the experiment is the same, but we change the way the data is represented, as binned data for a fixed bin size. 
+ 	 	\begin{figure}[h]
+		\includegraphics[width=0.5\textwidth]{figures/time_series}
+		\includegraphics[width=0.5\textwidth]{figures/poisson_histo}
+		\caption{By using a Poisson curve fit, we find that the $\mu$ is 5.677.}
+		\label{poisson}
+	\end{figure}
+\section{Conclusion\label{end}}
+In this lab, we 
+Possible extensions to this project is to investigate 
 \end{document}
