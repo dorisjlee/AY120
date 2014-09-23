@@ -1,11 +1,14 @@
-\documentclass[authoryear, 12pt,5p, times]{elsarticle}
+\documentclass[authoryear, 12pt,5p, Times]{elsarticle}
 \usepackage[hypcap]{caption}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref} 
  \usepackage{gensymb}
 \usepackage{subcaption}
 \usepackage{url}
+%\renewcommand\thefootnote{\fnsymbol{\dagger}}
+\usepackage[symbol*]{footmisc}
 \begin{document}
+%\footnote{This is a footnote}
 \begin{frontmatter}
 \title{Photon Counting \& the Statistics of Light}
 \author{\today \\ \quad \\Jung Lin (Doris) Lee\\ dorislee@berkeley.edu\\Group partners: Jennifer Ito, Manuel Silvia\\Prof. James Graham, UGSI Heechan Yuk, Isaac Domagalski}
@@ -14,8 +17,6 @@
 	 We present the methods used to conduct the photon counting experiment and the statistical results obtained from the collected data. By varying the brightness of the light source, we found that photon arrival rate increases, as seen from the decreased number of events .(\textbf{modify this??})Analysis on a single data set shows that as the the number of events in an experiment increases, the sample mean($\bar{x}$) converges to the theoretical mean($\mu$). However since systematic effects can not be eliminated by increasing number of events, we mitigate the effect of afterpulsing by vetoing photon arrival events that occurred immediately after another. The processed data results in a histogram that align very closely to exponential distribution. In addition, binned data for a fixed time interval also matches closely with the Poisson distribution. Therefore, by fitting the distribution we obtain the sample mean parameter of the experiment.  
 	\end{abstract}
 \end{frontmatter}
-
-
 \section{Introduction\label{intro}}
 \indent Photon statistics are the fundamental basis to optical astronomy since they constitute the data we collect in optical astronomy. 
 are important to astronomy because 
@@ -42,14 +43,27 @@ Large sky surveys such as the Sloan Digital Sky Survey(SDSS; York et al.) and th
 \caption{With a histogram of bin size = 500,000, the two peaks (original and afterpulse) as well as a gradual decline of ticks in the next 3000 clock ticks can be seen here.}
 \label{afterpulse}
 \end{figure}
-   \subsection{Changing LED Brightness}
-\indent By listening to ticks on the squawker, there was no detectable difference from the 3 o'clock off position to the 12 o'clock position. Therefore, we started off at the 12 o'clock location and went to the max location ($\approx$90\degree), diving this region into 6 equal parts \footnote{Although it seems like only 5 data points are shown in the plot, this is merely an artifact of the choice of data representation as circles as  the first two data points lie so closely that they are almost indistinguishable. This is easily verified by using the dot representation with \texttt{matplotlib's} `,`setting} is roughly 15\degree  increments. Even though the measurement of the LED brightness is eyeballed and not that precise, it did not significantly affect the plot since the the data point should always fall on the linear line with slope =1 since the $\sigma$ and $\mu$ of an exponential distribution is always equal.
-INCLUDE TABLE ON NUMBER OF PHOTON EVENT AND SAY THAT BRIGHTNESS IS CORRELATED WITH THE NUMBER OF PHOTON FLUX , so higher brightness results in shorter  experiment since we fix then number of experiment.
+   \subsection{Changing LED Brightness\label{changeLEDbrightness}}
+\indent By listening to ticks on the squawker, there was no detectable difference from the 3 o'clock off position to the 12 o'clock position. Therefore, we started off at the 12 o'clock location and went to the max location ($\approx$90\degree), diving this region into 6 equal parts \footnote{Although it seems like only 5 data points are shown in the plot, this is merely an artifact of the choice of data representation as circles as  the first two data points lie so closely that they are almost indistinguishable. This is easily verified by using the dot representation with \texttt{matplotlib's} `,`setting} is roughly 18\degree  increments. Even though the measurement of the LED brightness is eyeballed and not that precise, it did not significantly affect the plot since the the data point should fall on the $\sigma=\bar{x}$ line since the $\sigma$ and $\mu$ of an exponential distribution is always equal.
+\begin{table}
+    \center
+    \begin{tabular}{l|l}
+    Intensity[\degree] & Final time stamp in time series [ticks] \\ \hline
+    0                                    & 86447071309                                     \\
+    18                                   & 68475846523                                     \\
+    36                                   & 35127973096                                     \\
+    54                                   & 7517634481                                      \\
+    72                                   & 5787954870                                      \\
+    90 (max)                             & 5558407093                                      \\
+    \end{tabular}
+    \caption{Intensity is specified as the LED control knob position in degrees, as described earlier in Sec.\ref{changeLEDbrightness}. Since we are taking a fixed number of photon arrival events, as the brightness increases, the faster photon arrival rate means that 10,000 event count finishes faster than it did for lower brightness; thus, accounting for the smaller time stamp values.}
+\end{table}
 \begin{figure}[h]
+%Last timestamp in the reconstructed time series
 \centering
 \includegraphics[width=0.5\textwidth]{figures/changeLED}
-\includegraphics[width=0.5\textwidth]{figures/changeLED_gating}
-\caption{Showing linear relation between standard deviation and sample mean. The slope of the line should one since both the standard deviation and the sample mean of each dataset is equal to the single-parameter that governs the behavior of the exponential distribution.}
+%\includegraphics[width=0.5\textwidth]{figures/changeLED_gating}
+\caption{The slope of the line should be one since both the standard deviation and the sample mean of each dataset is equal to the single-parameter $\tau$ in the exponential distribution. We find that gating the afterpulses causes the $\bar{x}$ to get closer to $\mu$. }
 \label{changeLED}
 \end{figure}
 \section{Descriptive Statistics and Histograms\label{stats}}
@@ -79,8 +93,7 @@ Using the N=100,000 dataset with LED on the maximum brightness setting, we obtai
 	\end{equation} 	  
 Since the exponential probability density function (PDF) is normalized to one, this result is scaled by the number of events to fit the histogram.
  	\begin{figure}[h]
-		\includegraphics[width=0.5\textwidth]{figures/fitted_histo}
-		\includegraphics[width=0.5\textwidth]{figures/fitted_histo_with_gating}
+		\includegraphics[width=0.5\textwidth]{figures/histogram}
 		\caption{Histogram of bin size = 50 before and after gating afterpulses, with the scaled exponential PDF fit.}
 		\label{fitted_histo_gate_or_no}
 	\end{figure}
@@ -93,6 +106,11 @@ Since the exponential probability density function (PDF) is normalized to one, t
 			\label{poisson}
 		\end{figure}
 \section{Conclusion\label{end}}
-In this lab, we 
-Possible extensions to this project is to investigate 
+Our findings can be summarized to the following points: 
+\begin{itemize}
+\item 
+\item Since photon arrival is rare and random in the limit of large N , it can be closely follow a Poisson distribution.
+\item 
+\end{itemize}
+In this experiment, we only attempt to mitigate the effect of one type of systematic error vetoing the afterpulses. One possible extensions to this project may be to investigate the effect of other types of systematic error such as dark counts and thermal noise on the quality of the data. This effect can be quantified by measuring the signal to noise ratio and comparisons among different types of PMT.
 \end{document}
