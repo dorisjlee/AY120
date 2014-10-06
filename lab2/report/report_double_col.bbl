@@ -1,0 +1,12 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Howell(2006)}]{ccd_handbook}
+Howell, S.~B., 2006. Handbook of CCD Astronomy, 2nd Edition. Cambridge
+  University Press, cambridge Books Online.
+\newline\urlprefix\url{http://dx.doi.org/10.1017/CBO9780511807909}
+
+\end{thebibliography}
