@@ -11,7 +11,7 @@
 \begin{document}
 %\footnote{This is a footnote}
 \begin{frontmatter}
-\title{Photon Counting \& the Statistics of Light}
+\title{Astronomical Spectroscopy: Detecting light with a CCD}
 \author{\today \\ \quad \\Jung Lin (Doris) Lee\\ dorislee@berkeley.edu\\Group partners: Jennifer Ito, Manuel Silvia\\Prof. James Graham, UGSI Heechan Yuk, Isaac Domagalski}
 	\begin{abstract}
     %key objective, method, principle conclusion 
@@ -34,6 +34,17 @@ is a result of each CCD pixel's different sensitivity to photon
 \section{Data Reduction}
 	\subsection{Automated centroid algorithm}
 	find the local maxima and minima by comparing subsequent data points and testing the boolean condition of function increasing or decreasing.
+We attempted to create a automated centroid algorithm by selecting the centroid that we actually care about, we impose two conditions:1. the data range that we use to calculaute the centroid must be the region wihtin a min-max-min group, Since almost a large number of datapoint will satisfy thiscondition and it doesn't tell us teh intensity difference between the local max and min are, so we impose a second condition that the difference must be greater than 10\% of the difference between maximum datapoint of the first dataset and the minimum datapoint (so that the offset is considered in). The 10\% was chosen because of the quality of the centroid result that it produces.
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{figures/fail}
+\caption{Top: The closely spaced extremum at around the 1100th pixel results in a small difference value between the local minimum and maximum. Therefore, it was not detected by the algorithm. Bottom: The extremum finding algorithm did not detect the maximum at around pixel 1380 in its  first step.}
+\end{figure}
+	%the algorithm is robust as it is proven to find accurate centroid on a test data of 10000 sample (do later)
+	The alogirthim was not very robust as it is unable pick out spectral lines that lied between consecutive extremas such as the ones on pixel 1115 and 1374. Despite varying the percentage cut, it was unable to identify features that showed relative difference such as 314 but only measured the absolute differences, which is hard to account for with such great differences.
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{figures/steps}
+\caption{Graphical representation of how the automated algorithm works. Top: Identifying all the extremum of the dataset. Red marker denotes local maximum; green denotes local minimum. Middle: Applying criteria to select suitable ranges as shown in middle plot, using this sliced dataset to obtain the centroid values (dashed). Bottom: Resulting centroid list misses some important spectral feature picked out by the eyeball-estimation method shown in Fig. (\textbf{REF!!!!}).} 
+\end{figure}
 	\subsection{Systematic Effects}
 	 \subsection{Natural Broadening Effect}
  As seen in Fig. (LABEL HERE) the spectral lines are not perfect sharp Dirac Delta functions. This broadening is due to several physical phenomena, one reason is the natural line width caused by the measurement uncertainty inherent from quantum mechanics. Another more dominant effect is due to Doppler shift from the thermal velocity of the atoms. The distribution of the atomic thermal velocity is governed by the Boltzmann distribution. This Doppler-shifted velocity distribution propagates to our intensity measurement, which can then be rearranged into a Gaussian form. The broadening effect is chracterized by the variance of this new distribution as shown in  Eq. \ref{doppler_var},
