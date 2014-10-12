@@ -30,7 +30,10 @@ is a result of each CCD pixel's different sensitivity to photon
 \caption{We took a dataset of 1s integration time bias frames by placing the red cap on the spectrometer and in a black bag. A histogram of dark counts is fitted to a Gaussian. The variance of the distribution relates to the read noise and gain of the spectrometer \citep{ccd_handbook}.}
 \end{figure}
 \section{Experiment and }
+\subsection{Spectra property and comparison for different sources}
 \section{Data Reduction}
+	\subsection{Automated centroid algorithm}
+	find the local maxima and minima by comparing subsequent data points and testing the boolean condition of function increasing or decreasing.
 	\subsection{Systematic Effects}
 	 \subsection{Natural Broadening Effect}
  As seen in Fig. (LABEL HERE) the spectral lines are not perfect sharp Dirac Delta functions. This broadening is due to several physical phenomena, one reason is the natural line width caused by the measurement uncertainty inherent from quantum mechanics. Another more dominant effect is due to Doppler shift from the thermal velocity of the atoms. The distribution of the atomic thermal velocity is governed by the Boltzmann distribution. This Doppler-shifted velocity distribution propagates to our intensity measurement, which can then be rearranged into a Gaussian form. The broadening effect is chracterized by the variance of this new distribution as shown in  Eq. \ref{doppler_var},
