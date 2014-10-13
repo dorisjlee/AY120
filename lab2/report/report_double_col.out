@@ -1,9 +1,14 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Experiment and }{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Spectra property and comparison for different sources}{section.2}% 3
-\BOOKMARK [1][-]{section.3}{Data Reduction}{}% 4
-\BOOKMARK [2][-]{subsection.3.1}{Automated centroid algorithm}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.2}{Systematic Effects}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.3}{Natural Broadening Effect}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.4}{Dark Counts}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 9
+\BOOKMARK [1][-]{section.2}{Hardware and Experiment}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Ocean Optics USB 2000 spectrometer}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Qualitative findings for different sources}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Spectra property and comparison for different sources}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Systematic Effects}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Natural Broadening Effect}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Dark Counts}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Read Noise and gain}{}% 9
+\BOOKMARK [1][-]{section.5}{Data Reduction}{}% 10
+\BOOKMARK [1][-]{section.6}{Data Smoothing}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Automated centroid algorithm}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Wavelength calibration}{section.6}% 13
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 14

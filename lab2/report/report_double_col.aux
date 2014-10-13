@@ -16,22 +16,34 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{ccd_handbook}
-\citation{ccd_handbook}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces We took a dataset of 1s integration time bias frames by placing the red cap on the spectrometer and in a black bag. A histogram of dark counts is fitted to a Gaussian. The variance of the distribution relates to the read noise and gain of the spectrometer \citep  {ccd_handbook}.\relax }}{1}{figure.caption.1}}
 \newlabel{intro}{{1}{1}{Introduction}{section.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Experiment and }{1}{section.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Spectra property and comparison for different sources}{1}{subsection.2.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Data Reduction}{1}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Automated centroid algorithm}{1}{subsection.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Hardware and Experiment}{2}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Ocean Optics USB 2000 spectrometer}{2}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Qualitative findings for different sources}{2}{subsection.2.2}}
+\newlabel{power_ohms}{{1}{2}{\textbf {Voltage}}{equation.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Each colored line shows the spectral response to the corresponding color filters. The difference in relative intensity is irrelevant, it is may simply be due to how close we are holding the source to the entrance slit of the spectrometer and how efficient the colored-marker ink is at blocking out light. Pixel-to-wavelength conversion done by manufacturer's wavelength calibration coefficients.\relax }}{2}{figure.caption.2}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{color}{{1}{2}{Each colored line shows the spectral response to the corresponding color filters. The difference in relative intensity is irrelevant, it is may simply be due to how close we are holding the source to the entrance slit of the spectrometer and how efficient the colored-marker ink is at blocking out light. Pixel-to-wavelength conversion done by manufacturer's wavelength calibration coefficients.\relax }{figure.caption.2}{}}
+\newlabel{wien}{{2}{2}{\textbf {Voltage}}{equation.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Spectra property and comparison for different sources}{2}{subsection.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Systematic Effects}{2}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Natural Broadening Effect}{2}{subsection.3.1}}
+\citation{ccd_handbook}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Changing the input voltage of the source affects the peak wavelength of the distribution. \relax }}{3}{figure.caption.4}}
+\newlabel{voltage}{{2}{3}{Changing the input voltage of the source affects the peak wavelength of the distribution. \relax }{figure.caption.4}{}}
+\newlabel{doppler_var}{{3}{3}{Natural Broadening Effect}{equation.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Dark Counts}{3}{subsection.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces An averaged spectra of dark counts with integration time of 1ms shows the non-uniformity of each pixel in the linear CCD array. Also, note the clear bias offset seen at around 125 ADU.\relax }}{3}{figure.caption.5}}
+\newlabel{dark_counts}{{3}{3}{An averaged spectra of dark counts with integration time of 1ms shows the non-uniformity of each pixel in the linear CCD array. Also, note the clear bias offset seen at around 125 ADU.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Read Noise and gain}{3}{section.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Data Reduction}{3}{section.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Data Smoothing}{3}{section.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Automated centroid algorithm}{3}{subsection.6.1}}
 \bibdata{references}
 \bibcite{ccd_handbook}{{1}{2006}{{Howell}}{{}}}
 \bibstyle{elsarticle-harv}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Top: The closely spaced extremum at around the 1100th pixel results in a small difference value between the local minimum and maximum. Therefore, it was not detected by the algorithm. Bottom: The extremum finding algorithm did not detect the maximum at around pixel 1380 in its first step.\relax }}{2}{figure.caption.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Graphical representation of how the automated algorithm works. Top: Identifying all the extremum of the dataset. Red marker denotes local maximum; green denotes local minimum. Middle: Applying criteria to select suitable ranges as shown in middle plot, using this sliced dataset to obtain the centroid values (dashed). Bottom: Resulting centroid list misses some important spectral feature picked out by the eyeball-estimation method shown in Fig. (\textbf  {REF!!!!}).\relax }}{2}{figure.caption.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Systematic Effects}{2}{subsection.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Natural Broadening Effect}{2}{subsection.3.3}}
-\newlabel{doppler_var}{{1}{2}{Natural Broadening Effect}{equation.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Dark Counts}{2}{subsection.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{2}{section.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top: The closely spaced extremum at around the 1100th pixel results in a small difference value between the local minimum and maximum. Therefore, it was not detected by the algorithm. Bottom: The extremum finding algorithm did not detect the maximum at around pixel 1380 in its first step.\relax }}{4}{figure.caption.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Wavelength calibration}{4}{subsection.6.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Graphical representation of how the automated algorithm works. Top: Identifying all the extremum of the dataset. Red marker denotes local maximum; green denotes local minimum. Middle: Applying criteria to select suitable ranges as shown in middle plot, using this sliced dataset to obtain the centroid values (dashed). Bottom: Resulting centroid list misses some important spectral feature picked out by the eyeball-estimation method shown in Fig. (\textbf  {REF!!!!}).\relax }}{4}{figure.caption.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{4}{section.7}}
