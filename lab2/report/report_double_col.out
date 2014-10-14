@@ -2,13 +2,14 @@
 \BOOKMARK [1][-]{section.2}{Hardware and Experiment}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Ocean Optics USB 2000 spectrometer}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Qualitative findings for different sources}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Spectra property and comparison for different sources}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Systematic Effects}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Natural Broadening Effect}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Read Noise and gain}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{Dark Counts}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Data Reduction}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Data Smoothing}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{Automated centroid algorithm}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.3}{Wavelength calibration}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 14
+\BOOKMARK [1][-]{section.3}{Noise and Systematic Effects}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Natural Broadening Effect}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Dark Counts}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Poisson nature of obtained data}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Other possible source of error}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Data Reduction}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Data Smoothing}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Centroid-Finding Methods}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Wavelength calibration}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 14
+\BOOKMARK [1][-]{section.6}{References}{}% 15
