@@ -5,10 +5,10 @@
 \BOOKMARK [2][-]{subsection.2.3}{Spectra property and comparison for different sources}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Systematic Effects}{}% 6
 \BOOKMARK [2][-]{subsection.3.1}{Natural Broadening Effect}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Dark Counts}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Read Noise and gain}{}% 9
+\BOOKMARK [1][-]{section.4}{Read Noise and gain}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Dark Counts}{section.4}% 9
 \BOOKMARK [1][-]{section.5}{Data Reduction}{}% 10
-\BOOKMARK [1][-]{section.6}{Data Smoothing}{}% 11
-\BOOKMARK [2][-]{subsection.6.1}{Automated centroid algorithm}{section.6}% 12
-\BOOKMARK [2][-]{subsection.6.2}{Wavelength calibration}{section.6}% 13
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Data Smoothing}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{Automated centroid algorithm}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{Wavelength calibration}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 14

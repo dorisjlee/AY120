@@ -67,28 +67,42 @@ If we approximate the desklamp source as a radiating blackbody, Wien's law state
  \end{equation}
  where T is the temperature, m is the mass of the atom, $f_0$ is the frequency when atom is stationary, c is the speed of light and k is the Boltzman factor.
  
- \subsection{Dark Counts}
- We took a dataset of 1s integration time bias frames by placing the red cap on the spectrometer and in a black bag. A histogram of dark counts is fitted to a Gaussian. The variance of the distribution relates to the read noise and gain of the spectrometer \citep{ccd_handbook}.
- Ununiform quality of pixel can be seen in \ref{dark_counts}
- \begin{figure}[h!]
-\includegraphics[width=0.45\textwidth]{figures/dark&biashisto}
-\caption{An averaged spectra of dark counts with integration time of 1ms shows the non-uniformity of each pixel in the linear CCD array. Also, note the clear bias offset seen at around 125 ADU.} 
-\label{dark_counts}
-\end{figure}
+
 Possible source of error: 
 - ununiform pixels(REF dark counts)
 - multiple mixed source since roomlight not closed when taking data, so slight traces of other sources in our pure data like neon...etc
 \section{Read Noise and gain}
 We chose to conduct the statistical analysis on noise property on the 60Watt lightbulb data since the variance is less likely to be dominated by fluctuations in the source's illumination brightness compared to the sunlight or plasma bulb.
+ \subsection{Dark Counts}
+ We took set of 3ms integration time bias frames by placing the red cap on the spectrometer and in a black bag. This integration time was chosen as close to zero as possible to minimize the tails of the Gaussian on the two ends. The 3ms integration time is the shortest integration time accessible for data acquisition using the SpectraSuite software. 
+ %A histogram of dark counts is fitted to a Gaussian. 
+ %The variance of the distribution relates to the read noise and gain of the spectrometer \citep{ccd_handbook}. 
+ 
+A Gaussian is fitted onto the histogram to obtain the value of mean ($\mu$) and variance($\sigma$) of the distribution. The $\mu$ corresponds to the $ADU_0$, whereas the $\sigma$ corresponds to $\sigma_{ADU_0}$, the error on the dark counts. This variation on the dark counts comes from the non-uniform quality of the pixel as seen in Fig.\ref{dark_counts}. But since $\sigma_{ADU_0}$ is relatively small compared to $ADU_0$, it is negligible when considering its per-pixel additive effect on the raw data.
+
+
+In real astronomical observations, this method of acquiring dark measurements and the use of overscan strips by adding additional pseudopixels are two common ways of bias calibration on imaging data. Although our spectrometer has a linear CCD array as a detector, imaging telescope often has an plane array of CCD pixels. In those cases, an average of 10 or more bias frame is often better bias-correction technique since it reveals any underlying 2D bias patterns present. 
+ \begin{figure}[h!]
+\includegraphics[width=0.45\textwidth]{figures/dark&biashisto}
+\caption{Top panel shows an averaged spectra of dark counts that exhibits the non-uniformity of each pixel in the linear CCD array. Also, note the clear bias offset seen at around 125 ADU. Bottom panel is a histogram of bias frames fitted with a Gaussian. } 
+\label{dark_counts}
+\end{figure}
 \section{Data Reduction}
  Now we have examined the systematic effects that affects our data, we process the raw data obtained from the spectrometer in order to find an equation that converts the pixel values to wavelengths.
   \subsection{Data Smoothing}
   Smoothing is a data reduction technique that removes noise and minor pixel-to-pixel variations in the data. We employ both the boxcar and averaging technique in our datasets and compare their resulting differences.
-  \paragraph*{Boxcar Smoothing}
-  
-   boxcar average for cosmetic purposes. lower s/N but resolution decrease. In this case could be useful for better centroid findindg 
+  \paragraph*{\textbf{Boxcar Smoothing}}
+  Our boxcar smoothing algorithm takes the values of adjacent pixel and average them over some user-defined interval. Since the quality of each pixel is inconsistent, boxcar smoothing compensate for 
+  However even though boxcar smoothing lowers the signal-to-noise ratio by eliminating small-scale features, when 
+  boxcar smoothing may lower the resolution of the Delta-function-like peak that  important spectral fec
+  In this case could be useful for better centroid findindg 
 Since the quality of each pixel is inconsistent, we employ boxcar smoothing to compensate for the 
-Boxcar smoothing takes the values of adjacent pixels and average them. 
+
+
+
+  
+   boxcar average for cosmetic purposes. lower s/N but resolution decrease. 
+   
 This produced undesirable results so we resorted to the conventional averaging of data by averaging over whole datasets
   a step towards finding a functional form to fit the data  into functional form since it makes the data less discrete and more continuous like a function.l
 
@@ -106,8 +120,12 @@ This produced undesirable results so we resorted to the conventional averaging o
 \end{figure}
 \subsection{Wavelength calibration}
 The polynomial nature of our fitting model comes from the paraxial apprximation of diffraction scneario, which results in a Taylor expansion that can be boiled down to a polynomial of higher order terms.
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figures/neon_calib}
+\caption{ } 
+\end{figure}
 \section{Conclusion}
-Possible extension to this project may be to try conducting a basic flat-field correction to the detector. One way to do this to shine bright light uniformly on the detector to see the response of each pixel.  The exposure time needs to be short so that the CCD is not saturated. We can also try to measure maximum ranges at which CCD is sensitive and linear.
+Possible extension to this project may be to try conducting a basic flat-field correction to the detector. One way to do this to shine bright light uniformly on the detector to see the response of each pixel. The exposure time needs to be short so that the CCD is not saturated. We can also try to measure maximum ranges at which CCD is sensitive and linear.
 \bibliography{references}
  %\bibliographystyle{abbrvnat}
 %\bibliographystyle{apalike}
