@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 OCT 2014 15:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 OCT 2014 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,69 +567,70 @@ Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+txmia on input line 24.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 27.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 24.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 24.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 24.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Overfull \hbox (2.40881pt too wide) in paragraph at lines 26--27
+Overfull \hbox (2.40881pt too wide) in paragraph at lines 29--30
 []\OT1/txr/m/n/12 Optical spec-troscopy pro-vides im-por-tant in-for-ma-
  []
 
 
-Overfull \hbox (2.772pt too wide) in paragraph at lines 26--27
+Overfull \hbox (2.772pt too wide) in paragraph at lines 29--30
 \OT1/txr/m/n/12 their sur-round-ing medium can be de-rived from atomic
  []
 
 
-Overfull \hbox (5.80801pt too wide) in paragraph at lines 28--29
+Overfull \hbox (5.80801pt too wide) in paragraph at lines 31--32
 \OT1/txr/m/n/12 ever, most mod-ern day spec-tro-scope uses finely-grated
  []
 
 
-Overfull \hbox (0.3pt too wide) in paragraph at lines 30--32
+Overfull \hbox (0.3pt too wide) in paragraph at lines 33--35
 \OT1/txr/m/n/12 used to elim-i-nate noise and vari-a-tions as-so-ci-ated with
  []
 
 
-Overfull \hbox (1.91998pt too wide) in paragraph at lines 30--32
+Overfull \hbox (1.91998pt too wide) in paragraph at lines 33--35
 \OT1/txr/m/n/12 Fi-nally, sec-tion 4 ex-plains how we con-verted the pixel
  []
 
 
-Overfull \hbox (24.39603pt too wide) in paragraph at lines 30--32
+Overfull \hbox (24.39603pt too wide) in paragraph at lines 33--35
 \OT1/txr/m/n/12 val-ues recorded by the spec-trom-e-ter to the more hardware-
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 37--39
+\OT1/txr/m/n/12 beam into com-po-nent of dif-fer-ent wave-lengths. Then,
  []
 
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 34--36
-\OT1/txr/m/n/12 beam into com-po-nent of dif-fer-ent wave-lengths. Then,
- []
-
-<figures/color.png, id=75, 401.5pt x 288.07625pt>
+<figures/color.png, id=76, 401.5pt x 288.07625pt>
 File: figures/color.png Graphic file (type png)
  <use figures/color.png>
-Package pdftex.def Info: figures/color.png used on input line 45.
+Package pdftex.def Info: figures/color.png used on input line 48.
 (pdftex.def)             Requested size: 261.0pt x 187.27809pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 45--47
+Overfull \hbox (9.0pt too wide) in paragraph at lines 48--50
 [][] 
  []
 
@@ -637,38 +638,38 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 45--47
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (0.62401pt too wide) in paragraph at lines 57--58
+Overfull \hbox (0.62401pt too wide) in paragraph at lines 60--61
 \OT1/txr/m/n/12 be ap-prox-i-mately the same shape but with a dis-placed
  []
 
-<figures/voltage.png, id=80, 400.49625pt x 288.07625pt>
+<figures/voltage.png, id=81, 400.49625pt x 288.07625pt>
 File: figures/voltage.png Graphic file (type png)
 
 <use figures/voltage.png>
-Package pdftex.def Info: figures/voltage.png used on input line 65.
+Package pdftex.def Info: figures/voltage.png used on input line 68.
 (pdftex.def)             Requested size: 261.0pt x 187.74844pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 65--66
+Overfull \hbox (9.0pt too wide) in paragraph at lines 68--69
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/sunlight_saturated.png, id=82, 396.5214pt x 283.0575pt>
+<figures/sunlight_saturated.png, id=83, 396.5214pt x 283.0575pt>
 File: figures/sunlight_saturated.png Graphic file (type png)
 
 <use figures/sunlight_saturated.png>
-Package pdftex.def Info: figures/sunlight_saturated.png used on input line 74.
+Package pdftex.def Info: figures/sunlight_saturated.png used on input line 77.
 (pdftex.def)             Requested size: 234.8984pt x 167.68056pt.
  [2 <./figures/color.png>]
 <figures/dark.png, id=100, 402.50375pt x 130.4875pt>
 File: figures/dark.png Graphic file (type png)
  <use figures/dark.png>
-Package pdftex.def Info: figures/dark.png used on input line 84.
+Package pdftex.def Info: figures/dark.png used on input line 87.
 (pdftex.def)             Requested size: 261.0pt x 84.61276pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 84--85
+Overfull \hbox (9.0pt too wide) in paragraph at lines 87--88
 [][] 
  []
 
@@ -676,203 +677,213 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 84--85
 File: figures/60Wdarksubtracted.png Graphic file (type png)
 
 <use figures/60Wdarksubtracted.png>
-Package pdftex.def Info: figures/60Wdarksubtracted.png used on input line 92.
+Package pdftex.def Info: figures/60Wdarksubtracted.png used on input line 95.
 (pdftex.def)             Requested size: 261.0pt x 184.50882pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 92--93
+Overfull \hbox (9.0pt too wide) in paragraph at lines 95--96
 [][] 
  []
 
 
-Overfull \hbox (6.86328pt too wide) in paragraph at lines 90--96
+Overfull \hbox (6.86328pt too wide) in paragraph at lines 93--99
 \OT1/txr/m/n/12 since it re-veals any un-der-ly-ing 2D bias pat-terns present
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./figures/voltage.png> <./figures/sunlight_saturated.png> <./figures/dark.p
 ng>] <figures/dark&biashisto.png, id=118, 426.6339pt x 424.7067pt>
 File: figures/dark&biashisto.png Graphic file (type png)
 
 <use figures/dark&biashisto.png>
-Package pdftex.def Info: figures/dark&biashisto.png used on input line 104.
+Package pdftex.def Info: figures/dark&biashisto.png used on input line 106.
 (pdftex.def)             Requested size: 234.8984pt x 233.83565pt.
 
-<figures/varmeanplot.png, id=121, 397.485pt x 293.095pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/varmeanplot.png, id=121, 383.5128pt x 277.9986pt>
 File: figures/varmeanplot.png Graphic file (type png)
 
 <use figures/varmeanplot.png>
-Package pdftex.def Info: figures/varmeanplot.png used on input line 116.
-(pdftex.def)             Requested size: 234.8984pt x 173.21077pt.
+Package pdftex.def Info: figures/varmeanplot.png used on input line 120.
+(pdftex.def)             Requested size: 234.8984pt x 170.27457pt.
 
-Overfull \hbox (2.82002pt too wide) in paragraph at lines 114--119
+Overfull \hbox (2.82002pt too wide) in paragraph at lines 118--123
 \OT1/txr/m/n/12 The list of mean and vari-ances are com-puted by stack-
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [4 <./figures/60Wdarksubtracted.png> <./figures/dark&biashisto.png>]
-Overfull \hbox (1.83281pt too wide) in paragraph at lines 125--126
+Overfull \hbox (1.83281pt too wide) in paragraph at lines 129--130
 []\OT1/txr/m/n/12 Now we have ex-am-ined the sys-tem-atic ef-fects that
  []
 
 <figures/boxcar.png, id=134, 425.59pt x 288.07625pt>
 File: figures/boxcar.png Graphic file (type png)
  <use figures/boxcar.png>
-Package pdftex.def Info: figures/boxcar.png used on input line 131.
+Package pdftex.def Info: figures/boxcar.png used on input line 135.
 (pdftex.def)             Requested size: 234.8984pt x 159.00067pt.
 
-Overfull \hbox (4.67998pt too wide) in paragraph at lines 129--134
+Overfull \hbox (4.67998pt too wide) in paragraph at lines 133--138
  []\OT1/txr/bx/it/12 Boxcar Smooth-ing\OT1/txr/m/it/12 . \OT1/txr/m/n/12 Our bo
 x-car smooth-ing al-go-rithm
  []
 
 
-Overfull \hbox (6.21602pt too wide) in paragraph at lines 129--134
+Overfull \hbox (6.21602pt too wide) in paragraph at lines 133--138
 \OT1/txr/m/n/12 delta-function-like peak of im-por-tant spec-tral fea-tures.
  []
 
 [5 <./figures/varmeanplot.png> <./figures/boxcar.png>]
-Overfull \hbox (2.41199pt too wide) in paragraph at lines 143--144
+Overfull \hbox (2.41199pt too wide) in paragraph at lines 148--149
  []\OT1/txr/bx/it/12 Automated cen-troid al-go-rithm\OT1/txr/m/it/12 . \OT1/txr
 /m/n/12 We at-tempted to cre-
  []
 
 
-Overfull \hbox (0.56403pt too wide) in paragraph at lines 143--144
+Overfull \hbox (0.56403pt too wide) in paragraph at lines 148--149
 \OT1/txr/m/n/12 se-lected data range used for cen-troid cal-cu-la-tion must
  []
 
 
-Overfull \hbox (9.08401pt too wide) in paragraph at lines 143--144
+Overfull \hbox (9.08401pt too wide) in paragraph at lines 148--149
 \OT1/txr/m/n/12 i-mum and then end with an-other lo-cal min-i-mum. There
  []
 
-<figures/fail.png, id=146, 402.5439pt x 276.0714pt>
+<figures/fail.png, id=147, 402.5439pt x 276.0714pt>
 File: figures/fail.png Graphic file (type png)
  <use figures/fail.png>
-Package pdftex.def Info: figures/fail.png used on input line 147.
+Package pdftex.def Info: figures/fail.png used on input line 152.
 (pdftex.def)             Requested size: 234.8984pt x 161.09882pt.
 
-Overfull \hbox (6.93602pt too wide) in paragraph at lines 145--150
+Overfull \hbox (6.93602pt too wide) in paragraph at lines 150--155
 \OT1/txr/m/n/12 se-lect only the data ranges that have dif-fer-ences greater
  []
 
 
-Overfull \hbox (0.70802pt too wide) in paragraph at lines 145--150
+Overfull \hbox (0.70802pt too wide) in paragraph at lines 150--155
 \OT1/txr/m/n/12 than 10% of the dif-fer-ence be-tween the ab-so-lute max-
  []
 
-<figures/steps.png, id=148, 351.2322pt x 262.581pt>
+<figures/steps.png, id=149, 351.2322pt x 262.581pt>
 File: figures/steps.png Graphic file (type png)
  <use figures/steps.png>
-Package pdftex.def Info: figures/steps.png used on input line 154.
+Package pdftex.def Info: figures/steps.png used on input line 159.
 (pdftex.def)             Requested size: 234.8984pt x 175.61581pt.
 
-<figures/spectral_lines.png, id=150, 426.59375pt x 282.05376pt>
+<figures/spectral_lines.png, id=151, 426.59375pt x 282.05376pt>
 File: figures/spectral_lines.png Graphic file (type png)
 
 <use figures/spectral_lines.png>
-Package pdftex.def Info: figures/spectral_lines.png used on input line 162.
+Package pdftex.def Info: figures/spectral_lines.png used on input line 167.
 (pdftex.def)             Requested size: 250.55777pt x 165.66571pt.
 
-<figures/window.png, id=151, 531.4254pt x 236.5638pt>
+<figures/window.png, id=152, 531.4254pt x 236.5638pt>
 File: figures/window.png Graphic file (type png)
  <use figures/window.png>
-Package pdftex.def Info: figures/window.png used on input line 166.
+Package pdftex.def Info: figures/window.png used on input line 171.
 (pdftex.def)             Requested size: 250.55777pt x 111.53513pt.
 
-<figures/neon_calib.png, id=152, 412.6617pt x 314.1336pt>
+[6 <./figures/fail.png> <./figures/steps.png>]
+<figures/neon_calib.png, id=164, 412.6617pt x 314.1336pt>
 File: figures/neon_calib.png Graphic file (type png)
 
 <use figures/neon_calib.png>
-Package pdftex.def Info: figures/neon_calib.png used on input line 172.
+Package pdftex.def Info: figures/neon_calib.png used on input line 177.
 (pdftex.def)             Requested size: 261.0pt x 198.68172pt.
-
-Overfull \hbox (9.0pt too wide) in paragraph at lines 172--173
-[][] 
- []
-
-<figures/compare_linquad.png, id=153, 393.47pt x 162.6075pt>
-File: figures/compare_linquad.png Graphic file (type png)
-
-<use figures/compare_linquad.png>
-Package pdftex.def Info: figures/compare_linquad.png used on input line 177.
-(pdftex.def)             Requested size: 261.0pt x 107.86217pt.
 
 Overfull \hbox (9.0pt too wide) in paragraph at lines 177--178
 [][] 
  []
 
+<figures/compare_linquad.png, id=165, 393.47pt x 162.6075pt>
+File: figures/compare_linquad.png Graphic file (type png)
 
-Overfull \hbox (19.73573pt too wide) in paragraph at lines 186--194
+<use figures/compare_linquad.png>
+Package pdftex.def Info: figures/compare_linquad.png used on input line 182.
+(pdftex.def)             Requested size: 261.0pt x 107.86217pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 182--183
 [][] 
  []
 
 
-Overfull \hbox (0.23682pt too wide) in paragraph at lines 170--197
+Overfull \hbox (19.73573pt too wide) in paragraph at lines 191--199
+[][] 
+ []
+
+
+Overfull \hbox (0.23682pt too wide) in paragraph at lines 175--202
 []\OT1/txr/m/n/12 The poly-no-mial na-ture of our fit-ting model comes
  []
 
 
-Overfull \hbox (0.27599pt too wide) in paragraph at lines 170--197
+Overfull \hbox (0.27599pt too wide) in paragraph at lines 175--202
 \OT1/txr/m/n/12 ing equa-tion. By ap-prox-i-mat-ing that the light's wave-
  []
 
 
-Overfull \hbox (6.612pt too wide) in paragraph at lines 170--197
+Overfull \hbox (6.612pt too wide) in paragraph at lines 175--202
 \OT1/txr/m/n/12 the trigono-met-ric equa-tion to a poly-no-mial with higher
  []
 
-[6 <./figures/fail.png>] [7 <./figures/steps.png> <./figures/spectral_lines.png
-> <./figures/window.png> <./figures/neon_calib.png>]
-Overfull \hbox (5.56802pt too wide) in paragraph at lines 202--203
+[7 <./figures/spectral_lines.png> <./figures/window.png> <./figures/neon_calib.
+png>]
+Overfull \hbox (5.56802pt too wide) in paragraph at lines 207--208
 \OT1/txr/m/n/12 from NIST. Then, we con-duct a higher-order quadratic
  []
 
 
-Overfull \hbox (3.384pt too wide) in paragraph at lines 204--205
+Overfull \hbox (3.384pt too wide) in paragraph at lines 209--210
 \OT1/txr/m/n/12 ex-per-i-ment data, one pos-si-ble ex-ten-sion to this project
  []
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 208.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 213.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 208.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 213.
 
-Overfull \hbox (5.3027pt too wide) in paragraph at lines 208--209
+Overfull \hbox (5.3027pt too wide) in paragraph at lines 213--214
 \OT1/txr/m/n/12 2nd Edi-tion. Cam-bridge Uni-ver-sity Press, 2006. 
  []
 
 
-Overfull \hbox (15.10667pt too wide) in paragraph at lines 210--212
+Overfull \hbox (15.10667pt too wide) in paragraph at lines 215--217
 \OT1/txr/m/it/12 tics for As-tronomers\OT1/txr/m/n/12 , Cam-bridge Uni-ver-sity
  Press,
  []
 
 
-Overfull \hbox (0.77875pt too wide) in paragraph at lines 212--213
+Overfull \hbox (0.77875pt too wide) in paragraph at lines 217--218
 []\OT1/txr/m/n/12 Hecht, Eu-gene, \OT1/txr/m/it/12 Op-tics\OT1/txr/m/n/12 , Add
 ison-Wesley, 2001. 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
 [8 <./figures/compare_linquad.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
  (./report_double_col.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
 Package rerunfilecheck Info: File `report_double_col.out' has not changed.
 (rerunfilecheck)             Checksum: 52B26B11DD99BAE67274B38DFD415AE4;987.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
  ) 
 Here is how much of TeX's memory you used:
  8861 strings out of 493117
  129690 string characters out of 6135433
- 233801 words of memory out of 5000000
+ 228754 words of memory out of 5000000
  12110 multiletter control sequences out of 15000+600000
  46127 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,926b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,888b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -886,7 +897,7 @@ ublic/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.
 pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report_double_col.pdf (8 pages, 553792 bytes).
+Output written on report_double_col.pdf (8 pages, 596019 bytes).
 PDF statistics:
  236 PDF objects out of 1000 (max. 8388607)
  184 compressed objects within 2 object streams

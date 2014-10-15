@@ -18,7 +18,10 @@
 	Spectroscopy is an essential tool in observational astronomy for examining  properties of distant sources. In this experiment, we observe the spectral line signatures of different everyday light sources. We examine the hardware of the Ocean Optics USB 2000 spectrometer and consider how physical phenomenon such as thermal noise could affect the quality of our data. %Systematic effect due to (1),(2), and (3). 
 By taking dark frames, we use the resulting mean and variances to
 %__ correct for are (2),(3).  The dark-corrected mean/variance plot was used to
-  quantify the read noise and Poisson error of the instrument. 	Then we explore data reduction techniques in order to get to a wavelength calibration formula. Data-smoothing eliminates tiny fluctuations in the intensity values of adjacent pixels so that they are not identified as important spectral line signature; therefore. it improves the accuracy of the centroid-finding algorithm. However, the automated centroid-finding algorithm that we employed misses a few spectral line features. Therefore, using the centroid values obtained from the estimation method instead, we conduct a linear least squares fit with the known neon and mercury wavelength values. By comparing the residual plots and the sum of residuals from the linear and quadratic fits, we conclude that a linear fit is good enough for our experiment's data and a higher-order description for wavelength calibration is not necessary. 
+  quantify the read noise and Poisson error of the instrument. %	Then we explore data reduction techniques in order to get to a wavelength calibration formula. 
+Then, two different data-smoothing techniques are employed to eliminate tiny fluctuations in the intensity values % of adjacent pixels 
+so that they are not identified as important spectral line signature. %and therefore 
+Even though data smoothing is supposed to improve the accuracy of the centroid-finding algorithm, we found that our automated centroid-finding algorithm misses a few important spectral line features. Therefore, using the centroid values obtained from the estimation method instead, we conduct a linear least squares fit with the known neon and mercury wavelength values. By comparing the residual plots and the sum of residuals from the linear and quadratic fits, we conclude that a linear fit is good enough for our experiment's data and a higher-order description for wavelength calibration is not necessary. 
   
 	\end{abstract}
 \end{frontmatter}
@@ -94,20 +97,21 @@ In the Ocean Optics USB 2000 spectrometer, the first 24 pixels are covered up du
 \label{60W}
 \end{figure}
  \subsection{Poisson nature of obtained data}
- We chose to conduct the statistical analysis of noise property on the 60-Watt lightbulb data since the variance is less likely to be dominated by fluctuations in the source's illumination brightness compared to the sunlight or plasma bulb.  
- 
+ We chose to conduct the statistical analysis of noise property on the 60-Watt lightbulb data since the variance is less likely to be dominated by fluctuations in the source's illumination brightness.
  A Gaussian is fitted onto the histogram of dark frames in Fig.\ref{dark&histo} to obtain the value of mean ($\mu$) and variance($\sigma$) of the distribution. The $\mu$ corresponds to the $ADU_0$ in Eq.\ref{adu} , whereas the $\sigma$ corresponds to $\sigma_{ADU_0}$, the error on the dark counts. This variation on the dark counts comes from the non-uniform quality of the pixel as seen in Fig.\ref{dark&histo}. But since $\sigma_{ADU_0}$ is relatively small compared to $ADU_0$, it is negligible when considering its per-pixel additive effect on the raw data.
  \begin{equation}\label{adu}
  ADU = g \frac{Ne}{C}+ADU_0
  \end{equation}
 Analog digital units (ADU) is the value of the digital measurement that is converted from the raw electron count in the circuit; C is the capacitance where the total electric charge from N number of electrons with charge e is deposited and g is simply a proportionality constant for the conversion.
- \begin{figure}[h!]\includegraphics[width=0.45\textwidth]{figures/dark&biashisto}\caption{Top panel shows a spectrum of dark frames that exhibits the non-uniformity of each pixel in the linear CCD array. We can see that even when no light is entering the spectroscope, there are non-zero intensity values due to the effects of dark current and bias offset. The spectrum roughly corresponds to the $ADU_0$ value obtained from the $\mu$ of 108 ADU in the histogram of bias frame fitted with a Gaussian shown in the bottom panel.}\label{dark&histo}\end{figure}
+ \begin{figure}[h!]\includegraphics[width=0.45\textwidth]{figures/dark&biashisto}\caption{Top panel shows a spectrum of dark frames that exhibits the non-uniformity of each pixel in the linear CCD array. We can see that even when no light is entering the spectroscope, there are non-zero intensity values due to the effects of dark current and bias offset. The spectrum roughly corresponds to the bias value ($ADU_0$) obtained from the $\mu$ of 108 ADU shown in the bottom panel.}\label{dark&histo}\end{figure}
+ 
+ 
 Since the CCD detector is essentially doing photon counting during the course of an experiment, the CCD noise is largely governed by Poisson statistics. By conducting the method of error propagation on Eq.\ref{adu} and assuming the Poisson and read noise is uncorrelated, we obtain :
 \begin{equation}
 \sigma^2_{ADU} = \Bigg(\frac{\partial ADU}{\partial N}\Bigg)^2 \sigma_N^2 +\Bigg(\frac{\partial ADU}{\partial ADU_0}\Bigg)^2\sigma_0^2
 \label{error}
 \end{equation}
-where $\sigma_0$ is the read noise associated with each measurement and $\sigma_{ADU}$ is the   Poisson noise which is equal to N due to notable  $\sqrt{N}$ standard deviation of Poisson . Then writing this in linear form by substituting \ref{adu}:
+where $\sigma_0$ is the read noise associated with each measurement and $\sigma_{ADU}$ is the   Poisson noise which is equal to N (due to notable  $\sqrt{N}$ Poisson standard deviation) . Then,  writing this in linear form by substituting Eq.\ref{adu}, we get :
 \begin{equation}
 \sigma^2_{ADU}=\frac{ge}{C}(ADU- ADU_0)+\sigma_0^2
 \label{linear_error_relation}
@@ -196,13 +200,13 @@ The polynomial nature of our fitting model comes from the perpendicular incident
     \label{table}
 \end{table}
 \section{Conclusion}
-In this experiment, we measured the effect of different light-emitting sources and draw a qualitative relationship between spectral responses to the underlying physics in play. By decreasing the voltage parameter of an incandescent source, we found that the peak wavelength is red shifted due to the lower temperature from less power-dissipation. The arrangement of colored filters exhibits higher intenisty peak repsonses to the filter's corrsponding wavelength. By examining the hardware setup and the internal workings of a spectrometer, we consider the possible systematic effects that could effect the data taken from the experiment. 
+In this experiment, we measured the effect of different light-emitting sources and draw a qualitative relationship between spectral responses to the underlying physics in play. By decreasing the voltage parameter of an incandescent source, we found that the peak wavelength is red shifted due to the lower temperature from less power-dissipation. The arrangement of colored filters exhibits higher intensity peaks to the filter's corresponding wavelength. By examining the hardware setup and the internal workings of a spectrometer, we consider the possible systematic effects on the data taken from the experiment. 
 
 During data reduction, the data was smoothed using the boxcar and averaging methods. We find that the averaging method serves this purpose better since it is not subjected to loss of per-pixel detail as much as the boxcar technique does. With the smoothed data, the automated centroid-finding algorithm can better identify centroids of interest in isolated window ranges, as some false-positives (short spiky peaks that do not resemble important spectral features) are eliminated by the smoothing procedure. However, since our algorithm only compares absolute differences in the local extrema of the spectra, it misses some important spectral line features in the  processed data. Therefore, we resorted to visually-examining the spectral peaks and defining a window of peak value\rpm 1$\sigma$ so that a more accurate centroid can be calculated in the data range.
 
-With the list of centroid values, we conduct linear least square fit on the wavelength value with the  spectral line pixel and wavelength values referenced from NIST. Then, we conduct a higher-order quadratic fit. By comparing the sum of residuals from the two fits and examining the residual plots, we find that there was not much of an improvement for going to a higher order fit. Finally, the fitting paramters are the coefficients used for wavelength calibration, which enable us to express the pixel numbers obtained in our spectra data to the less hardware-dependent values of wavelength.
+With the list of centroid values, we conduct linear least square fit on the wavelength value with the  spectral line pixel and wavelength values referenced from NIST. Then, we conduct a higher-order quadratic fit. By comparing the sum of residuals from the two fits and examining the residual plots, we find that there was not much of an improvement for going to a higher order fit. Finally, the fitting parameters are the coefficients used for wavelength calibration, which enable us to express the pixel numbers obtained in our spectra data to the less hardware-dependent values of wavelength.
 	
-As we only applied dark frame corrections to our experiment data, one possible extension to this project may be to try conducting a basic flat-field correction to the detector. One way to do this to shine bright light uniformly on the detector to see the response of each pixel. The exposure time needs to be short so that the CCD is not saturated. In doing so, we can also try to measure maximum ranges at which CCD is sensitive and linear.
+As we only applied dark frame corrections to our experiment data, one possible extension to this project may be to try conducting a basic flat-field correction to the detector. One way to do this to shine bright light uniformly across the detector to see the response of each pixel. The exposure time needs to be short so that the CCD is not saturated. In doing so, we can also try to measure maximum ranges at which CCD is sensitive and linear.
 \section{References}
 %\bibliographystyle{elsarticle-harv}
 \begin{itemize}

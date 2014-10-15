@@ -1,0 +1,101 @@
+# Linear least squares example for circular motion at known frequency
+# and phase, with unknown center and amplitude
+#
+# James R. Graham 8/22/2011
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#----------------------------------
+npts   = 20     # number of data points
+omega  = 10.    # m/s/s due to gravity 
+x0     = 1.25   # dc offset
+x1     = 1.0    # amplitude
+stde   = 0.1    # measurement error 
+
+# Make a vector of times and compute the position
+
+t = np.linspace(0.0, 2.0 ,npts)
+x =  x0 + x1 * np.sin(omega*t) 
+
+# Add Gaussian noise to the positions 
+
+err = stde * np.random.randn(npts) 
+xe = x + err
+
+# Check the statistical properties of the error 
+
+print 'Mean = ', np.mean(err)
+print 'Standard dev = ', np.std(err)
+
+# Start a new figure
+
+fig = plt.figure(figsize=(9,6))
+
+plt.subplot(121)
+plt.plot(t,xe,'bo') 
+plt.xlabel('Time [s]')
+plt.ylabel('Dist [m]')
+plt.xlim([0,2.])
+plt.ylim([-0.5,2.5])
+plt.title('Data') 
+
+plt.subplot(122)
+
+
+plt.plot(t,xe,'bo') 
+plt.xlabel('Time [s]')
+plt.ylabel('Dist [m]')
+plt.xlim([0,2.])
+plt.ylim([-0.5,2.5])
+plt.title('Data, Fit, & Residuals')
+
+
+
+
+# Independent variable 
+b1 = np.ones(npts)
+b2 = np.sin(omega*t)
+b = np.matrix(np.column_stack((b1,b2)))
+bt = np.transpose(b)
+
+# Dependent variable 
+y = np.transpose(np.matrix(xe))
+
+# Compute moore-penrose pseudo inverse
+btb = bt * b 
+mpsi  = np.linalg.inv(btb)
+
+# Find the least squares solution 
+
+ans = mpsi * bt * y 
+print
+print 'x0 = {0:.3f}, x1 = {1:.3f} '.format(ans[0,0],ans[1,0])
+
+# Plot up the answer and admire the results
+
+ni = 100 
+
+ti = np.linspace(0,2,ni)  # define times for fit curve
+
+bi1 = np.ones(ni)
+bi2 = np.sin(omega*ti)
+
+bi = np.matrix(np.column_stack((bi1,bi2)))
+
+xfit = bi*ans
+
+plt.plot(ti,xfit  ,'b-')
+
+# Compute and plot the residuals between 
+# observed and predicted by fit
+
+xr = y - b*ans
+
+plt.plot(t,xr,'gs')
+plt.plot([-10,10],[0,0],'g--')
+
+
+# save the result
+
+plt.savefig('circ-lsq.png')

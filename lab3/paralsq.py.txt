@@ -1,0 +1,79 @@
+# Example is a falling object under gravity 
+#
+# James R. Graham 2011/8/22
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#----------------------------------
+npts = 10     # number of data points
+g    = 9.81   # m/s/s due to gravity 
+stde = 0.5    # m/s measurement error 
+
+# Make a vector of times and compute the position
+
+t = np.linspace(0.0, 1.0 ,npts)  # in seconds
+x = 0.5 * g * t**2.              # in meters 
+
+# Add Gaussian noise to the positions 
+np.random.seed(1)   # initialze the random number generator
+
+err = stde * np.random.randn(npts) 
+xe  = x + err
+
+# Check the statistical properties of the error 
+
+print 'Mean         = ', np.mean(err)
+print 'Standard dev = ', np.std(err)
+
+# Start a new figure
+
+plt.figure()
+
+plt.plot(t,xe,'bo') 
+plt.xlabel('Time [s]')
+plt.ylabel('Distance [m]')
+plt.xlim([-0.1,1.1])
+plt.ylim([-1,6])
+plt.title('Data, Fit, & Residuals')
+
+# Solve the least squares problem
+#
+# Turn arrays into matrices for linear algebra
+
+b  = np.transpose(np.matrix(0.5 * t**2)) # column matrix of 
+                                         # independent variable
+bt = np.transpose(b)
+y  = np.transpose(np.matrix(xe))
+
+# Compute moore-penrose pseudo inverse
+
+btb = bt * b 
+mpsi  = np.linalg.inv(btb)
+ans = mpsi * bt * y 
+
+print
+print 'Linear least squares acceleration = {0:.3f} m/s/s'.format(ans[0,0])
+
+# Plot up the answer and admire the results
+
+ti = np.linspace(0,1,100)  # define times for fit curve
+xfit = 0.5*ans[0,0]*ti**2
+
+plt.plot(ti,xfit  ,'b-',label=r'$x = \frac{1}{2}gt^2$')
+
+# Polynomial fit 
+
+res = np.polyfit(t,xe,2)
+print 'Polynomial fit Acceleration = {0:.3f} m/s/s'.format(2*res[0])
+plt.plot(ti,np.polyval(res,ti),'r:',label=r'$x = x_0 + vt + \frac{1}{2}at^2$')
+
+# Compute and plot the residuals between 
+# observed and predicted by fit
+
+xr = xe - 0.5*ans[0,0]*t**2
+
+# plt.plot(t,xr,'gs')
+# plt.plot([-10,10],[0,0],'g--')
+
+plt.legend(loc='best')
