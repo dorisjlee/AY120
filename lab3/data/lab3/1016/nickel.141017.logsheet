@@ -1,0 +1,170 @@
+               Nickel + Direct Imaging Camera Observing Log
+
+__________________________________________________________________________
+Observer(s): James Graham, Heechan Yuk        16 October/17 October 2014   
+Weather: Thin clouds, 70~90% humidity
+Key: Bad Guiding: BG, No Guiding: NG, Wind: W, Moonlight: M, Bad/Sat: BAD
+Photometric: PM, Thin Clouds: TC, Moderate Clouds: MC, (Thick) Clouds: C
+--------------------------------------------------------------------------
+d*.fits    Object     Filter     Exp.     Air       Comments
+number      name      (BVRI)     time     mass      
+--------------------------------------------------------------------------
+100-114   bias          B          0      1.00         980
+115       flat          B          3      1.07         38K
+116       flat          B          3      1.07         33K
+117       flat          B          3      1.07         29K
+118       flat          V          3      1.07         24K
+119       flat          V          4      1.07         29K
+120       flat          V          4      1.07         24K
+121       flat          R          4      1.06         21K
+122       flat          R          5      1.06         22K
+123       flat          R          6      1.06         21K
+124       flat          I          7      1.06         19K, BAD
+125       flat          I          9      1.06         20K
+126       flat          I         11      1.06         20K
+127       flat          I         15      1.06         21K, focus = 163
+128       12_Victoria   R         30      1.43         TC SAT
+129       12_Victoria   R         15      1.41         TC
+130       12_Victoria   I         15      1.40         TC SAT
+131       12_Victoria   I         20      1.40         TC
+132       12_Victoria   I         20      1.39         TC
+133       12_Victoria   I         20      1.39         TC
+134       12_Victoria   I         20      1.39         TC
+135       12_Victoria   I         20      1.38         TC
+136       12_Victoria   I         20      1.38         TC
+137       12_Victoria   R         20      1.38         TC
+138       12_Victoria   R         20      1.37         TC
+139       12_Victoria   R         20      1.37         TC
+140       12_Victoria   R         20      1.37         TC
+141       12_Victoria   R         20      1.36         TC
+142       33_Polyhymnia R         20      1.74         TC
+143       33_Polyhymnia R         35      1.73         TC
+144       33_Polyhymnia R         35      1.70         TC
+145       33_Polyhymnia R         35      1.69         TC
+146       33_Polyhymnia R         35      1.69         TC
+147       33_Polyhymnia R         35      1.68         TC
+148       33_Polyhymnia R         35      1.67         TC
+149       33_Polyhymnia R         60      1.67         TC
+150       33_Polyhymnia R         60      1.66         TC
+151       33_Polyhymnia I         60      1.63         TC
+152       33_Polyhymnia I         90      1.62         TC sat
+153       33_Polyhymnia I         80      1.61         TC
+154       33_Polyhymnia I         80      1.60         TC
+155       33_Polyhymnia I         80      1.59         TC
+156       33_Polyhymnia I         80      1.59         TC
+157       33_Polyhymnia I         80      1.58         TC
+158       84_Klio       R         30      1.31         TC
+159       84_Klio       R         80      1.30         TC
+160       84_Klio       R         90      1.30         TC
+161       84_Klio       R        120      1.29         TC
+162       84_Klio       R        120      1.28         TC
+163       84_Klio       R        120      1.27         TC
+164       84_Klio       R        120      1.26         TC
+165       84_Klio       I        120      1.26         TC SAT
+166       84_Klio       I         90      1.25         TC
+167       84_Klio       I         90      1.24         TC
+168       84_Klio       I         90      1.24         TC SAT
+169       84_Klio       I         80      1.23         TC SAT
+170       84_Klio       I         60      1.23         TC 
+171       84_Klio       I         50      1.22         TC
+172       84_Klio       I         50      1.22         TC
+173       84_Klio       I         50      1.21         TC
+174       270_Anahita   R         50      1.34         TC
+175       270_Anahita   R         60      1.34         TC
+176       270_Anahita   R         50      1.33         TC
+177       270_Anahita   R         50      1.33         TC
+178       270_Anahita   R         50      1.33         TC
+179       270_Anahita   R         50      1.33         TC
+180       270_Anahita   I         50      1.32         TC
+181       270_Anahita   I         40      1.32         TC
+182       270_Anahita   I         40      1.32         TC
+183       270_Anahita   I         40      1.31         TC
+184       270_Anahita   I         40      1.31         TC
+185       270_Anahita   I         40      1.30         TC
+186       584_Semiramis R         40      1.27         TC
+187       584_Semiramis R         40      1.28         TC
+188       584_Semiramis R         40      1.28         TC
+189       584_Semiramis R         40      1.28         TC
+190       584_Semiramis R         40      1.28         TC
+191       584_Semiramis I         40      1.29         TC
+192       584_Semiramis I         40      1.29         TC
+193       584_Semiramis I         40      1.29         TC
+194       584_Semiramis I         40      1.29         TC
+195       584_Semiramis I         40      1.29         TC
+196       258_Tyche     R         30      1.22         TC
+197       258_Tyche     R         30      1.21         TC
+198       258_Tyche     R         20      1.21         TC
+199       258_Tyche     R         30      1.21         TC
+200       258_Tyche     R         30      1.21         TC
+201       258_Tyche     R         40      1.20         TC
+202       258_Tyche     R         40      1.20         TC SAT
+203       258_Tyche     R         30      1.20         TC
+204       258_Tyche     R         30      1.20         TC
+205       258_Tyche     R         30      1.20         TC
+206       258_Tyche     I         30      1.19         TC
+207       258_Tyche     I         30      1.19         TC
+208       258_Tyche     I         30      1.19         TC
+209       258_Tyche     I         30      1.19         TC
+210       258_Tyche     I         30      1.19         TC
+211       33_Polyhymnia R         30      1.39         TC
+212       33_Polyhymnia R         45      1.39         TC
+213       33_Polyhymnia R         45      1.39         TC
+214       33_Polyhymnia R         45      1.39         TC
+215       33_Polyhymnia R         45      1.39         TC
+216       33_Polyhymnia R         45      1.39         TC
+217       33_Polyhymnia I         45      1.39         TC
+218       33_Polyhymnia I         45      1.39         TC
+219       33_Polyhymnia I         45      1.39         TC SAT
+220       33_Polyhymnia I         45      1.39         TC
+221       33_Polyhymnia I         45      1.39         TC SAT
+222       33_Polyhymnia I         45      1.39         TC SAT
+223       33_Polyhymnia I         40      1.40         TC SAT
+224       33_Polyhymnia I         30      1.40         TC 
+225       33_Polyhymnia I         30      1.40         TC 
+226       33_Polyhymnia I         30      1.40         TC 
+227       33_Polyhymnia I         45      1.40         TC 
+228       33_Polyhymnia I         45      1.40         TC 
+229       84_Klio       R         90      1.09         TC
+230       84_Klio       R         90      1.09         TC SAT
+231       84_Klio       R         90      1.09         C 
+232       84_Klio       R         90      1.09         C 
+233       84_Klio       R         90      1.09         C 
+234       84_Klio       R         90      1.09         TC
+235       84_Klio       R         90      1.09         C 
+236       84_Klio       R         90      1.09         C 
+237       84_Klio       R        120      1.09         C 
+238       84_Klio       I        120      1.10         C 
+239       84_Klio       I        120      1.10         TC SAT
+240       84_Klio       I         90      1.11         TC SAT
+241       84_Klio       I         60      1.12         TC
+242       84_Klio       I         30      1.12         TC
+243       84_Klio       I         45      1.12         TC SAT
+244       84_Klio       I         30      1.12         TC
+245       84_Klio       I         30      1.12         TC
+246       84_Klio       I         30      1.12         TC
+247       84_Klio       I         30      1.12         TC
+248       84_Klio       R         30      1.13         TC
+249       84_Klio       R         30      1.13         TC
+250       84_Klio       R         30      1.13         TC
+251       12_Victoria   R        120      2.88         C 
+252       84_Klio       R        120      1.56         C 
+253       84_Klio       I        120      1.58         C 
+254       84_Klio       I        240      1.66         C
+255       84_Klio       I        240      1.70         TC SAT
+256       84_Klio       I        180      1.73         TC SAT
+257       84_Klio       I        120      1.76         TC SAT
+258       84_Klio       I         60      1.78         TC SAT
+259       84_Klio       I         30      1.80         TC
+260       84_Klio       I         45      1.81         TC
+261       84_Klio       I         45      1.82         TC
+262       84_Klio       R         45      1.84         TC
+263       84_Klio       R         45      1.85         TC
+264       84_Klio       R         45      1.86         TC
+265       258_Tyche     R         45      1.97         TC
+266       258_Tyche     R         50      1.97         TC
+267       258_Tyche     R         60      2.00         TC
+268       258_Tyche     R         55      2.02         TC
+269       258_Tyche     R         55      2.04         TC
+270       258_Tyche     I         55      2.06         TC
+271       258_Tyche     I         55      2.08         TC
+272       258_Tyche     I         55      2.09         TC

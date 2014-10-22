@@ -1,0 +1,12 @@
+               Nickel + Direct Imaging Camera Observing Log
+
+__________________________________________________________________________
+Observer(s): James Graham, Heechan Yuk        15 October/16 October 2014   
+Weather: Cloudy and high humidity
+Key: Bad Guiding: BG, No Guiding: NG, Wind: W, Moonlight: M, Bad/Sat: BAD
+Photometric: PM, Thin Clouds: TC, Moderate Clouds: MC, (Thick) Clouds: C
+--------------------------------------------------------------------------
+d*.fits    Object     Filter     Exp.     Air       Comments
+number      name      (BVRI)     time     mass      
+--------------------------------------------------------------------------
+100-114   bias          I          0      1.00         970
