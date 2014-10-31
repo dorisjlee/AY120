@@ -476,7 +476,7 @@
            {-6\p@}%
            {\normalfont\itshape}}
 \newdimen\leftMargin
-\leftMargin=2em
+\leftMargin=5em
 \newtoks\@enLab  %\newtoks\@enfont
 \def\@enQmark{?}
 \def\@enLabel#1#2{%
@@ -531,7 +531,7 @@
            \setlength{\topsep}{\@sep}\fi
      \ifnum \@enumdepth>1\setlength{\itemsep}{0pt plus1pt minus1pt}%
       \else \setlength{\itemsep}{\@@sep}\fi
-     %\setlength\leftmargin{\leftMargin}%%%{1.8em}
+     \setlength\leftmargin{\leftMargin}{1.8em}
      \setlength{\parsep}{0pt plus1pt minus1pt}%
      \setlength{\parskip}{0pt plus1pt minus1pt}
                    }}
@@ -669,6 +669,7 @@
 \else\ifnum\jtype=3
  \RequirePackage{geometry}
  \geometry{twoside,
+ margin=5cm,
   paperwidth=210mm,
   paperheight=297mm,
   textheight=622pt,

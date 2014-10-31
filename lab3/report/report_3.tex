@@ -1,5 +1,7 @@
 \documentclass[authoryear, 12pt,5p, times]{elsarticle}
 %\usepackage[hypcap]{caption}
+%\geometry{margin=0.95in,top=1.4in,bottom=1.4in}
+\geometry{margin=1in,top=1.3in,bottom=1.3in}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage[hidelinks]{hyperref} 
@@ -12,208 +14,49 @@
 \begin{document}
 %\footnote{This is a footnote}
 \begin{frontmatter}
-\title{Astronomical Spectroscopy: Detecting light with a CCD}
+\title{Asteroid Astrometry from CCD Images}
 \author{\today \\ \quad \\Jung Lin (Doris) Lee\\ dorislee@berkeley.edu\\Group partners: Jennifer Ito, Manuel Silvia\\Prof. James Graham, UGSI Heechan Yuk, Isaac Domagalski}
 	\begin{abstract}
-	Spectroscopy is an essential tool in observational astronomy for examining  properties of distant sources. In this experiment, we observe the spectral line signatures of different everyday light sources. We examine the hardware of the Ocean Optics USB 2000 spectrometer and consider how physical phenomenon such as thermal noise could affect the quality of our data. %Systematic effect due to (1),(2), and (3). 
-By taking dark frames, we use the resulting mean and variances to
-%__ correct for are (2),(3).  The dark-corrected mean/variance plot was used to
-  quantify the read noise and Poisson error of the instrument. %	Then we explore data reduction techniques in order to get to a wavelength calibration formula. 
-Then, two different data-smoothing techniques are employed to eliminate tiny fluctuations in the intensity values % of adjacent pixels 
-so that they are not identified as important spectral line signature. %and therefore 
-Even though data smoothing is supposed to improve the accuracy of the centroid-finding algorithm, we found that our automated centroid-finding algorithm misses a few important spectral line features. Therefore, using the centroid values obtained from the estimation method instead, we conduct a linear least squares fit with the known neon and mercury wavelength values. By comparing the residual plots and the sum of residuals from the linear and quadratic fits, we conclude that a linear fit is good enough for our experiment's data and a higher-order description for wavelength calibration is not necessary. 
-  
+astrometry for asteroid name..etc
 	\end{abstract}
 \end{frontmatter}
-\section{Introduction\label{intro}}
-Optical spectroscopy provides important information about the chemical composition observational targets since astronomers often do not have access to physical samples of their targets for conducting chemical analysis. Detailed insight into the properties of planetary bodies, radiating black-bodies, and their  surrounding medium can be derived from atomic absorption and emission features on a spectrum.
+\section{Introduction}
 
-Early models of spectrometers consist of prisms that dispersed light into different components . However, most modern day spectroscope uses finely-grated slits instead of prisms to minimize absorption so that faint sources, common to astronomical observation, can be better observed. Moreover, the use of optical fiber plates for simultaneous acquisition of multiple spectra enables cosmological studies such as Baryon Oscillation Spectroscopic Survey (BOSS; Dawson et al.) to examine higher redshift quasars and luminous red galaxies.
-
-In this report, we present the internal workings of a spectrometer and how that effects the raw, unprocessed spectra obtained. In section 2, I will present the Ocean Optics USB 2000 spectrometer hardware used for this experiment and a qualitative overview of the data resulting from different sources. In section 3, I will detail the various procedures that were used to eliminate noise and variations associated with the spectrometer's hardware setup.  In addition, I will show the Poisson nature of these systematic effects. Finally, section 4 explains how we converted the pixel values recorded by the spectrometer to the more hardware-independent measurement of wavelength by comparing our data with given atomic line features referenced from NIST\footnote{National Institute of Standards and Technology Atomic Spectra Database}.
-%spectral features  and corresponding wavelengths from
-\section{Hardware and Experiment}
-	\subsection{Ocean Optics USB 2000 spectrometer}
-	A spectroscope is an instrument used for analyzing components of an electromagnetic wave over some specific wavelength. In a typical spectroscopy setup, the incoming light is collimated by a lens and goes through a diffraction grating that disperses the beam into component of different wavelengths.  Then, the dispersed light is detected by the CCD and %with side-by-side pixels that span a fixed range of wavelengths. 
-voltage readout corresponding to the intensity value incident on each pixel is converted into digital units and stored for further analysis.  %Therefore each dispersed component falls into one of the ranges .
-
-The spectrometer that we are using for this experiment is an Ocean Optics USB 2000 spectrometer, with a 2048-pixels linear CCD. Each pixel in the CCD spans 14$\mu m\times 200\mu m$.
-
-	\subsection{Qualitative findings for different sources}
-	\paragraph*{\textbf{Color}}
-	
-	 In astronomical spectroscopy, color (i.e. the range of wavelength that the peak falls near) yields information about the temperature of a stellar population, which can then serves as an indicator for its age. To explore the color wavelength response of the spectrometer, we place red, green, orange, and blue colored paper in front of a very bright LED flashlight. Even though there was transmission loss through the filter, the absorption should be fairly equal for all wavelengths. Therefore we can still clearly see from  Fig. \ref{color} the wavelength correspondence of each color  in the visible wavelength. 
-	%, property derived from spectra.% In addition, since color simply defines a range of wavelength, photogmeric system that overlap in the ultraviolet/optical /infared bands such as the U,B,V and Gunn g,r,i photometric system.
-	\begin{figure}[h!]
-\includegraphics[width=0.5\textwidth]{figures/color}
-%Each colored line shows the spectral response to the corresponding color filters. 
-\caption{ By adding a color filter in front of a radiating body, we found that the lines peaks around the color's corresponding wavelength in the visible spectrum.The difference in relative intensity is irrelevant, as it may simply be due to how close we are holding the source to the entrance slit of the spectrometer and how much light the colored-marker ink is blocking out. The pixel-to-wavelength conversion was done according to the manufacturer's wavelength calibration coefficients.}
-\label{color}
-\end{figure}
-	\paragraph*{\textbf{Voltage}} The desk lamp is attached to an external potentiometer which allows us to vary the voltage of the source. Since to the relationship between voltage and current is described by Ohm's law, the decrease in voltage is directly proportional to the decrease in current, which  leads to a dimming of the lamp. Another way is to consider the power dissipation by the bulb as described by Eq.\ref{power_ohms}:
-	\begin{equation}
-	P=IV=\frac{V^2}{R}
-	\label{power_ohms}
-	\end{equation}
-		where P is the power dissipated by the lamp, I is current through the lamp, V is the voltage across the circuit (externally modulated by the potentiometer) and R is the resistance of the circuit which in this case is fixed. Therefore, decreasing the voltage results in a decreases in power dissipation.
-		
-If we approximate the desklamp source as a radiating blackbody, Wien's law states that its wavelength distribution for different temperature should be approximately the same shape but with a displaced wavelength as shown in Eq.\ref{wien}:
-		\begin{equation}
-		\lambda_{max} = \frac{b}{T}=\frac{2.897\times 10^3 m\cdot K}{T}
-		\label{wien}
-		\end{equation}
-		where $\lambda_{max}$ is the peak wavelength for the distribution, T is the temperature of the radiating blackbody, and b is the Wien's displacement constant.
-		Since Eq. \ref{power_ohms} shows a lower power dissspation for smaller input voltage, it means that the lamp's bulb is cooler in temperature than if it was at a higher voltage setting. This is why the peak wavelength of the  lower-voltage source distribution is longer than the higher-voltage source. % hy the spectra taken with the low voltage setting peaks at a lower wavelength is
-	\begin{figure}[h!]
-	\includegraphics[width=0.5\textwidth]{figures/voltage}
-\caption{Changing the input voltage of the source affects the peak wavelength of the distribution. }
-
-\label{voltage}
-	\end{figure}
-%\subsection{Spectra property and comparison for different sources}
-\paragraph*{\textbf{Intensity}}
-The sunlight spectra was taken by an optical fiber that lead from spectrometer's entracnce slit to an adjustable stand to minimize the variation of the , however external factors such as cloud and shadows still varied the source brightness. Also,  despite the use of minimum integration time (3ms) for data acquisition,  the pixels still saturate by the high intensity of sunlight as shown in the cutoff in Fig.\ref{sunlight}. Averaging the data does not alleviate the effect since this feature persists throughout the whole duration of taking the 1000 samples. 
- \begin{figure}[h!]
-	\includegraphics[width=0.45\textwidth]{figures/sunlight_saturated}
-\caption{Top: Saturation of the CCD pixels results in the plateau of the spectra. Bottom: Mercury lines in roomlights and spectra obtained from other sources did not exhibit this plateauing effect since none were of such high intensity.}
-\label{sunlight}
-	\end{figure}
-\section{Noise and Systematic Effects}
-	 \subsection{Natural Broadening Effect}
- As seen in the mercury lines in Fig.\ref{sunlight}, the spectral lines do not resemble perfectly sharp Dirac Delta functions. This broadening effect is due to several physical phenomena. One reason for  the natural line width is the measurement uncertainty inherent from quantum mechanics. Another more dominant effect is due to the Doppler effect of atoms moving with thermal velocity while they are emitting the electromagnetic wave recorded in the spectra. The distribution of the atomic thermal velocity is governed by the Boltzmann distribution. This Doppler-shifted velocity distribution propagates to our intensity measurement, which can then be rearranged into a Gaussian form. The broadening effect is characterized by the variance of this new distribution.
-  \subsection{Dark Counts}
- We took set of 3ms integration time bias frames by placing the red cap on the spectrometer and in a black bag. This integration time was chosen as close to zero as possible to minimize the tails of the Gaussian on the two ends. The 3ms integration time is the shortest integration time accessible for data acquisition using the SpectraSuite software. These dark count measurements can be used to subtract out the per-pixel noise in the experiment's data.
- \begin{figure}[h!]
-\includegraphics[width=0.5\textwidth]{figures/dark}
-\caption{A spectrum of neon zoomed in at lower intensity value to show the relative intensity of the signal versus the noise from the dark counts.} 
-\label{dark_neon}
-\end{figure}
-
-
-In the Ocean Optics USB 2000 spectrometer, the first 24 pixels are covered up during each taking of the spectra. These dark pixels could also serve as a way to correct for the noise level offset. In real astronomical observations, the method of dark subtraction as shown in Fig.\ref{60W} and the use of overscan strips by adding additional pseudopixels are two common ways of bias calibration on imaging data. Although our spectrometer has a linear CCD array as a detector, CCD for imaging telescope often has a plane array of pixels. In those cases, averaging 10 or more bias frames is often a better bias-correction technique since it reveals any underlying 2D bias patterns present in the image.
- \begin{figure}[h!]
-\includegraphics[width=0.5\textwidth]{figures/60Wdarksubtracted}
-\caption{A spectrum of 60W lightbulb before and after pixel-by-pixel dark subtraction. The small fluctuations present in both spectra may be due to flat field variations across the CCD's linear array of pixels.} 
-\label{60W}
-\end{figure}
- \subsection{Poisson nature of obtained data}
- We chose to conduct the statistical analysis of noise property on the 60-Watt lightbulb data since the variance is less likely to be dominated by fluctuations in the source's illumination brightness.
- A Gaussian is fitted onto the histogram of dark frames in Fig.\ref{dark&histo} to obtain the value of mean ($\mu$) and variance($\sigma$) of the distribution. The $\mu$ corresponds to the $ADU_0$ in Eq.\ref{adu} , whereas the $\sigma$ corresponds to $\sigma_{ADU_0}$, the error on the dark counts. This variation on the dark counts comes from the non-uniform quality of the pixel as seen in Fig.\ref{dark&histo}. But since $\sigma_{ADU_0}$ is relatively small compared to $ADU_0$, it is negligible when considering its per-pixel additive effect on the raw data.
- \begin{equation}\label{adu}
- ADU = g \frac{Ne}{C}+ADU_0
- \end{equation}
-Analog digital units (ADU) is the value of the digital measurement that is converted from the raw electron count in the circuit; C is the capacitance where the total electric charge from N number of electrons with charge e is deposited and g is simply a proportionality constant for the conversion.
- \begin{figure}[h!]\includegraphics[width=0.45\textwidth]{figures/dark&biashisto}\caption{Top panel shows a spectrum of dark frames that exhibits the non-uniformity of each pixel in the linear CCD array. We can see that even when no light is entering the spectroscope, there are non-zero intensity values due to the effects of dark current and bias offset. The spectrum roughly corresponds to the bias value ($ADU_0$) obtained from the $\mu$ of 108 ADU shown in the bottom panel.}\label{dark&histo}\end{figure}
- 
- 
-Since the CCD detector is essentially doing photon counting during the course of an experiment, the CCD noise is largely governed by Poisson statistics. By conducting the method of error propagation on Eq.\ref{adu} and assuming the Poisson and read noise is uncorrelated, we obtain :
-\begin{equation}
-\sigma^2_{ADU} = \Bigg(\frac{\partial ADU}{\partial N}\Bigg)^2 \sigma_N^2 +\Bigg(\frac{\partial ADU}{\partial ADU_0}\Bigg)^2\sigma_0^2
-\label{error}
-\end{equation}
-where $\sigma_0$ is the read noise associated with each measurement and $\sigma_{ADU}$ is the   Poisson noise which is equal to N (due to notable  $\sqrt{N}$ Poisson standard deviation) . Then,  writing this in linear form by substituting Eq.\ref{adu}, we get :
-\begin{equation}
-\sigma^2_{ADU}=\frac{ge}{C}(ADU- ADU_0)+\sigma_0^2
-\label{linear_error_relation}
-\end{equation}
-The list of mean and variances are computed by stacking together in full datasets  of spectra and retrieving the intensity value for each pixel over all the dataset. Then, using the 1000-sample slice of intensity values for the same pixel to compute the mean and standard deviation. We observe the linear relation between $\mu$ and $\sigma$ due to the Poisson noise. 
- \begin{figure}[h!]\includegraphics[width=0.45\textwidth]{figures/varmeanplot}
-\caption{The linear relation of variance and mean can be observed in this plot. Since we are plotting the mean of dark-subtracted signal (ADU-$ADU_0$). The slope from the linear fit is equal to the the gain and the intercept is the (read noise)$^2$.} \label{varmean}
-\end{figure}
-\subsection{Other possible source of error}
-Since our spectrometer operated at room temperature, a source of error in our experiment is dark current. This effect is due to thermal noise in the spectrometer's readout electronics and in the CCD. Most modern day telescopes have a dedicated dewar that cools their CCDs to minimize the production of thermal electrons. This is especially important when the observing target is faint, (i.e. low signal-to-noise ratio), as the detector has no way to distinguish between thermal electrons from real astronomical photoelectrons.
-
-
-Another source of error in our experiment is multiple mixed sources present when taking data. We took preventive measures when taking our data for neon and coarsely covered up the gap between the slit entrance and the neon bulb with its transparent gap removed. This problem could have been completely resolved if data was taken in the dark so that no slight traces of atomic feature of radiating source in the background can be seen in the pure neon sample used for wavelength calibration.
 \section{Data Reduction}
- Now we have examined the systematic effects that affects our data, we process the raw data obtained from the spectrometer in order to find an equation that converts the pixel values to wavelengths.
-  \subsection{Data Smoothing}
-  Smoothing is a data reduction technique that removes noise and minor pixel-to-pixel variations in the data. We employ both the boxcar and averaging technique in our datasets and compare their results.
-  \paragraph*{\textbf{Boxcar Smoothing}}
-  Our boxcar smoothing algorithm takes the values of adjacent pixel and averages them over some user-defined interval. Since the quality of each pixel is inconsistent, boxcar smoothing compensate for the pixel-by-pixel variations.  However, by lowering the signal-to-noise ratio to reduce small-scale features, we also lower the resolution of the delta-function-like peak of important spectral features. When the interval is chose incorrectly, datasets processed in such manner can have adverse effects on centroid value calculation as shown in Fig.\ref{boxcar} .
- \begin{figure}[h!] 
-\includegraphics[width=0.45\textwidth]{figures/boxcar}
-\caption{The red marker denotes the interval that we are averaging over. As the number of pixels in an averaging interval increases, the shape of the line and the location of its extrema is obscured by the lack of datapoints defining it.}\label{boxcar}
-\end{figure}
- \paragraph*{\textbf{Average multiple spectra samples}}
-Since the boxcar method produced undesirable results, we resorted to the conventional averaging of data by summing over the intensity values of each pixel of the same experiment then scaling the result by the number of datasets. This is a step towards finding a functional form to fit the data since it makes the data less discrete and more continuous like a function. 
-	\subsection{Centroid-Finding Methods}
-	The centroid for a spectrum is a weighted average of position and intensity computed by Eq.\ref{centroid}. The computation itself is trivial but the hard part is finding the interval that we are taking the summation over. We employ two different techniques in finding the centroid by determining the appropriate interval to compute the sum.
-	\begin{equation}
-	\textrm{Centroid} =<x_i>=\frac{\sum\limits^N_{i=1}x_i I_i}{\sum\limits^N_{i=1}I_i}
-	\label{centroid}
-	\end{equation}
-	where x is the pixel position value and I is the intensity.
-	\paragraph*{\textbf{Automated centroid algorithm}}
- We attempted to create an automated centroid algorithm by imposing two conditions to select for the centroid of interest that correspond to atomic signature spectral lines. The selected data range used for centroid calculation must begin at a local minimum and contain one local maximum and then end with another local minimum. There can not be any extra extrema that lies within that range other than the 3 specified. Since a large number of datapoints satisfies this condition, we needed a quantitative measure of how ``important" each spike is.  
- 
- For this, we use the intensity difference between the consecutive  local maximum and minimum and select only the data ranges that  have  differences greater than 10\% of the difference between the absolute maximum and  minimum datapoint of the whole dataset. The ad hoc 10\% criterium was chosen to so that the bias offset  was considered in . The 10\% was chosen because of the quality of the centroid result that it produces. The local extrema was found by comparing consecutive data points and testing a change in the boolean condition of increasing or decreasing.
-\begin{figure}
-\includegraphics[width=0.45\textwidth]{figures/fail}
-\caption{Top: The closely spaced extremum at around the 1100th pixel results in a small difference value between the local minimum and maximum. Therefore, it was not detected by the algorithm. Bottom: The extremum finding algorithm did not detect the maximum at around pixel 1380 in its  first step.}
-\end{figure}
-
-
-	The algorithm was not very robust as it is unable pick out spectral lines that lied between consecutive extrema, such as the ones near pixel 1115 and 1374 in Fig.\ref{fail}. Despite the attempts to vary the percentage cut, the program cannot identify features that showed relative differences, so it tends to overlook single, short, sharp spikes. The variability in the importance of a signature line  is hard to account for  by measuring only the  absolute differences.
-\begin{figure}
-\includegraphics[width=0.45\textwidth]{figures/steps}
-\caption{Graphical representation of how the automated algorithm works. Top: Identifying all the extremum of the dataset. Red marker denotes local maximum; green denotes local minimum. Middle: Applying criteria to select suitable ranges as shown in middle plot, using this sliced dataset to obtain the centroid values (dashed). Bottom: Resulting centroid list misses some important spectral feature picked out by the estimation method.}\label{fail}
-\end{figure}
-\paragraph*{\textbf{Estimation method}} 
-If we approximate the shape of a single atomic line feature as a Gaussian, an isolated data range of plus-or-minus one sigma around the mean accounts for about 68\% of the area under a Gaussian based on the 68-95-99.7 rule (Wall and Jenkins, 2003).
-We manually select data range based on visually inspecting where a spectral line lies as shown in Fig.\ref{window}. Then, we calculate the centroid on \large\rpm \normalsize 1$\sigma$ of the maximum peak in the selected data range. The 1-$\sigma$ window provides a quantitative way of defining the boundaries of the data range that we are taking. Trying to automate this procedure would be challenging because not all the atomic line are symmetric Gaussians so the centroid may be skewed to one side of the peak. 
-\label{estimate-sec}
-\begin{figure}
-\includegraphics[width=0.48\textwidth]{figures/spectral_lines}
-\caption{Final spectral lines for neon and mercury obtained by estimation method, used for wavelength calibration.}\label{final_lines}
-\end{figure}
-\begin{figure}
-\includegraphics[width=0.48\textwidth]{figures/window}
-\caption{Windows selected by visual inspection before quantifying the range with one sigma.}\label{window}
-\end{figure}
-\subsection{Wavelength calibration}
-The polynomial nature of our fitting model comes from the perpendicular incident ray case of the grating equation. By approximating that the light's wavelength is small relative to the groove spacing of the diffraction slit, a Taylor expansion can boiled down the trigonometric equation to a polynomial with higher order terms. In this case, the fitting parameter is the polynomial coefficients The residual is defined as $y_i-f(x_i)$ where $y_i$ is the centroid value in pixels from experimental result and f is the polynomial fitting model.  We plot the residual in order to examine whether  there are any patterns present in the residual which would suggest a need for a higher order fit.
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figures/neon_calib}
-\caption{Top panel shows the result of a linear least square fit on the centroid values obtained from the neon and mercury spectra. The middle and bottom panel is residual plot from comparing against the linear and quadratic fits respectively.}\label{neon_calib}
-\end{figure}
-\begin{figure}
-\label{comp_linquad}
-\includegraphics[width=0.5\textwidth]{figures/compare_linquad}
-\caption{Above is an overlaid plot of the linear and quadratic residuals. It shows that there is not much improvement in using a higher order polynomial model than the linear one, which is also evident from the sum of residuals computed in Table\ref{table}. This makes sense because the polynomial coefficient that we obtained for the quadratic term is $-5.101\times 10^{-6}$, which is an order of magnitude smaller than the quadratic coefficient in the manufacturer's wavelength calibration. This is the reason why the y-axis range of the linear residual plot in Fig.\ref{neon_calib} is almost the same as the range in the quadratic residual plot.} 
-\end{figure}
-%The polynomial wavelength calibration that we ____ is : 
-%\begin{equation}
-%
-%\label{wcalib}
-%\end{equation}
-\begin{table}
-    \begin{tabular}{|l|l|l|l|}
-    \hline
-    ~                            & Linear                             & Quadratic                        & Manufacturer\\ \hline
-    $a_0$                     & 356.326                              & 351.556                              & 344.311846                              \\ \hline
-    $a_1$                     & 0.16380                              & 0.175133                             & 0.19743726                              \\ \hline
-    $a_2$                     & ---                                  & -$5.10\times10^{-6}$   &-$1.4913\times10^{-5}$    \\ \hline
-    $\sum r_i$ & -$2.16\times10^{-12}$ & -$9.265\times10^{-12}$ & -2.292                                  \\ \hline
-    \end{tabular}
-    \caption{The wavelength calibration coefficients obtained from experimental data. $r_i$ is the residual calculated for each datapoint. Note that two outliers were removed when computing manufacturer's total residuals, in order to show how close does the manufacturer's calibration fit with the majority of the datapoints we obtained.}
-    \label{table}
-\end{table}
-\section{Conclusion}
-In this experiment, we measured the effect of different light-emitting sources and draw a qualitative relationship between spectral responses to the underlying physics in play. By decreasing the voltage parameter of an incandescent source, we found that the peak wavelength is red shifted due to the lower temperature from less power-dissipation. The arrangement of colored filters exhibits higher intensity peaks to the filter's corresponding wavelength. By examining the hardware setup and the internal workings of a spectrometer, we consider the possible systematic effects on the data taken from the experiment. 
-
-During data reduction, the data was smoothed using the boxcar and averaging methods. We find that the averaging method serves this purpose better since it is not subjected to loss of per-pixel detail as much as the boxcar technique does. With the smoothed data, the automated centroid-finding algorithm can better identify centroids of interest in isolated window ranges, as some false-positives (short spiky peaks that do not resemble important spectral features) are eliminated by the smoothing procedure. However, since our algorithm only compares absolute differences in the local extrema of the spectra, it misses some important spectral line features in the  processed data. Therefore, we resorted to visually-examining the spectral peaks and defining a window of peak value\rpm 1$\sigma$ so that a more accurate centroid can be calculated in the data range.
-
-With the list of centroid values, we conduct linear least square fit on the wavelength value with the  spectral line pixel and wavelength values referenced from NIST. Then, we conduct a higher-order quadratic fit. By comparing the sum of residuals from the two fits and examining the residual plots, we find that there was not much of an improvement for going to a higher order fit. Finally, the fitting parameters are the coefficients used for wavelength calibration, which enable us to express the pixel numbers obtained in our spectra data to the less hardware-dependent values of wavelength.
 	
-As we only applied dark frame corrections to our experiment data, one possible extension to this project may be to try conducting a basic flat-field correction to the detector. One way to do this to shine bright light uniformly across the detector to see the response of each pixel. The exposure time needs to be short so that the CCD is not saturated. In doing so, we can also try to measure maximum ranges at which CCD is sensitive and linear.
-\section{References}
+	\subsection{Bias Correction}
+		\textbf{\paragraph{Overscan correction}}
+		Overscan pixels are	32 pseudo-pixels generated by the data aquiscition software of the reader (?). Resulting in an array size of 1024
+We take the median value of the 32 pseudo-pixels and subtract them from the actual data. This eliminates the constant offset from the every pixel reading. 
+	
+		\textbf{\paragraph{Bias subtraction}}
+		The more bias subtraction the better since bias is Poisson, so falls off as $1/\sqrt{N}$
+	\subsection{Flat Correction}
+			We took 12 flat frames for the B,V,R,I filters on the observing session on October 16, 2014 at dusk time. The exposure time was adjusted for every frame to accommodate for the sky's changing brightness. Every pixel on the 1024-by-1024 image is processed by : 
+			\begin{equation}
+			\frac{\text{image}-\text{dark}}{\text{flat}}\times\text{median(flat)}
+			\end{equation}
+		 As shown in the equation, we first dark-subtract from the image so that the intensity is linearly proportional to the number of photon counts then we divide by the flat in order to scale for the pixel-by-pixel . Then, this is multiplied by a scalar value that is representative of the magnitude of the flat field data that we are subtracting off. The median value is chosen because unlike the mean its value is not skewed due to the outliers (i.e. bad pixel and columns).
+
+	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/normalization}
+\caption{Without normalization, the image requires a logarithmic stretch on the color bar scale to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulting from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.}
+\label{normalization}
+\end{figure}
+
+	
+\section{Astrometry}
+	\subsection{Centroid Finding}
+		\subsubsection{Algorithm}
+	\subsection{General Least Square Method}
+
+\section{Conclusion}
+
+ \section{References}
 %\bibliographystyle{elsarticle-harv}
 \begin{itemize}
 \item Howell, Steve,  \textit{Handbook of CCD Astronomy}, 2nd Edition. Cambridge University Press, 2006.
-\item Haken, Hermann and Wolf, Hans Christolph, \textit{The Physics of Atoms and Quanta}, Springer-Verlag, 1996.
 \item Wall, J. V. and Jenkins, C.R., \textit{Practical Statistics for Astronomers}, Cambridge University Press, 2002.
-%\item Tipler, Paul and Llewellyn, \textit{Modern Physics}, Macmillan, 2012.
-\item Hecht, Eugene, \textit{Optics}, Addison-Wesley, 2001.
+\item Press, William H., and William T. Vetterling. \textit{Numerical Recipes in C: The Art of Scientific Computing}. Cambridge University Press, 1992. 
 \end{itemize}
 \end{document}
