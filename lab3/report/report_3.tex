@@ -48,10 +48,14 @@ We take the median value of the 32 pseudo-pixels and subtract them from the actu
 \subsection{Pixel to Standard Coordinate conversion}
 Since most stars used for (?) comparison are often very far away, it is convientent to treat them as projected position onto a sphere centered at the observer.
 \section{Astrometry}
+Using stellar positions to calibrate the image
 	\subsection{Centroid Finding}
 		\subsubsection{Algorithm}
-	\subsection{General Least Square Method}
-
+	\subsection{Least Square}
+	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
+	The standard coordinates can then be projected to celestial coordinates based on the Eq. (LABEL!!!):
+	(TYPE EQUATION HERE)
+	
 \section{Conclusion}
 
  \section{References}
