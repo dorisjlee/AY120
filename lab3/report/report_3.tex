@@ -55,7 +55,15 @@ Using stellar positions to calibrate the image
 	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
 	The standard coordinates can then be projected to celestial coordinates based on the Eq. (LABEL!!!):
 	(TYPE EQUATION HERE)
+	\subsection{Ephemeris information}	
+heliocentric vector to Earth
+	JPL horizon by default returns the ecliptic coordinate, Make sure to chose equtorial coordinate . This would affect the values for y and z components of the position (and velocity) vector returned since in the equitorial system the plane is around the equator
 	
+	 xy-plane: plane of the Earth's mean equator at the reference epoch
+    x-axis  : out along ascending node of instantaneous plane of the Earth's
+              orbit and the Earth's mean equator at the reference epoch
+    z-axis  : along the Earth mean north pole at the reference epoch
+    
 \section{Conclusion}
 
  \section{References}
