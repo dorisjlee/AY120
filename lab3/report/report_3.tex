@@ -40,8 +40,22 @@ Bias frames are images taken with zero integration time and used to subtract the
 \caption{Without normalization, the image requires a logarithmic stretch to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulted from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.}
 \label{normalization}
 \end{figure}
-
 \subsection{Centroid-finding}
+In order to determine the positions of the stars on the image, we need to find the centroid position with the weight as the 
+First, we set a threshold which was empirically adjusted to yield just enough stars for pattern recognition at around 5000 (UNITSS!!!!). This identifies 
+Since bad columns, corners, and borders often show up as completely dark pixels \footnote{Since image color scheme is inverted, the darkest pixel mean highest intensity.}, it is mistaken as a whole row of stars , we have to manually mask the pixels by zeroing the intensity value at the selected pixel.
+	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/centroid_many}
+\caption{CENTROID MANY STUFF}
+\label{centroid_many}
+\end{figure}
+Since this is a fairly trivial case where the datapoints for each cluster is far apart, we use the more conceptually simplistic but computational intensive method of distance estimation instead of other clustering algorithm  in the literature.  We loop through list of points above the threshold and for every \_ we compute its pixel distance from another point in the same list. If the separation distance between two datapoints is smaller than 20 pixel, then it is clustered into the same star. Each cluster represent a star. This threshold radius is selected  \_ , most star have approx same aperture/ size because \_. Finally, in order to get a representative value from cluster information, we calculate the centroid by Eq. \ref{centroid_eq} :
+\begin{equation}
+x = \frac{\sum \limits_{i} x_i I_i}{\sum\limits_{i} I_i}
+\label{centroid_eq}
+\end{equation}
+
+Error on centroid. 
 \subsection{Pixel to Standard Coordinate conversion}
 Since most stars used for (?) comparison are often very far away, it is convientent to treat them as projected position onto a sphere centered at the observer.
 \section{Astrometry}
@@ -52,6 +66,8 @@ Using stellar positions to calibrate the image
 	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
 	The standard coordinates can then be projected to celestial coordinates based on the Eq. (LABEL!!!):
 	(TYPE EQUATION HERE)
+	\subsubsection{USNO}
+	intentionally adjust the Vmag lower cut than Vmag observed in NASA's small object dynamic so that it is able to identify the asteroid as a star.
 	\subsection{Ephemeris information}	
 Position vector can be obtained from the HORIZONS Web-Interface 
 heliocentric vector to Earth
