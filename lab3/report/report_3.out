@@ -1,10 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Data Reduction}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Bias Correction}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Flat Correction}{section.2}% 4
-\BOOKMARK [1][-]{section.3}{Astrometry}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Centroid Finding}{section.3}% 6
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Algorithm}{subsection.3.1}% 7
-\BOOKMARK [2][-]{subsection.3.2}{General Least Square Method}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 9
-\BOOKMARK [1][-]{section.5}{References}{}% 10
+\BOOKMARK [2][-]{subsection.2.1}{Systematic Corrections}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Centroid-finding}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Pixel to Standard Coordinate conversion}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Astrometry}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Centroid Finding}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Algorithm}{subsection.3.1}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Least Square}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Ephemeris information}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 11
+\BOOKMARK [1][-]{section.5}{References}{}% 12

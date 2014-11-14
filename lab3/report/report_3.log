@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 NOV 2014 22:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 NOV 2014 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,71 +593,107 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 22.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Overfull \hbox (7.28807pt too wide) in paragraph at lines 38--40
+Overfull \hbox (9.44804pt too wide) in paragraph at lines 30--31
+ []\OT1/txr/bx/it/12 Bias sub-trac-tion\OT1/txr/m/it/12 .[] \OT1/txr/m/n/12 Bia
+s frames are im-ages taken
+ []
+
+
+Overfull \hbox (2.59607pt too wide) in paragraph at lines 30--31
+\OT1/txr/m/n/12 as the num-ber of bias frames we have in-crease,
+ []
+
+
+Overfull \hbox (0.73604pt too wide) in paragraph at lines 30--31
+\OT1/txr/m/n/12 by Chromey (2010) which re-moves the largest
+ []
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Overfull \hbox (7.28807pt too wide) in paragraph at lines 35--37
 \OT1/txr/m/n/12 As shown in the equa-tion, we first dark-subtract
  []
 
-<figures/normalization.png, id=44, 401.5pt x 282.05376pt>
+<figures/normalization.png, id=65, 401.5pt x 282.05376pt>
 File: figures/normalization.png Graphic file (type png)
 
 <use figures/normalization.png>
-Package pdftex.def Info: figures/normalization.png used on input line 42.
+Package pdftex.def Info: figures/normalization.png used on input line 39.
 (pdftex.def)             Requested size: 226.48395pt x 159.10674pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 42--43
+Overfull \hbox (9.0pt too wide) in paragraph at lines 39--40
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Overfull \hbox (12.73288pt too wide) in paragraph at lines 52--55
+[]\OT1/txr/m/n/12 The pur-pose of us-ing the least square method
+ []
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 58.
+Overfull \hbox (8.74004pt too wide) in paragraph at lines 52--55
+\OT1/txr/m/n/12 is to find a con-ver-sion ma-trix be-tween the CCD-
+ []
+
+
+Overfull \hbox (4.13208pt too wide) in paragraph at lines 52--55
+\OT1/txr/m/n/12 The stan-dard co-or-di-nates can then be pro-jected
+ []
+
+
+Overfull \hbox (3.85606pt too wide) in paragraph at lines 56--60
+\OT1/txr/m/n/12 sure to chose equto-rial co-or-di-nate . This would
+ []
+
+[2 <./figures/normalization.png>]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 71.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 71.
 
-Overfull \hbox (0.54276pt too wide) in paragraph at lines 60--61
+Overfull \hbox (0.54276pt too wide) in paragraph at lines 73--74
 \OT1/txr/m/it/12 Art of Sci-en-tific Com-put-ing\OT1/txr/m/n/12 . Cam-bridge
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
-[2
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
+[3
 
- <./figures/normalization.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
  (./report_3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
 Package rerunfilecheck Info: File `report_3.out' has not changed.
-(rerunfilecheck)             Checksum: 3B403EBD0AED74E738AE907EE7E58DBE;569.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
+(rerunfilecheck)             Checksum: 7619B75B0EFC8DDCCDEAEC329A68C75C;722.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
  ) 
 Here is how much of TeX's memory you used:
- 8678 strings out of 493117
- 126604 string characters out of 6135433
- 222080 words of memory out of 5000000
- 11991 multiletter control sequences out of 15000+600000
- 25208 words of font info for 64 fonts, out of 8000000 for 9000
+ 8689 strings out of 493117
+ 126723 string characters out of 6135433
+ 222056 words of memory out of 5000000
+ 11994 multiletter control sequences out of 15000+600000
+ 27151 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,5n,40p,489b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,5n,40p,1717b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on report_3.pdf (2 pages, 99457 bytes).
+exlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on report_3.pdf (3 pages, 110198 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
