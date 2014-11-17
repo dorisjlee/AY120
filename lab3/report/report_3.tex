@@ -60,7 +60,6 @@ Error on centroid.
 Since most stars used for (?) comparison are often very far away, it is convientent to treat them as projected position onto a sphere centered at the observer.
 \section{Astrometry}
 Using stellar positions to calibrate the image
-	\subsection{Centroid Finding}
 		\subsubsection{Algorithm}
 	\subsection{Least Square}
 	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
@@ -68,6 +67,11 @@ Using stellar positions to calibrate the image
 	(TYPE EQUATION HERE)
 	\subsubsection{USNO}
 	intentionally adjust the Vmag lower cut than Vmag observed in NASA's small object dynamic so that it is able to identify the asteroid as a star.
+	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/starfield_match}
+\caption{ Matching starfield with USNO-B1 of stars with Vmag>  (------), October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.}
+\label{starfield_match}
+\end{figure}
 	\subsection{Ephemeris information}	
 Position vector can be obtained from the HORIZONS Web-Interface 
 heliocentric vector to Earth
@@ -78,14 +82,38 @@ This could be verified with the vector from earth to asteroid.
     x-axis  : out along ascending node of instantaneous plane of the Earth's
               orbit and the Earth's mean equator at the reference epoch
     z-axis  : along the Earth mean north pole at the reference epoch
-    
-\section{Conclusion}
+    \subsection{Iterative solution}
+    	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/convergence_example}
+\caption{ Convergence}
+\label{convergence_example}
+\end{figure}
+    From a Monte Carlo simulation of 1000 trials, the solution takes on average 5 steps to converge\footnote{ We define a solution to be converging when the difference between solutions at consecutive steps is less than 1.0$\times10^{-5}$} Each step approximately  bring  closer to the actual solution by an order of magnitude. 
+\section{Error and Uncertainty}
+\subsection{Centroid Error}
+To find the 
+however this obtained results is in units of pixels, 
+    	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/uncertainty_range}
+\caption{ using the same procedure described in Sec (REF!!!) this is converted into units of degree.}
+\label{uncertainty_range}
+\end{figure}
 
+\subsection{Monte Carlo}
+\subsection{Other possible errors}
+For this excercise, we only examined errors on the asteroid. However, uncertainty in the measurement of stellar position can also affect our asteroid position result since stellar positions are taken into consideration in the least square procedure. This propagates to uncertainty on the plate constant values we obtain whichh is used in the calculation for conversion from ---- to ---- coordinates. However this effect should be secondary to the ones we computed directly for the asteorid. 
+\section{Conclusion}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/motion_path}
+\caption{ motion path}
+\label{motion_path}
+\end{figure}
  \section{References}
 %\bibliographystyle{elsarticle-harv}
 \begin{itemize}
 \item Howell, Steve,  \textit{Handbook of CCD Astronomy}, 2nd Edition. Cambridge University Press, 2006.
 \item Wall, J. V. and Jenkins, C.R., \textit{Practical Statistics for Astronomers}, Cambridge University Press, 2002.
 \item Press, William H., and William T. Vetterling. \textit{Numerical Recipes in C: The Art of Scientific Computing}. Cambridge University Press, 1992. 
+\item Chromey, Frederick R. \textit{To Measure the Sky: An Introduction to Observational Astronomy}. Cambridge: Cambridge UP, 2010. Print.
 \end{itemize}
 \end{document}

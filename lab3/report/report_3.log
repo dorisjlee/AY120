@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 NOV 2014 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 NOV 2014 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,7 +616,7 @@ Overfull \hbox (7.28807pt too wide) in paragraph at lines 35--37
 \OT1/txr/m/n/12 As shown in the equa-tion, we first dark-subtract
  []
 
-<figures/normalization.png, id=65, 401.5pt x 282.05376pt>
+<figures/normalization.png, id=85, 401.5pt x 282.05376pt>
 File: figures/normalization.png Graphic file (type png)
 
 <use figures/normalization.png>
@@ -630,12 +630,12 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 39--40
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/centroid_many.png, id=68, 361.35pt x 257.0403pt>
+<figures/centroid_many.png, id=88, 379.4175pt x 278.9622pt>
 File: figures/centroid_many.png Graphic file (type png)
 
 <use figures/centroid_many.png>
 Package pdftex.def Info: figures/centroid_many.png used on input line 48.
-(pdftex.def)             Requested size: 226.48395pt x 161.10475pt.
+(pdftex.def)             Requested size: 226.48395pt x 166.52303pt.
 
 Overfull \hbox (9.0pt too wide) in paragraph at lines 48--49
 [][] 
@@ -646,61 +646,129 @@ Overfull \hbox (2.04405pt too wide) in paragraph at lines 44--53
 \OT1/txr/m/n/12 set a thresh-old which was em-pir-i-cally ad-justed
  []
 
-[2 <./figures/normalization.png> <./figures/centroid_many.png>]
-Overfull \hbox (12.73288pt too wide) in paragraph at lines 66--69
+[2 <./figures/normalization.png> <./figures/centroid_many.png (PNG copy)>]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 63.
+
+
+Overfull \hbox (12.73288pt too wide) in paragraph at lines 65--68
 []\OT1/txr/m/n/12 The pur-pose of us-ing the least square method
  []
 
 
-Overfull \hbox (8.74004pt too wide) in paragraph at lines 66--69
+Overfull \hbox (8.74004pt too wide) in paragraph at lines 65--68
 \OT1/txr/m/n/12 is to find a con-ver-sion ma-trix be-tween the CCD-
  []
 
 
-Overfull \hbox (4.13208pt too wide) in paragraph at lines 66--69
+Overfull \hbox (4.13208pt too wide) in paragraph at lines 65--68
 \OT1/txr/m/n/12 The stan-dard co-or-di-nates can then be pro-jected
  []
 
+<figures/starfield_match.png, id=99, 490.9542pt x 468.7914pt>
+File: figures/starfield_match.png Graphic file (type png)
 
-Overfull \hbox (3.85606pt too wide) in paragraph at lines 70--74
+<use figures/starfield_match.png>
+Package pdftex.def Info: figures/starfield_match.png used on input line 71.
+(pdftex.def)             Requested size: 226.48395pt x 216.26183pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 71--72
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (3.85606pt too wide) in paragraph at lines 76--80
 \OT1/txr/m/n/12 sure to chose equto-rial co-or-di-nate . This would
  []
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 85.
+<figures/convergence_example.png, id=100, 383.5128pt x 162.6075pt>
+File: figures/convergence_example.png Graphic file (type png)
+
+<use figures/convergence_example.png>
+Package pdftex.def Info: figures/convergence_example.png used on input line 87.
+
+(pdftex.def)             Requested size: 226.48395pt x 96.02939pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 87--88
+[][] 
+ []
+
+[3 <./figures/starfield_match.png (PNG copy)> <./figures/convergence_example.pn
+g>] <figures/uncertainty_range.png, id=111, 420.6114pt x 282.0939pt>
+File: figures/uncertainty_range.png Graphic file (type png)
+
+<use figures/uncertainty_range.png>
+Package pdftex.def Info: figures/uncertainty_range.png used on input line 97.
+(pdftex.def)             Requested size: 226.48395pt x 151.89368pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 97--98
+[][] 
+ []
+
+
+Overfull \hbox (2.76405pt too wide) in paragraph at lines 104--105
+\OT1/txr/m/n/12 ever this ef-fect should be sec-ondary to the ones
+ []
+
+<figures/motion_path.png, id=112, 422.57875pt x 165.61874pt>
+File: figures/motion_path.png Graphic file (type png)
+
+<use figures/motion_path.png>
+Package pdftex.def Info: figures/motion_path.png used on input line 107.
+(pdftex.def)             Requested size: 226.48395pt x 88.76561pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 107--108
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 114.
+
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 85.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 114.
 
-Overfull \hbox (0.54276pt too wide) in paragraph at lines 87--88
+Overfull \hbox (0.54276pt too wide) in paragraph at lines 116--117
 \OT1/txr/m/it/12 Art of Sci-en-tific Com-put-ing\OT1/txr/m/n/12 . Cam-bridge
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
- (./report_3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
+
+Overfull \hbox (2.46275pt too wide) in paragraph at lines 117--118
+\OT1/txr/m/it/12 As-tron-omy\OT1/txr/m/n/12 . Cam-bridge: Cam-bridge UP,
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
+[4 <./figures/uncertainty_range.png> <./figures/motion_path.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+
+(./report_3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
 Package rerunfilecheck Info: File `report_3.out' has not changed.
-(rerunfilecheck)             Checksum: 7619B75B0EFC8DDCCDEAEC329A68C75C;722.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
+(rerunfilecheck)             Checksum: 47A740130594208F57B2BA91D653707F;1036.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  ) 
 Here is how much of TeX's memory you used:
- 8734 strings out of 493117
- 127368 string characters out of 6135433
- 222098 words of memory out of 5000000
- 12029 multiletter control sequences out of 15000+600000
+ 8774 strings out of 493117
+ 128263 string characters out of 6135433
+ 222561 words of memory out of 5000000
+ 12054 multiletter control sequences out of 15000+600000
  39886 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,8n,40p,1717b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
 
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/20
@@ -710,10 +778,10 @@ fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on report_3.pdf (3 pages, 208179 bytes).
+Output written on report_3.pdf (4 pages, 357445 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 
