@@ -21,7 +21,7 @@ astrometry for asteroid name..etc
 	\end{abstract}
 \end{frontmatter}
 \section{Introduction}
-
+(Some motivation for studying small bodies??) 
 \section{Data Reduction}
 	
 	\subsection{Systematic  Corrections}
@@ -41,6 +41,7 @@ Bias frames are images taken with zero integration time and used to subtract the
 \label{normalization}
 \end{figure}
 \subsection{Centroid-finding}
+\label{centroid_find}
 In order to determine the positions of the stars on the image, we need to find the centroid position with the weight as the 
 First, we set a threshold which was empirically adjusted to yield just enough stars for pattern recognition at around 5000 (UNITSS!!!!). This identifies 
 Since bad columns, corners, and borders often show up as completely dark pixels \footnote{Since image color scheme is inverted, the darkest pixel mean highest intensity.}, it is mistaken as a whole row of stars , we have to manually mask the pixels by zeroing the intensity value at the selected pixel.
@@ -61,7 +62,7 @@ Since most stars used for (?) comparison are often very far away, it is convient
 \section{Astrometry}
 Using stellar positions to calibrate the image
 		\subsubsection{Algorithm}
-	\subsection{Least Square}
+	\subsection{Least Square}\label{ls}
 	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
 	The standard coordinates can then be projected to celestial coordinates based on the Eq. (LABEL!!!):
 	(TYPE EQUATION HERE)
@@ -83,29 +84,52 @@ This could be verified with the vector from earth to asteroid.
               orbit and the Earth's mean equator at the reference epoch
     z-axis  : along the Earth mean north pole at the reference epoch
     \subsection{Iterative solution}
+    talk about $\rho$...\footnote{Since unit vectors are by normalized by its own magnitude, it is by definition dimensionless. Therefore, to construct physical units in the Earth-Asteroid vector, $\rho$ must have units of AU.}
+    \label{iterative_soln}
     	\begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/convergence_example}
 \caption{ Convergence}
 \label{convergence_example}
 \end{figure}
-    From a Monte Carlo simulation of 1000 trials, the solution takes on average 5 steps to converge\footnote{ We define a solution to be converging when the difference between solutions at consecutive steps is less than 1.0$\times10^{-5}$} Each step approximately  bring  closer to the actual solution by an order of magnitude. 
+    From running this on (??) 1000 trials, the solution takes on average 5 steps to converge\footnote{ We define a solution to be converging when the difference between solutions at consecutive steps is less than 1.0$\times10^{-5}$} Each step approximately  bring  closer to the actual solution by an order of magnitude. 
 \section{Error and Uncertainty}
 \subsection{Centroid Error}
-To find the 
-however this obtained results is in units of pixels, 
+\label{centroid_error}
+In order to find the error on the value of $\rho$ that scales the Earth-to-asteroid distance, we must first determine the error on the centroid values used to find $\rho$. 
+By assuming that the error on each pixel is uncorrelated, we can apply the method of error propagation on Eq. \ref{centroid_eq} and obtain:
+\begin{equation}
+\sigma^2_{<x>}=\sum_{i} \Bigg(\frac{\partial \langle x\rangle}{\partial I_i}\Bigg)^2
+\label{error_prop_centroid}
+\end{equation} 
+Computing $\frac{\partial \langle x\rangle}{\partial I_i}$ and plugging it back into Eq. \ref{error_prop_centroid}: 
+\begin{equation}
+\sigma^2_{\langle x\rangle}=\frac{\sum\limits_{j}I_j (x_j-\langle x\rangle)^2 }{\Big(\sum \limits_{i} I_i\Big)^2}
+\end{equation}
+
+Using the list of clustered star position as described in Sec. \ref{centroid_find}
+The same method is also used to calculate the error on <y> 
+However this obtained results is in units of pixels, we must convert this error to units of degree as shown in Fig.\ref{uncertainty_range} 
     	\begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/uncertainty_range}
-\caption{ using the same procedure described in Sec (REF!!!) this is converted into units of degree.}
+\caption{ Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref{ls}, works on coordinate points rather than value measurement (----). We select 2 boundary points that defines where the x and y error bar ends (larges ---- that  substends --- - maximum error ---). Converting these two points and the asteroid's centroid location to celstial coordinates, then subtracting boundary points from the center position, we obtain the x and y error ranges in units of degrees. We find that the uncertainty on the centroid position is around 0.016 arcseconds. }
 \label{uncertainty_range}
 \end{figure}
 
 \subsection{Monte Carlo}
-\subsection{Other possible errors}
-For this excercise, we only examined errors on the asteroid. However, uncertainty in the measurement of stellar position can also affect our asteroid position result since stellar positions are taken into consideration in the least square procedure. This propagates to uncertainty on the plate constant values we obtain whichh is used in the calculation for conversion from ---- to ---- coordinates. However this effect should be secondary to the ones we computed directly for the asteorid. 
+Since we do not have an analytical solution to solve for $\rho$ we can not compute the partial derivatives used in the error propagation equation. Instead we use the Monte Carlo method to approximate the error on our obtained value of $\rho$ given the centroid error of the asteroid's celestial position. First, we construct two Gaussian nosie distribution with standard deviation as the x and y centroid error that we obtained in Sec. \ref{centroid_error}. Then we draw a random value from each distribution to construct a noise vector for the x,y component with the noise on the z component set as zero.\footnote{ We have no information about the error on z  because it is not involved in the centroid-finidng calculations. Since the CCD image is 2D, we can only compute the centroid error along x and y component.}  The noise vector is added to $\vec{R}$ and this newly computed $\vec{R}$ is used in the iterative algorithm to compute the solution for $\rho$ as described in Sec.\ref{iterative_soln} with other parameters kept the same. The Gaussian distribution is centered at zero so that the random noise may be positive or negative. This ensures that the computed $\rho$ solutions are not skewed to  a higher value by the addition of the noise vector. By performing the Monte Carlo procedure on 100000 samples, the standard deviation of the list of computed $\rho$ values yields the approximate error on the value of $\rho$.
+    	\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/monte_carlo_result}
+\caption{The standard deviation on this Gaussian distribution approximates the error on $\rho$ to be $3.68\times10^{-5}$ AU ($\approx$ 5505 km).}
+\label{monte_carlo_result}
+\end{figure}
+\subsection{Other possible error contribution}
+we only did monte carlo on x y error and not on the z component
+added noise vector 
+For this excercise, we only examined errors on the asteroid. However, uncertainty in the measurement of stellar position can also affect our asteroid position result since stellar positions are taken into consideration in the least square procedure. This propagates to uncertainty on the plate constant values we obtain which is used in the calculation for conversion from ---- to ---- coordinates. However this effect should be secondary to the ones we computed directly for the asteroid. 
 \section{Conclusion}
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/motion_path}
-\caption{ motion path}
+\caption{The minor deviation from the straight motion path could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocty vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero. Since the 3D orbital of the asteroid are suppresed onto the 2D celestial coordinates, ------- (?)}
 \label{motion_path}
 \end{figure}
  \section{References}
