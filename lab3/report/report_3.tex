@@ -21,9 +21,16 @@ astrometry for asteroid name..etc
 	\end{abstract}
 \end{frontmatter}
 \section{Introduction}
-(Some motivation for studying small bodies??) 
-\section{Data Reduction}
-	
+(Some motivation for studying small bodies??)
+Distance is one of the most important but hard to measure quantities in astronomy. Due to the ---- of ;ength scales, astronomical distances can only be inferred from the method of parallax rather than directly measured by physical ----- . Parallax ---- since historical times--- space missions such as Gaia (Lindegren et al.) and  Hipparcos (Perryman et al.) dedicated to precision astrometry of millioins of sources. Distance is necessary for deriving the Keplerian orbital elements, luminosity, true motion, size and mass of the astronomical object for detailed studies of origin, structure and evolutionary history of our Galaxy.
+\paragraph{}
+In this experiment, we ------ from 3 different epochs (October 16,17,20, 2013)  to track the 
+ 
+
+Since we -- , e need to 
+\section{Data Collection and Reduction}
+	\subsection{Lick Observatory Nickel Telescope}
+	robotic telescope (30-inch) with a moderate field of view (~ 20 arc minute diameter/2k x 2k CCD)
 	\subsection{Systematic  Corrections}
 The purpose of bias,dark, flat correction is to make the intensity of the image approximately linearly proportional to the number of astronomical photons arriving at the detector.
 \paragraph{\textbf{Bias subtraction}}
@@ -42,6 +49,7 @@ Bias frames are images taken with zero integration time and used to subtract the
 \end{figure}
 \subsection{Centroid-finding}
 \label{centroid_find}
+intentionally adjust the Vmag lower cut than Vmag observed in NASA's small object dynamic so that it is able to identify the asteroid as a star.
 In order to determine the positions of the stars on the image, we need to find the centroid position with the weight as the 
 First, we set a threshold which was empirically adjusted to yield just enough stars for pattern recognition at around 5000 (UNITSS!!!!). This identifies 
 Since bad columns, corners, and borders often show up as completely dark pixels \footnote{Since image color scheme is inverted, the darkest pixel mean highest intensity.}, it is mistaken as a whole row of stars , we have to manually mask the pixels by zeroing the intensity value at the selected pixel.
@@ -50,29 +58,87 @@ Since bad columns, corners, and borders often show up as completely dark pixels 
 \caption{CENTROID MANY STUFF}
 \label{centroid_many}
 \end{figure}
-Since this is a fairly trivial case where the datapoints for each cluster is far apart, we use the more conceptually simplistic but computational intensive method of distance estimation instead of other clustering algorithm  in the literature.  We loop through list of points above the threshold and for every \_ we compute its pixel distance from another point in the same list. If the separation distance between two datapoints is smaller than 20 pixel, then it is clustered into the same star. Each cluster represent a star. This threshold radius is selected  \_ , most star have approx same aperture/ size because \_. Finally, in order to get a representative value from cluster information, we calculate the centroid by Eq. \ref{centroid_eq} :
+Since this is a fairly trivial case where the datapoints for each cluster is far apart, we use the more conceptually simplistic but computational intensive method of distance estimation instead of other clustering algorithm in the Machine Learning literature.  We loop through list of points above same threshold intensity and for every point we compute its pixel distance from another point in the same list. If the separation distance between two datapoints is less than 20 pixel, then it is clustered into the same group. Each cluster represent a star. This threshold intensity is intentionally chosen so that the asteroid can be mistakenly identified as a star. (can we convert USNO (???)) Now we have a list of pixel positions and intensity values of the datapoints that makes up a star, in order to get a representative value from cluster information, we compute centroid by Eq. \ref{centroid_eq} (From lab handout) :
 \begin{equation}
-x = \frac{\sum \limits_{i} x_i I_i}{\sum\limits_{i} I_i}
+\langle x\rangle = \frac{\sum \limits_{i} x_i I_i}{\sum\limits_{i} I_i}
 \label{centroid_eq}
 \end{equation}
 
-Error on centroid. 
-\subsection{Pixel to Standard Coordinate conversion}
-Since most stars used for (?) comparison are often very far away, it is convientent to treat them as projected position onto a sphere centered at the observer.
 \section{Astrometry}
 Using stellar positions to calibrate the image
-		\subsubsection{Algorithm}
+\subsection{Pixel to Standard Coordinate conversion}
+Since most reference stars are distant point sources (?), it is convenient to treat them as projected position onto a sphere centered at the observer. To match up and compare the stars on the CCD and the USNO stars in celestial coordinate, we must plot the USNO stars to pixel coordinates in the same coordinate system. In order to do so, we must first project celestial coordinates ($\alpha,\delta $) into standard Cartesian coordinates (X,Y) using Eq. \ref{projectionX} and 4 (From lab handout) : 
+\begin{align}
+X = -\frac{\cos(\delta) \sin(\alpha-\alpha_0)}{\cos(\delta_0)\cos(\delta)\cos(\alpha-\alpha_0)+\sin(\delta) \sin(\delta_0)}
+\\ Y= -\frac{\sin(\delta_0)\cos(\delta)\cos(\alpha-\alpha_0)-\cos(\delta_0)\sin(\delta))}{(\cos(\delta_0)\cos(\delta)\cos(\alpha-\alpha_0)+\sin(\delta)\sin(\delta_0)}
+\label{projectionX}
+\end{align}
+where ($\alpha,\delta $) are the (RA,DEC) for the USNO stars and ($\alpha_0,\delta_0$) are the center of the imaging field (i.e. the RA, DEC used to submit the USNO query\footnote{We were unable to use the RA, DEC given in the FITS header since it did not refer to the same sky location as what is shown on Aladin. Instead, we had to visually identify the star patterns in nearby region and set the center of the field position returned by Aladin and use those as our ($\alpha_0,\delta_0$) })
+Then we use Eq.5 and \ref{scale_to_pix_coord} (From lab handout) to scale and offset the standard coordinate so that they are in pixel coordinate (x,y)  of Nickel's CCD camera. 
+\begin{align}
+x  = f \Bigg(\frac{X}{p}\Bigg)+x_0
+\\ y  = f \Bigg(\frac{Y}{p}\Bigg)+y_0
+\label{scale_to_pix_coord}
+\end{align}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/aladin10162013}
+\caption{ Matching starfield pattern for October 16, 2013 with Aladin Sky Atlas, annotated to assist with  pattern recognition. Center crosshair position approximates the RA,DEC used in the USNO query. }
+\label{aladin10162013}
+\end{figure}
+
 	\subsection{Least Square}\label{ls}
-	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate.
+	\subsubsection{Theory}
+	The simple relation (Eq.5 and \ref{scale_to_pix_coord}) does not factor in the possible rotation between CCD and standard Cartesian coordinate system. The goal of using least square is to attain the value of the plate constants in the first two rows of the transformation matrix \textbf{T} described by Eq. \ref{Tmatrix} (From Lab Handout). The value of the plate constants $a_{ij}$ resulted from a combination of scale, shear and rotation operations on the input image. \textbf{T} provides a linear mapping between pixel space \textbf{x}=(x,y,1)  and standard Cartesian $\mathbb{R}^3$ space \textbf{X}=(X,Y,1). 
+	\begin{equation}
+\textbf{T}=	\begin{pmatrix}
+(f/p)a_{11} & (f/p)a_{12} & x_0\\ 
+(f/p)a_{21} & (f/p)a_{22} & y_0\\ 
+0 &0  & 1
+\end{pmatrix}
+	\label{Tmatrix}
+	\end{equation}
+where $(x_0 , y_0)$are the telescope's pointing offset and f/p=561000 $\frac{\textrm{pixels}}{\textrm{radian}}$. 
+\begin{align}
+\textbf{a}= \begin{bmatrix}
+ x_1
+\\ x_2
+\\ :
+\\:
+\\x_N
+\end{bmatrix}
+\quad
+\textbf{B}=\Bigg(\begin{smallmatrix}
+(f/p)X_1 & (f/p)Y_1  & 1\\ 
+(f/p)X_2  & (f/p)Y_2  & 1\\ 
+: &:  &: \\ 
+(f/p)X_N  &(f/p)Y_1   & 1
+\end{smallmatrix}\Bigg)
+\\
+\textbf{c} = \begin{pmatrix}
+a_{11} & a_{12} & x_0 
+\end{pmatrix}
+\end{align}
+The offset value is adjusted after conducting least square using first the standard ($x_0,y_0$)  first identifying matching pairs of stars from USNO and CCD image, then calculate the distance between them using the Pythagoras theorem. The distance is an offset that can be added to all the datapoints to precisely match the two datasets, or simlarly substriute for the initial $(x_0, y_0)$ with the addition.
+		In order to compute the plate constants to construct the $\textbf{T}$ matrix
+	Constructs a vector ---- of all the centroid $\langle x\rangle$ of all the stars on the CCD image \footnote{This list should include the asteroid, which is intentionally misidentified as a star since the same procedure is conducted in the same manner}.
+		By minimizing $\chi^2$=$\|\textbf{a}-\textbf{Bc}\|^2$, 
+	
+	This is similarly conducted on y by replacing \textbf{$a_x$} with a vector constructed with all the computed centroid $\langle y \rangle$ and we obtain \textbf{$c_y$} =
+	The purpose of using the least square method is to find a conversion matrix between the CCD-based pixel coordinate to standard coordinate. 
 	The standard coordinates can then be projected to celestial coordinates based on the Eq. (LABEL!!!):
 	(TYPE EQUATION HERE)
-	\subsubsection{USNO}
-	intentionally adjust the Vmag lower cut than Vmag observed in NASA's small object dynamic so that it is able to identify the asteroid as a star.
+
+	\subsubsection{Practice}
+	The actual ----- is the reverse steps of how the theory can be intuitively explained.
+
+	
 	\begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/starfield_match}
 \caption{ Matching starfield with USNO-B1 of stars with Vmag>  (------), October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.}
 \label{starfield_match}
 \end{figure}
+Since the model we used for least square is a linear ---- with its intercept set as zero, we don't minimize the offset parameter. parameter has no offset (translation). We need to manually ---. Alternatively we could have also come up with a model that also minimized the offset. 
+We find that the final projected image in celestial coordinates is horizontally flipped compared to the the our CCD image (INCLUDE FIG?? ) and  Aladin Sky Atlas (also CCD image) \ref{aladin10162013}.
 	\subsection{Ephemeris information}	
 Position vector can be obtained from the HORIZONS Web-Interface 
 heliocentric vector to Earth
@@ -83,7 +149,20 @@ This could be verified with the vector from earth to asteroid.
     x-axis  : out along ascending node of instantaneous plane of the Earth's
               orbit and the Earth's mean equator at the reference epoch
     z-axis  : along the Earth mean north pole at the reference epoch
+We conduct the all procedures mentioned in the above sections to the night of Oct 16, 17, 20, and 21. Only 3 epochs are necessary for computing the distance.  Following Eq.\ref{dx_defn} (Stewart, pg.174) , we chose the 3 of the closest nights (16,17,20)  in order to minimize the interval that we are computing our time derivative over to get as close to $\lim_{h\rightarrow 0}$ of the derivative definition as possible.
+\begin{equation}
+f'(x) = \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+\label{dx_defn}
+\end{equation}
+where h is an infinitesimal interval of x. Before proceeding to using the positions of the asteroids at 3 epochs to find  asteroid's distance, we plotted the coordinates of the asteroid as a sanity check as shown in Fig. \ref{motion_path}.
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/motion_path}
+\caption{The minor deviation from the straight motion path could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocity vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero. Since the 3D orbital of the asteroid are suppressed onto the 2D celestial coordinates, ------- (?)}
+\label{motion_path}
+\end{figure}
+
     \subsection{Iterative solution}
+The system of equation converges because in order to solve it you must have 
     talk about $\rho$...\footnote{Since unit vectors are by normalized by its own magnitude, it is by definition dimensionless. Therefore, to construct physical units in the Earth-Asteroid vector, $\rho$ must have units of AU.}
     \label{iterative_soln}
     	\begin{figure}[h!]
@@ -91,7 +170,8 @@ This could be verified with the vector from earth to asteroid.
 \caption{ Convergence}
 \label{convergence_example}
 \end{figure}
-    From running this on (??) 1000 trials, the solution takes on average 5 steps to converge\footnote{ We define a solution to be converging when the difference between solutions at consecutive steps is less than 1.0$\times10^{-5}$} Each step approximately  bring  closer to the actual solution by an order of magnitude. 
+   By conducting this procedure 1000 times, we find that the solution takes an average of 5 steps to converge\footnote{ We arbitrarily define a solution as ``converging" when the difference between solutions at consecutive steps is less than 1.0$\times10^{-5}$. It is interesting to note that each step approximately  bring  closer to the actual solution by an order of magnitude. } 
+Since the vector $\rho \vec{s}$ subtends from the Earth to asteroid, the norm of  $\rho \vec{s}$ yields the distance of 3.047 AU from Earth to 41 Daphne on the night of October 17, 2013, which has a 19\% percent difference from the values returned by NASA Solar System Bodies web tools. The possible source of error  contributing to the deviation from the nominal value is discussed in the next section. 
 \section{Error and Uncertainty}
 \subsection{Centroid Error}
 \label{centroid_error}
@@ -111,33 +191,43 @@ The same method is also used to calculate the error on <y>
 However this obtained results is in units of pixels, we must convert this error to units of degree as shown in Fig.\ref{uncertainty_range} 
     	\begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/uncertainty_range}
-\caption{ Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref{ls}, works on coordinate points rather than value measurement (----). We select 2 boundary points that defines where the x and y error bar ends (larges ---- that  substends --- - maximum error ---). Converting these two points and the asteroid's centroid location to celstial coordinates, then subtracting boundary points from the center position, we obtain the x and y error ranges in units of degrees. We find that the uncertainty on the centroid position is around 0.016 arcseconds. }
+\caption{ Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref{ls} transforms coordinates rather than interval values. We select two boundary points that defines where the x and y error bar subtends and convert these to celestial coordinates. Then subtracting boundary points from the asteroid's centroid position in celestial coordinates, we obtain the x and y uncertainty ranges ($\sigma_x,\sigma_y$) in units of degrees, which has a value of around 0.016 arcseconds.}
 \label{uncertainty_range}
 \end{figure}
 
 \subsection{Monte Carlo}
-Since we do not have an analytical solution to solve for $\rho$ we can not compute the partial derivatives used in the error propagation equation. Instead we use the Monte Carlo method to approximate the error on our obtained value of $\rho$ given the centroid error of the asteroid's celestial position. First, we construct two Gaussian nosie distribution with standard deviation as the x and y centroid error that we obtained in Sec. \ref{centroid_error}. Then we draw a random value from each distribution to construct a noise vector for the x,y component with the noise on the z component set as zero.\footnote{ We have no information about the error on z  because it is not involved in the centroid-finidng calculations. Since the CCD image is 2D, we can only compute the centroid error along x and y component.}  The noise vector is added to $\vec{R}$ and this newly computed $\vec{R}$ is used in the iterative algorithm to compute the solution for $\rho$ as described in Sec.\ref{iterative_soln} with other parameters kept the same. The Gaussian distribution is centered at zero so that the random noise may be positive or negative. This ensures that the computed $\rho$ solutions are not skewed to  a higher value by the addition of the noise vector. By performing the Monte Carlo procedure on 100000 samples, the standard deviation of the list of computed $\rho$ values yields the approximate error on the value of $\rho$.
+Since we do not have an analytical solution to solve for $\rho$ we can not compute the partial derivatives used in the error propagation equation. Instead we use the Monte Carlo method to approximate the error on our obtained value of $\rho$ given the centroid error of the asteroid's celestial position. First, we construct two Gaussian nosie distribution with standard deviation as the x and y centroid error that we obtained in Sec. \ref{centroid_error}. Then we draw a random value from each distribution to construct a noise vector for the x,y component with the noise on the z component set as zero.\footnote{ We have no information about the error on z  because it is not involved in the centroid-finidng calculations. Since the CCD image is 2D, we can only compute the centroid error along x and y component.}  The noise vector is added to $\vec{R}$ and this newly computed $\vec{R}$ is used in the iterative algorithm to compute the solution for $\rho$ as described in Sec.\ref{iterative_soln} with other parameters kept the same. The Gaussian distribution is centered at zero so that the random noise may be positive or negative. This ensures that the computed $\rho$ solutions are not skewed to  a higher value by the addition of the noise vector. By performing the Monte Carlo procedure on 100000 trials, the standard deviation of the list of computed $\rho$ values yields the approximate error on the value of $\rho$. As shown by conducting this procedure on different number of trials from $10^3$ to $10^6$, the choice of using 1$\times10^5$ trial is sufficiently large enough so that the standard deviation result does not vary by a lot relative to a choice of 1$\times10^6$ or more.
     	\begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/monte_carlo_result}
 \caption{The standard deviation on this Gaussian distribution approximates the error on $\rho$ to be $3.68\times10^{-5}$ AU ($\approx$ 5505 km).}
 \label{monte_carlo_result}
 \end{figure}
 \subsection{Other possible error contribution}
-we only did monte carlo on x y error and not on the z component
+The ---- certainly doesn't add to the 0.48 AU deviation from the values returned by NASA's small body simulation (?)
+One possible error is on NASA's
+Derivatives of position approximation
+
+velocity and acceleration is obtained 
+h$\rightarrow$0 
+we only did Monte Carlo on x y error and not on the z component
 added noise vector 
 For this excercise, we only examined errors on the asteroid. However, uncertainty in the measurement of stellar position can also affect our asteroid position result since stellar positions are taken into consideration in the least square procedure. This propagates to uncertainty on the plate constant values we obtain which is used in the calculation for conversion from ---- to ---- coordinates. However this effect should be secondary to the ones we computed directly for the asteroid. 
 \section{Conclusion}
-\begin{figure}[h!]
-\includegraphics[width=0.5\textwidth]{figures/motion_path}
-\caption{The minor deviation from the straight motion path could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocty vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero. Since the 3D orbital of the asteroid are suppresed onto the 2D celestial coordinates, ------- (?)}
-\label{motion_path}
-\end{figure}
- \section{References}
-%\bibliographystyle{elsarticle-harv}
-\begin{itemize}
+blah
+ \section*{References}
+
+ \begin{footnotesize}
+ \begin{itemize}
 \item Howell, Steve,  \textit{Handbook of CCD Astronomy}, 2nd Edition. Cambridge University Press, 2006.
-\item Wall, J. V. and Jenkins, C.R., \textit{Practical Statistics for Astronomers}, Cambridge University Press, 2002.
-\item Press, William H., and William T. Vetterling. \textit{Numerical Recipes in C: The Art of Scientific Computing}. Cambridge University Press, 1992. 
+%\item Wall, J. V. and Jenkins, C.R., \textit{Practical Statistics for Astronomers}, Cambridge University Press, 2002.
+%\item Press, William H., and William T. Vetterling. \textit{Numerical Recipes in C: The Art of Scientific Computing}. Cambridge University Press, 1992. 
 \item Chromey, Frederick R. \textit{To Measure the Sky: An Introduction to Observational Astronomy}. Cambridge: Cambridge UP, 2010. Print.
+\item Stewart, James. \textit{Calculus: Early Transcendentals}. 7th ed. Belmont: Thomson/Brooks/Cole, 2003. Print.
+\item Perryman, M.A.C. and Lindegren, L. and Kovalevsky, J. and Hoeg, E. and Bastian, U. and Bernacca, P.~L. and Cr{\'ez\'e}, M. and Donati, F. and Grenon, M. and Grewing, M. and van Leeuwen, F. and van der Marel, H. and Mignard, F. and Murray, C.A. and Le Poole, R.S. and Schrijver, H. and Turon, C. and Arenou, F. and Froeschl{\'e}, M. and Petersen, C.S.. The HIPPARCOS Catalogue. . p. L49-L52 1997
+\item  Lindegren, L. and Babusiaux, C. and Bailer-Jones, C. and Bastian, U. and Brown, A.G.A. and Cropper, M. and Hog, E. and Jordi, C. and Katz, D. and van Leeuwen, F. and Luri, X. and Mignard, F. and de Bruijne, J.H. J. and Prusti, T.. The Gaia mission: science, organization and present status. . p. 217-223 2008
 \end{itemize}
+% \bibliography{references}
+%\bibliographystyle{elsarticle-harv}
+  \end{footnotesize}
+
 \end{document}

@@ -1,17 +1,17 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Data Reduction}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Systematic Corrections}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Centroid-finding}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Pixel to Standard Coordinate conversion}{section.2}% 5
+\BOOKMARK [1][-]{section.2}{Data Collection and Reduction}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Lick Observatory Nickel Telescope}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Systematic Corrections}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Centroid-finding}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Astrometry}{}% 6
-\BOOKMARK [2][-]{subsubsection.3.0.1}{Algorithm}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Least Square}{section.3}% 8
-\BOOKMARK [3][-]{subsubsection.3.1.1}{USNO}{subsection.3.1}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Ephemeris information}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Iterative solution}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Error and Uncertainty}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Centroid Error}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Monte Carlo}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.3}{Other possible error contribution}{section.4}% 15
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 16
-\BOOKMARK [1][-]{section.6}{References}{}% 17
+\BOOKMARK [2][-]{subsection.3.1}{Pixel to Standard Coordinate conversion}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Least Square}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Theory}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Practice}{subsection.3.2}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Ephemeris information}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Iterative solution}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Error and Uncertainty}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Centroid Error}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Monte Carlo}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Other possible error contribution}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
