@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 NOV 2014 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 NOV 2014 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,103 +614,108 @@ Overfull \hbox (3.87938pt too wide) in paragraph at lines 26--27
 
 
 ]
-Overfull \hbox (11.90399pt too wide) in paragraph at lines 34--35
+Overfull \hbox (11.90399pt too wide) in paragraph at lines 31--32
 \OT1/txr/m/n/12 stan-dard de-vi-a-tion of the mean falls off as 1/$[]$,
  []
 
 
-Overfull \hbox (4.75606pt too wide) in paragraph at lines 34--35
+Overfull \hbox (4.75606pt too wide) in paragraph at lines 31--32
 \OT1/txr/m/n/12 in-dis-crim-i-nate re-jec-tion de-scribed by Chromey
  []
 
 
-Overfull \hbox (9.29205pt too wide) in paragraph at lines 34--35
+Overfull \hbox (9.29205pt too wide) in paragraph at lines 31--32
 \OT1/txr/m/n/12 largest sta-tis-ti-cal out-lier which is in-cluded when
  []
 
 
-Overfull \hbox (14.23605pt too wide) in paragraph at lines 34--35
+Overfull \hbox (14.23605pt too wide) in paragraph at lines 31--32
 \OT1/txr/m/n/12 scan pix-els can be ad-van-ta-geous over bias frames
  []
 
 
-Overfull \hbox (11.17288pt too wide) in paragraph at lines 36--37
+Overfull \hbox (11.17288pt too wide) in paragraph at lines 33--34
 []\OT1/txr/m/n/12 Dark frames are long-exposure im-ages taken
  []
 
 
-Overfull \hbox (3.37608pt too wide) in paragraph at lines 36--37
+Overfull \hbox (3.37608pt too wide) in paragraph at lines 33--34
 \OT1/txr/m/n/12 re-sponses. We con-duct dark cor-rec-tion by sub-
  []
 
 
-Overfull \hbox (7.28807pt too wide) in paragraph at lines 39--41
+Overfull \hbox (7.28807pt too wide) in paragraph at lines 36--38
 \OT1/txr/m/n/12 As shown in the equa-tion, we first dark-subtract
  []
 
 
-Overfull \hbox (2.24805pt too wide) in paragraph at lines 39--41
+Overfull \hbox (2.24805pt too wide) in paragraph at lines 36--38
 \OT1/txr/m/n/12 tive to our orig-i-nal im-age data at around 0.005.
  []
 
 
-Overfull \hbox (6.24408pt too wide) in paragraph at lines 39--41
+Overfull \hbox (6.24408pt too wide) in paragraph at lines 36--38
 \OT1/txr/m/n/12 sub-trac-tion, the im-age is nor-mal-ized by a scalar
  []
 
-[2] <figures/normalization.png, id=90, 442.7742pt x 293.898pt>
+[2] <figures/normalization.png, id=89, 442.7742pt x 293.898pt>
 File: figures/normalization.png Graphic file (type png)
 
 <use figures/normalization.png>
-Package pdftex.def Info: figures/normalization.png used on input line 43.
+Package pdftex.def Info: figures/normalization.png used on input line 40.
 (pdftex.def)             Requested size: 226.48395pt x 150.33443pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 43--44
+Overfull \hbox (9.0pt too wide) in paragraph at lines 40--41
 [][] 
  []
 
-<figures/centroid_many.png, id=93, 401.3394pt x 295.1025pt>
+<figures/centroid_many.png, id=92, 401.3394pt x 295.1025pt>
 File: figures/centroid_many.png Graphic file (type png)
 
 <use figures/centroid_many.png>
-Package pdftex.def Info: figures/centroid_many.png used on input line 53.
+Package pdftex.def Info: figures/centroid_many.png used on input line 50.
 (pdftex.def)             Requested size: 226.48395pt x 166.53508pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 53--54
+Overfull \hbox (9.0pt too wide) in paragraph at lines 50--51
 [][] 
  []
 
-<figures/centroid_error_image.png, id=94, 398.2077pt x 285.2256pt>
+<figures/centroid_error_image.png, id=93, 398.2077pt x 285.2256pt>
 File: figures/centroid_error_image.png Graphic file (type png)
 
 <use figures/centroid_error_image.png>
-Package pdftex.def Info: figures/centroid_error_image.png used on input line 58
+Package pdftex.def Info: figures/centroid_error_image.png used on input line 55
 .
 (pdftex.def)             Requested size: 226.48395pt x 162.22339pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 58--59
+Overfull \hbox (9.0pt too wide) in paragraph at lines 55--56
 [][] 
  []
 
 
-Overfull \hbox (2.45204pt too wide) in paragraph at lines 50--63
+Overfull \hbox (2.45204pt too wide) in paragraph at lines 47--60
 \OT1/txr/m/n/12 ev-ery point we com-pute its pixel dis-tance from
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [3 <./figures/normalization.png> <./figures/centroid_many.png> <./figures/centr
 oid_error_image.png>]
-Overfull \hbox (1.77689pt too wide) in paragraph at lines 71--72
+Overfull \hbox (1.77689pt too wide) in paragraph at lines 68--69
 []\OT1/txr/m/n/12 Since most ref-er-ence stars are dis-tant point
  []
 
 
-Overfull \hbox (16.377pt too wide) in paragraph at lines 76--76
+Overfull \hbox (3.56404pt too wide) in paragraph at lines 68--69
+\OT1/txr/m/n/12 ce-les-tial co-or-di-nates ($\OML/txmi/m/it/12 ; ^^N$\OT1/txr/
+m/n/12 ) into stan-dard Carte-
+ []
+
+
+Overfull \hbox (6.59135pt too wide) in paragraph at lines 68--69
+\OT1/txr/m/n/12 sian co-or-di-nates (X,Y) us-ing Eq. []4[] and 4 (From
+ []
+
+
+Overfull \hbox (16.377pt too wide) in paragraph at lines 73--73
 [] 
  []
 
@@ -718,153 +723,182 @@ Overfull \hbox (16.377pt too wide) in paragraph at lines 76--76
 File: figures/aladin10162013.png Graphic file (type png)
 
 <use figures/aladin10162013.png>
-Package pdftex.def Info: figures/aladin10162013.png used on input line 85.
+Package pdftex.def Info: figures/aladin10162013.png used on input line 82.
 (pdftex.def)             Requested size: 226.48395pt x 161.99493pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 85--86
+Overfull \hbox (9.0pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
 [4 <./figures/aladin10162013.png (PNG copy)>]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 124.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 121.
 
 
-Overfull \hbox (1.10806pt too wide) in paragraph at lines 123--125
+Overfull \hbox (1.10806pt too wide) in paragraph at lines 120--122
 \OT1/txr/m/n/12 choose the pa-ram-e-ters in our model that yields
  []
 
-<figures/starfield_match.png, id=139, 490.9542pt x 469.755pt>
+<figures/starfield_match.png, id=138, 490.9542pt x 469.755pt>
 File: figures/starfield_match.png Graphic file (type png)
 
 <use figures/starfield_match.png>
-Package pdftex.def Info: figures/starfield_match.png used on input line 146.
+Package pdftex.def Info: figures/starfield_match.png used on input line 143.
 (pdftex.def)             Requested size: 226.48395pt x 216.70636pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 146--147
+Overfull \hbox (9.0pt too wide) in paragraph at lines 143--144
 [][] 
  []
 
-[5 <./figures/starfield_match.png>]
-<figures/motion_path.png, id=156, 422.57875pt x 165.61874pt>
+
+Overfull \hbox (1.90005pt too wide) in paragraph at lines 138--149
+\OT1/txr/m/n/12 les-tial co-or-di-nates is hor-i-zon-tally flipped com-
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5] <figures/motion_path.png, id=155, 422.57875pt x 165.61874pt>
 File: figures/motion_path.png Graphic file (type png)
 
 <use figures/motion_path.png>
-Package pdftex.def Info: figures/motion_path.png used on input line 165.
+Package pdftex.def Info: figures/motion_path.png used on input line 162.
 (pdftex.def)             Requested size: 226.48395pt x 88.76561pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 165--166
+Overfull \hbox (9.0pt too wide) in paragraph at lines 162--163
 [][] 
  []
 
 
-Overfull \hbox (6.70398pt too wide) in paragraph at lines 170--171
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (6.70398pt too wide) in paragraph at lines 167--168
 \OT1/txr/m/n/12 oid, we can con-struct the unit vec-tors ($[]\OML/txmi/m/it/12 
 ; []; []$\OT1/txr/m/n/12 )
  []
 
-<figures/convergence_example.png, id=163, 388.8126pt x 162.6075pt>
+[6 <./figures/starfield_match.png> <./figures/motion_path.png>]
+<figures/convergence_example.png, id=174, 388.8126pt x 162.6075pt>
 File: figures/convergence_example.png Graphic file (type png)
 
 <use figures/convergence_example.png>
-Package pdftex.def Info: figures/convergence_example.png used on input line 204
+Package pdftex.def Info: figures/convergence_example.png used on input line 201
 .
 (pdftex.def)             Requested size: 226.48395pt x 94.7218pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 204--205
+Overfull \hbox (9.0pt too wide) in paragraph at lines 201--202
 [][] 
  []
 
-[6 <./figures/motion_path.png>]
-Overfull \hbox (4.58485pt too wide) in paragraph at lines 209--210
+
+Overfull \hbox (4.58485pt too wide) in paragraph at lines 206--207
 []\OT1/txr/m/n/12 Since the vec-tor $\OML/txmi/m/it/12 ^^Z[]$ \OT1/txr/m/n/12 s
 ub-tends from the Earth
  []
 
-<figures/uncertainty_range.png, id=182, 420.6114pt x 282.0939pt>
+<figures/uncertainty_range.png, id=181, 420.6114pt x 282.0939pt>
 File: figures/uncertainty_range.png Graphic file (type png)
 
 <use figures/uncertainty_range.png>
-Package pdftex.def Info: figures/uncertainty_range.png used on input line 228.
+Package pdftex.def Info: figures/uncertainty_range.png used on input line 225.
 (pdftex.def)             Requested size: 226.48395pt x 151.89368pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 228--229
+Overfull \hbox (9.0pt too wide) in paragraph at lines 225--226
 [][] 
  []
 
-<figures/monte_carlo_result.png, id=188, 395.5578pt x 267.399pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/monte_carlo_result.png, id=187, 395.5578pt x 267.399pt>
 File: figures/monte_carlo_result.png Graphic file (type png)
 
 <use figures/monte_carlo_result.png>
-Package pdftex.def Info: figures/monte_carlo_result.png used on input line 237.
+Package pdftex.def Info: figures/monte_carlo_result.png used on input line 234.
 
 (pdftex.def)             Requested size: 226.48395pt x 153.10448pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 237--238
+Overfull \hbox (9.0pt too wide) in paragraph at lines 234--235
 [][] 
  []
 
 
-Overfull \hbox (9.83203pt too wide) in paragraph at lines 235--241
+Overfull \hbox (9.83203pt too wide) in paragraph at lines 232--238
 \OT1/txr/m/n/12 struct two Gaus-sian nosie dis-tri-bu-tion with stan-
  []
 
 
-Overfull \hbox (1.16806pt too wide) in paragraph at lines 235--241
+Overfull \hbox (1.16806pt too wide) in paragraph at lines 232--238
 \OT1/txr/m/n/12 with the noise on the z com-po-nent set as zero.[][][]
  []
 
-[7 <./figures/convergence_example.png> <./figures/uncertainty_range.png>]
+[7 <./figures/convergence_example.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8 <./figures/monte_carlo_result.png>]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 250.
+[8 <./figures/uncertainty_range.png> <./figures/monte_carlo_result.png>]
+Overfull \hbox (7.68408pt too wide) in paragraph at lines 245--246
+\OT1/txr/m/n/12 be pro-jected to ce-les-tial co-or-di-nates. By match-
+ []
 
+
+Overfull \hbox (3.97606pt too wide) in paragraph at lines 245--246
+\OT1/txr/m/n/12 ing $\OML/txmi/m/it/12 ^^Z$\OT1/txr/m/n/12 , we in-stead used t
+he Monte Carlo method
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 252.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 250.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 252.
 
-Overfull \hbox (1.83078pt too wide) in paragraph at lines 250--253
+Overfull \hbox (1.83078pt too wide) in paragraph at lines 252--255
 \OT1/txr/m/n/10 2nd Edi-tion. Cam-bridge Uni-ver-sity Press, 2006. 
  []
 
 
-Overfull \hbox (2.64075pt too wide) in paragraph at lines 253--254
+Overfull \hbox (2.64075pt too wide) in paragraph at lines 255--256
 \OT1/txr/m/it/10 In-tro-duc-tion to Ob-ser-va-tional As-tron-omy\OT1/txr/m/n/10
  . Cam-
  []
 
 
-Overfull \hbox (16.50087pt too wide) in paragraph at lines 255--256
+Overfull \hbox (16.50087pt too wide) in paragraph at lines 257--258
 \OT1/txr/m/n/10 and Grenon, M. and Grew-ing, M. and van Leeuwen,
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 262.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
 [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
  (./report_3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
-Package rerunfilecheck Info: File `report_3.out' has not changed.
-(rerunfilecheck)             Checksum: D9E4DDA6C4B6C355C7B0423AAFCA2BBE;1124.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
 
+
+Package rerunfilecheck Warning: File `report_3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report_3.out':
+(rerunfilecheck)             Before: 04F152033B6557C4C9498DC3E223FA4E;1131
+(rerunfilecheck)             After:  3D25E8B789AAEC64C3E789160296396A;1135.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
  ) 
 Here is how much of TeX's memory you used:
  8846 strings out of 493117
  129402 string characters out of 6135433
- 231410 words of memory out of 5000000
+ 231417 words of memory out of 5000000
  12091 multiletter control sequences out of 15000+600000
  43429 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,40p,1811b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,14n,40p,1732b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -888,7 +922,7 @@ mf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2014/texmf-dist
 type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on report_3.pdf (9 pages, 927144 bytes).
+Output written on report_3.pdf (9 pages, 927575 bytes).
 PDF statistics:
  256 PDF objects out of 1000 (max. 8388607)
  215 compressed objects within 3 object streams
