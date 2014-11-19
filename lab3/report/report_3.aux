@@ -17,49 +17,60 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
-\@writefile{toc}{\contentsline {paragraph}{}{1}{section*.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Data Collection and Reduction}{1}{section.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Lick Observatory Nickel Telescope}{1}{subsection.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Systematic Corrections}{1}{subsection.2.2}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Bias subtraction}}{1}{section*.2}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Dark and Flat Correction}}{2}{section*.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Without normalization, the image requires a logarithmic stretch to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulted from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.\relax }}{2}{figure.caption.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Data Reduction}{2}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Systematic Corrections}{2}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Bias subtraction}{2}{subsubsection.2.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Dark and Flat Correction}{2}{subsubsection.2.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Without normalization, the image requires a logarithmic stretch to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulted from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.\relax }}{3}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{normalization}{{1}{2}{Without normalization, the image requires a logarithmic stretch to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulted from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Centroid-finding}{2}{subsection.2.3}}
-\newlabel{centroid_find}{{2.3}{2}{Centroid-finding}{subsection.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CENTROID MANY STUFF\relax }}{3}{figure.caption.5}}
-\newlabel{centroid_many}{{2}{3}{CENTROID MANY STUFF\relax }{figure.caption.5}{}}
-\newlabel{centroid_eq}{{2}{3}{Centroid-finding}{equation.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Astrometry}{3}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Pixel to Standard Coordinate conversion}{3}{subsection.3.1}}
-\newlabel{projectionX}{{4}{3}{Pixel to Standard Coordinate conversion}{equation.3.4}{}}
-\newlabel{scale_to_pix_coord}{{6}{3}{Pixel to Standard Coordinate conversion}{equation.3.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  Matching starfield pattern for October 16, 2013 with Aladin Sky Atlas, annotated to assist with pattern recognition. Center crosshair position approximates the RA,DEC used in the USNO query. \relax }}{4}{figure.caption.6}}
-\newlabel{aladin10162013}{{3}{4}{Matching starfield pattern for October 16, 2013 with Aladin Sky Atlas, annotated to assist with pattern recognition. Center crosshair position approximates the RA,DEC used in the USNO query. \relax }{figure.caption.6}{}}
+\newlabel{normalization}{{1}{3}{Without normalization, the image requires a logarithmic stretch to distinguish the asteroid and the background since it has to accommodate for the range of decimal values resulted from the division. With normalization, the image can be viewed on a linear scale with a lower intensity limit of 0 and upper limit of 1000.\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Centroid-finding}{3}{subsection.2.2}}
+\newlabel{centroid_find}{{2.2}{3}{Centroid-finding}{subsection.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A zoomed in image of a star and pixels that exceeds a threshold of 3000 counts belonging to the same star.\relax }}{3}{figure.caption.2}}
+\newlabel{centroid_many}{{2}{3}{A zoomed in image of a star and pixels that exceeds a threshold of 3000 counts belonging to the same star.\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Centroid computed for each star with plotted errorbar. Star pattern can be matched with the corresponding Aladin field as shown in Fig. \ref  {aladin10162013}.\relax }}{3}{figure.caption.3}}
+\newlabel{centroid_error_image}{{3}{3}{Centroid computed for each star with plotted errorbar. Star pattern can be matched with the corresponding Aladin field as shown in Fig. \ref {aladin10162013}.\relax }{figure.caption.3}{}}
+\newlabel{centroid_eq}{{2}{4}{Centroid-finding}{equation.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Astrometry}{4}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Coordinate conversions on USNO stellar positions}{4}{subsection.3.1}}
+\newlabel{usno_coord_conv}{{3.1}{4}{Coordinate conversions on USNO stellar positions}{subsection.3.1}{}}
+\newlabel{projectionX}{{4}{4}{Coordinate conversions on USNO stellar positions}{equation.3.4}{}}
+\newlabel{scale_to_pix_coord}{{6}{4}{Coordinate conversions on USNO stellar positions}{equation.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Matching starfield pattern for October 16, 2013 with Aladin Sky Atlas, annotated to assist with pattern recognition. Center crosshair position approximates the RA,DEC used in the USNO query. \relax }}{4}{figure.caption.4}}
+\newlabel{aladin10162013}{{4}{4}{Matching starfield pattern for October 16, 2013 with Aladin Sky Atlas, annotated to assist with pattern recognition. Center crosshair position approximates the RA,DEC used in the USNO query. \relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Least Square}{4}{subsection.3.2}}
 \newlabel{ls}{{3.2}{4}{Least Square}{subsection.3.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Theory}{4}{subsubsection.3.2.1}}
+\newlabel{theory}{{3.2.1}{4}{Theory}{subsubsection.3.2.1}{}}
 \newlabel{Tmatrix}{{7}{4}{Theory}{equation.3.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Practice}{4}{subsubsection.3.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Ephemeris information}{4}{subsection.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Matching starfield with USNO-B1 of stars with Vmag> (------), October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.\relax }}{5}{figure.caption.7}}
-\newlabel{starfield_match}{{4}{5}{Matching starfield with USNO-B1 of stars with Vmag> (------), October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.\relax }{figure.caption.7}{}}
-\newlabel{dx_defn}{{10}{5}{Ephemeris information}{equation.3.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The minor deviation from the straight motion path could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocity vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero. Since the 3D orbital of the asteroid are suppressed onto the 2D celestial coordinates, ------- (?)\relax }}{5}{figure.caption.8}}
-\newlabel{motion_path}{{5}{5}{The minor deviation from the straight motion path could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocity vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero. Since the 3D orbital of the asteroid are suppressed onto the 2D celestial coordinates, ------- (?)\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Iterative solution}{5}{subsection.3.4}}
-\newlabel{iterative_soln}{{3.4}{5}{Iterative solution}{subsection.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  Convergence\relax }}{5}{figure.caption.9}}
-\newlabel{convergence_example}{{6}{5}{Convergence\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Error and Uncertainty}{6}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Centroid Error}{6}{subsection.4.1}}
-\newlabel{centroid_error}{{4.1}{6}{Centroid Error}{subsection.4.1}{}}
-\newlabel{error_prop_centroid}{{11}{6}{Centroid Error}{equation.4.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Monte Carlo}{6}{subsection.4.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref  {ls} transforms coordinates rather than interval values. We select two boundary points that defines where the x and y error bar subtends and convert these to celestial coordinates. Then subtracting boundary points from the asteroid's centroid position in celestial coordinates, we obtain the x and y uncertainty ranges ($\sigma _x,\sigma _y$) in units of degrees, which has a value of around 0.016 arcseconds.\relax }}{6}{figure.caption.10}}
-\newlabel{uncertainty_range}{{7}{6}{Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref {ls} transforms coordinates rather than interval values. We select two boundary points that defines where the x and y error bar subtends and convert these to celestial coordinates. Then subtracting boundary points from the asteroid's centroid position in celestial coordinates, we obtain the x and y uncertainty ranges ($\sigma _x,\sigma _y$) in units of degrees, which has a value of around 0.016 arcseconds.\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The standard deviation on this Gaussian distribution approximates the error on $\rho $ to be $3.68\times 10^{-5}$ AU ($\approx $ 5505 km).\relax }}{7}{figure.caption.11}}
-\newlabel{monte_carlo_result}{{8}{7}{The standard deviation on this Gaussian distribution approximates the error on $\rho $ to be $3.68\times 10^{-5}$ AU ($\approx $ 5505 km).\relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Other possible error contribution}{7}{subsection.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}}
+\newlabel{aBc}{{8}{5}{Theory}{equation.3.8}{}}
+\newlabel{c_eq}{{10}{5}{Theory}{equation.3.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Implementation and Results}{5}{subsubsection.3.2.2}}
+\newlabel{tan_proj}{{11}{5}{Implementation and Results}{equation.3.11}{}}
+\newlabel{sin_proj}{{12}{5}{Implementation and Results}{equation.3.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Matching starfield with USNO-B1 of bright stars $<$ 14.4 mag for October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.\relax }}{5}{figure.caption.5}}
+\newlabel{starfield_match}{{5}{5}{Matching starfield with USNO-B1 of bright stars $<$ 14.4 mag for October 16, 2013. The asteroid is easily identified as it shows up on the CCD image but not on the USNO-B1 catalog.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Iterative solution}{6}{subsection.3.3}}
+\newlabel{dx_defn}{{13}{6}{Iterative solution}{equation.3.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The minor deviation from the straight motion path caused by supressing the 3D orbital of the asteroid onto the 2D plot and could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocity vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero.\relax }}{6}{figure.caption.6}}
+\newlabel{motion_path}{{6}{6}{The minor deviation from the straight motion path caused by supressing the 3D orbital of the asteroid onto the 2D plot and could be explained by the asteroid's motion in the other directions. As shown in the JPL emphemeris velocity vectors, even though the $V_y$ is much larger than $V_x$ and $V_z$, $V_x$ and $V_z$ are still non-zero.\relax }{figure.caption.6}{}}
+\newlabel{ds}{{15}{6}{Iterative solution}{equation.3.15}{}}
+\newlabel{dds}{{16}{6}{Iterative solution}{equation.3.16}{}}
+\newlabel{p}{{17}{6}{Iterative solution}{equation.3.17}{}}
+\newlabel{r}{{18}{7}{Iterative solution}{equation.3.18}{}}
+\newlabel{r}{{3.3}{7}{Iterative solution}{equation.3.18}{}}
+\newlabel{iterative_soln}{{3.3}{7}{Iterative solution}{equation.3.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  By conducting this procedure for 1000 times with slightly varied input values as described in Sec.\ref  {monte_carlo}, we find that the solution takes an average of 5 steps to converge as shown in the graph above (where we arbitrarily define a solution as ``converging" when the difference between solutions at consecutive steps is less than 1.0$\times 10^{-5}$AU). It is interesting to note that each step brings the computed result closer to the actual solution by approximately an order of magnitude. \relax }}{7}{figure.caption.7}}
+\newlabel{convergence_example}{{7}{7}{By conducting this procedure for 1000 times with slightly varied input values as described in Sec.\ref {monte_carlo}, we find that the solution takes an average of 5 steps to converge as shown in the graph above (where we arbitrarily define a solution as ``converging" when the difference between solutions at consecutive steps is less than 1.0$\times 10^{-5}$AU). It is interesting to note that each step brings the computed result closer to the actual solution by approximately an order of magnitude. \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Error and Uncertainty}{7}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Centroid Error}{7}{subsection.4.1}}
+\newlabel{centroid_error}{{4.1}{7}{Centroid Error}{subsection.4.1}{}}
+\newlabel{error_prop_centroid}{{19}{7}{Centroid Error}{equation.4.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref  {ls} transforms coordinates rather than interval values. We select two boundary points that defines where the x and y error bar subtends and convert these to celestial coordinates. Then subtracting boundary points from the asteroid's centroid position in celestial coordinates, we obtain the x and y uncertainty ranges ($\sigma _x,\sigma _y$) in units of degrees, which has a value of around 0.016 arcseconds.\relax }}{7}{figure.caption.8}}
+\newlabel{uncertainty_range}{{8}{7}{Since the pixel-to-celestial coordinate conversion procedure described in Sec. \ref {ls} transforms coordinates rather than interval values. We select two boundary points that defines where the x and y error bar subtends and convert these to celestial coordinates. Then subtracting boundary points from the asteroid's centroid position in celestial coordinates, we obtain the x and y uncertainty ranges ($\sigma _x,\sigma _y$) in units of degrees, which has a value of around 0.016 arcseconds.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Monte Carlo}{8}{subsection.4.2}}
+\newlabel{monte_carlo}{{4.2}{8}{Monte Carlo}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Other possible error contribution}{8}{subsection.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The standard deviation on this Gaussian distribution approximates the error on $\rho $ to be $3.68\times 10^{-5}$ AU ($\approx $ 5505 km).\relax }}{8}{figure.caption.9}}
+\newlabel{monte_carlo_result}{{9}{8}{The standard deviation on this Gaussian distribution approximates the error on $\rho $ to be $3.68\times 10^{-5}$ AU ($\approx $ 5505 km).\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}}
