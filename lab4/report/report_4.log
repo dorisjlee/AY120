@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 DEC 2014 20:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 DEC 2014 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,74 +593,81 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 22.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-<figures/wavelength_calib.png, id=20, 425.6703pt x 282.0939pt>
+<figures/processed.png, id=20, 460.8417pt x 131.5314pt>
+File: figures/processed.png Graphic file (type png)
+
+<use figures/processed.png>
+Package pdftex.def Info: figures/processed.png used on input line 25.
+(pdftex.def)             Requested size: 226.48395pt x 64.64362pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 25--26
+[][] 
+ []
+
+<figures/wavelength_calib.png, id=22, 425.6703pt x 282.0939pt>
 File: figures/wavelength_calib.png Graphic file (type png)
 
 <use figures/wavelength_calib.png>
-Package pdftex.def Info: figures/wavelength_calib.png used on input line 28.
+Package pdftex.def Info: figures/wavelength_calib.png used on input line 32.
 (pdftex.def)             Requested size: 226.48395pt x 150.09444pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 28--29
+Overfull \hbox (9.0pt too wide) in paragraph at lines 32--33
 [][] 
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 29--29
-[]\OT1/txr/m/n/10 Figure 1: |The first or-der fit in the top fig-ure
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 1496) in paragraph at lines 29--29
-\OT1/txr/m/n/10 shows that the dis-per-sion is ap-prox-i-mately lin-ear
- []
-
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 38.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 42.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 38.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 42.
 
-Overfull \hbox (1.83078pt too wide) in paragraph at lines 38--41
+Overfull \hbox (1.83078pt too wide) in paragraph at lines 42--45
 \OT1/txr/m/n/10 2nd Edi-tion. Cam-bridge Uni-ver-sity Press, 2006. 
  []
 
 
-Overfull \hbox (2.64075pt too wide) in paragraph at lines 41--42
+Overfull \hbox (2.64075pt too wide) in paragraph at lines 45--46
 \OT1/txr/m/it/10 In-tro-duc-tion to Ob-ser-va-tional As-tron-omy\OT1/txr/m/n/10
  . Cam-
  []
 
 
-Overfull \hbox (16.50087pt too wide) in paragraph at lines 43--44
+Overfull \hbox (16.50087pt too wide) in paragraph at lines 47--48
 \OT1/txr/m/n/10 and Grenon, M. and Grew-ing, M. and van Leeuwen,
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figures/wavelength_calib.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
+ <./figures/processed.png> <./figures/wavelength_calib.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 54.
+ [2
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 54.
  (./report_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 50.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 54.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 54.
 Package rerunfilecheck Info: File `report_4.out' has not changed.
 (rerunfilecheck)             Checksum: C2812448218B46D0C287965D112F2057;211.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 54.
  ) 
 Here is how much of TeX's memory you used:
- 8696 strings out of 493117
- 126842 string characters out of 6135433
- 220804 words of memory out of 5000000
- 12015 multiletter control sequences out of 15000+600000
+ 8704 strings out of 493117
+ 126991 string characters out of 6135433
+ 221057 words of memory out of 5000000
+ 12020 multiletter control sequences out of 15000+600000
  35013 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,477b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,40p,515b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2014/t
@@ -668,10 +675,10 @@ exmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on report_4.pdf (1 page, 104765 bytes).
+Output written on report_4.pdf (2 pages, 153608 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
