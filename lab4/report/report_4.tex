@@ -21,19 +21,46 @@ In this experiment,  we------
 	\end{abstract}
 \end{frontmatter}
 \section{Introduction}
+\section{Data Reduction}
+\subsection{Dark, Bias, Flat Subtraction}
+Using the halogen lamp as a source of uniform illumination, the flat field images calibrate the pixel-by-pixel variations as well as common artifacts that is seen in both continuum sources as shown in Fig. \ref{calib}. We take the ``dark frame" as the the average of the ---- (i.e. the flat region shown in Fig. ----) before and after the  . Without subtracting the bias in the ``dark image", we can automatically get bias subtraction by simply subtraction off the dark, as the bias is incorporated as part of the ``dark frame" .
+Every image pixel is:
+\begin{equation}
+			\frac{\text{image}-\text{dark}}{\text{flat}}\times\text{median(flat)}
+			\label{calib_eq}
+\end{equation}
  \begin{figure}[h!]
+ When converting the 2D images to 1D spectra, we took a 1024-by-1024 pixel slice of the image array to truncate the 24 overscan pixels.
 \includegraphics[width=0.5\textwidth]{figures/processed}
 \caption{Both continuous sources shows the same artifact in a corner of the CCD image. The figures below are zoomed in --- on this feature, which  possibly from the reflected light . The halogen exposure is used for flat correction. Along with subtracting the background from the non-incident solar spectrum, the artifact is removed in the proceessed image shown in the rightmost figure.}
 \label{processed}
 \end{figure}
-\section{Wavelength Calibration}
- We dark subtract the image 
+\subsection{Wavelength Calibration}
+From the halogen spectrum we deduced that the cross-dispersion wavelength ( $\lambda_{cd}$)decreases along the direction of y axis and from the tilted order, we conclude that the wavelength from the echelle grating ($\lambda_{e}$) increase from right to left.
+We took exposures where both the neon light and 635nm green laser was turned on in order to identify  where ----- .Since each order has a slightly different coefficient, we chose to calibrate the order containing the 635nm green laser. as a convient 
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/lambda_direction}
+\caption{Wavelength direction, the arrow points in the direction of increasing wavelength. We determine the tilting direction from a zoomed-in section of a single echelle  order, as shown in the top figure.}
+\label{lambda_direction}
+\end{figure}
  \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/wavelength_calib}
-\caption{The first order fit in the top figure shows that the dispersion is approximately linear ($\frac{d\lambda}{d\text{pixel}}$=0.0315 nm/pixel ). Since there is no notable pattern in linear residual, and the magnitude of the residual is small. From the bottommost quadratic figure, we see that the residual decrease by an order of magnitude.}
+\caption{The first order fit in the top figure shows that the dispersion is approximately linear ($\frac{d\lambda}{d\text{pixel}}$=0.0315 nm/pixel ). Since there is no notable patterns in linear residual and the magnitude of the residual is small, a linear relationship should be sufficient for pixel-to-wavelength conversion. From the bottom most quadratic figure, we see that the residual decrease by an order of magnitude.}
 \label{calib}
 \end{figure}
+\section{Limb Darkening}
+
+The use of limb darkening serves two purpose: 1) determine crossing time 2)determine quality of data. both for selection of data (we only want to look at solar spectra when the sun directly incidents the optical fiber of our spectrometer and other systematic effect.time series 
+We see the effect of limb darkening by summing together the intensity of all pixel in every CCD image in a full solar scan. Limb darkening results from the --- that .The time series data in Fig. --- shows the total intensity of each exposure scaled by the intensity at the central bright peak ($I_0$) which we set at the origin. By modelling intensity as a function of the incident viewing angle using the Eddington approximation for grey, plane-parallel stellar atmosphere and geometrically relating this with the Earth-sun distance and crossing times, we can fit our data to the resulting relation with the center-to-limb time ($\Delta t$) as our varying parameter: 
+\begin{equation}
+\frac{I(\theta)}{I(\theta=0)}=\frac{I}{I_0}= \frac{2}{5}+\frac{3}{5}cos\theta
+\label{eddington}
+\end{equation}
+where 
+By using trignometric relation 
+The relative 
 \section{Doppler Shift Determination}
+\subsection{Cross Correlation}
 \section{Conclusion}
  
  \section*{References}
