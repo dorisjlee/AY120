@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 DEC 2014 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 DEC 2014 02:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,14 +433,20 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 )
-(./report_4.aux)
+(./report_4.aux
+
+LaTeX Warning: Label `spectral_resolution' multiply defined.
+
+
+LaTeX Warning: Label `lambda_direction' multiply defined.
+
+)
 \openout1 = `report_4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 14.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 14.
 
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 14.
@@ -628,114 +634,123 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 35--37
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (11.76086pt too wide) in paragraph at lines 41--43
-[]\OT1/txr/m/n/12 The ta-ble be-low shows ---- for m=35 Echelle
+Underfull \hbox (badness 1546) in paragraph at lines 54--54
+[]\OT1/txr/m/n/10 Table 1: |Com-puted spec-trom-e-ter in-for-ma-tion for
  []
 
-<figures/lambda_direction.png, id=47, 391.7034pt x 310.2792pt>
-File: figures/lambda_direction.png Graphic file (type png)
+<figures/single_neon.png, id=49, 400.49625pt x 285.065pt>
+File: figures/single_neon.png Graphic file (type png)
 
-<use figures/lambda_direction.png>
-Package pdftex.def Info: figures/lambda_direction.png used on input line 48.
-(pdftex.def)             Requested size: 226.48395pt x 179.40813pt.
+<use figures/single_neon.png>
+Package pdftex.def Info: figures/single_neon.png used on input line 64.
+(pdftex.def)             Requested size: 226.48395pt x 161.20992pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 48--49
-[][] 
- []
-
-<figures/wavelength_calib.png, id=48, 425.6703pt x 282.0939pt>
-File: figures/wavelength_calib.png Graphic file (type png)
-
-<use figures/wavelength_calib.png>
-Package pdftex.def Info: figures/wavelength_calib.png used on input line 53.
-(pdftex.def)             Requested size: 226.48395pt x 150.09444pt.
-
-Overfull \hbox (9.0pt too wide) in paragraph at lines 53--54
+Overfull \hbox (9.0pt too wide) in paragraph at lines 64--65
 [][] 
  []
 
 
-Overfull \hbox (27.94005pt too wide) in paragraph at lines 45--57
-\OT1/txr/m/n/12 that the cross-dispersion wave-length ( $\OML/txmi/m/it/12 ^^U[
-]$\OT1/txr/m/n/12 )decreases
- []
-
-
-Overfull \hbox (2.34406pt too wide) in paragraph at lines 45--57
-\OT1/txr/m/n/12 along the di-rec-tion of y axis and from the tilted
+Overfull \hbox (0.48402pt too wide) in paragraph at lines 60--68
+\OT1/txr/m/n/12 to-wavelength con-ver-sion and the Doppler ve-
  []
 
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./figures/processed.png>]
-<figures/eddington_fit.png, id=66, 424.7067pt x 314.1336pt>
+<figures/lambda_direction.png, id=67, 391.7034pt x 310.2792pt>
+File: figures/lambda_direction.png Graphic file (type png)
+
+<use figures/lambda_direction.png>
+Package pdftex.def Info: figures/lambda_direction.png used on input line 72.
+(pdftex.def)             Requested size: 226.48395pt x 179.40813pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 72--73
+[][] 
+ []
+
+<figures/wavelength_calib.png, id=68, 425.6703pt x 282.0939pt>
+File: figures/wavelength_calib.png Graphic file (type png)
+
+<use figures/wavelength_calib.png>
+Package pdftex.def Info: figures/wavelength_calib.png used on input line 77.
+(pdftex.def)             Requested size: 226.48395pt x 150.09444pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 77--78
+[][] 
+ []
+
+<figures/eddington_fit.png, id=71, 424.7067pt x 314.1336pt>
 File: figures/eddington_fit.png Graphic file (type png)
 
 <use figures/eddington_fit.png>
-Package pdftex.def Info: figures/eddington_fit.png used on input line 61.
+Package pdftex.def Info: figures/eddington_fit.png used on input line 85.
 (pdftex.def)             Requested size: 226.48395pt x 167.51578pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 61--64
+Overfull \hbox (9.0pt too wide) in paragraph at lines 85--88
 [][] 
  []
 
 
-Overfull \hbox (13.55208pt too wide) in paragraph at lines 58--71
+Overfull \hbox (13.55208pt too wide) in paragraph at lines 82--95
 \OT1/txr/m/n/12 bright cen-tral re-gion for a more ac-cu-rate Doppler
  []
 
 
-Overfull \hbox (0.83206pt too wide) in paragraph at lines 58--71
+Overfull \hbox (0.83206pt too wide) in paragraph at lines 82--95
 \OT1/txr/m/n/12 sphere and ge-o-met-ri-cally re-lat-ing this with the
  []
 
-[2 <./figures/lambda_direction.png> <./figures/wavelength_calib.png> <./figures
-/eddington_fit.png>]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 87.
+[2 <./figures/single_neon.png> <./figures/lambda_direction.png> <./figures/wave
+length_calib.png>]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 113.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 87.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 113.
 
-Overfull \hbox (2.64075pt too wide) in paragraph at lines 88--89
+Overfull \hbox (2.64075pt too wide) in paragraph at lines 114--115
 \OT1/txr/m/it/10 In-tro-duc-tion to Ob-ser-va-tional As-tron-omy\OT1/txr/m/n/10
  . Cam-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
-[3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
+[3 <./figures/eddington_fit.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
  (./report_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
 Package rerunfilecheck Info: File `report_4.out' has not changed.
-(rerunfilecheck)             Checksum: C1BC12AF63BE1DE256D8B1392C733A4D;611.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+(rerunfilecheck)             Checksum: 50B37BB41ECE4A923DA6C5FFE26E0227;611.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 8744 strings out of 493117
- 127629 string characters out of 6135433
- 224396 words of memory out of 5000000
- 12039 multiletter control sequences out of 15000+600000
+ 8758 strings out of 493117
+ 127877 string characters out of 6135433
+ 228656 words of memory out of 5000000
+ 12048 multiletter control sequences out of 15000+600000
  39559 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,842b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,842b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on report_4.pdf (3 pages, 317040 bytes).
+exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on report_4.pdf (3 pages, 333336 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -38,11 +38,35 @@ Every image pixel is:
 \label{processed}
 \end{figure}
 \subsection{Spectrometer details}
-The table below shows ---- for m=35 
-Echelle order of interference on blaze (m)
-
+The spectrometer consist of a ----- perpendicular to an echelle grating . Cross dispersion grating --- -
+\hspace{-20pt}
+\begin{table}
+    \begin{tabular}{|l|l}
+%    \hline
+    \hline Angular dispersion [$m^{-1}$]  & 4.804                     \\ \hline     \hline Free spectral range [nm]           & 18.16                     \\     \hline Min wavelength [nm]  & 625.6
+ \\  \hline  Max wavelength [nm]  &  643.76 
+ \\ \hline Magnification   & 0.3357                
+ \\ \hline  \hline     Angular dispersion [$m^{-1}$]  & 4.804                   \\ \hline   Spectral resolving power  & $1.317\times10^4$\\ 
+    \hline Spectral resolution [km/s]   & 54.09        \\ 
+   \hline Width on the CCD [mm]   & 0.52                      \\
+    \end{tabular}
+  
+    \caption{Computed spectrometer information for $\lambda $=632.8 nm, corresponding to echelle order of  m=35. }
+  \label{spec_prop}\end{table}
+ \\The spectral resolution in nm deals with the distance between two closely spaced features so that the features are resolved. This quantity can be computed by Eq.\label{spectral_resolution}
+\begin{equation}
+\delta\lambda=\Bigg(\frac{\partial\lambda}{\partial\beta}\Bigg)_{m,\alpha}\Bigg(\frac{\partial\beta}{\partial\alpha}\Bigg)_{m,\lambda}\delta\alpha
+\label{spectral_resolution}
+\end{equation}
+where $\Big(\frac{\partial\lambda}{\partial\beta}\Big)_{m,\alpha}$ is the reciprocal of the angular dispersion and $\Big(\frac{\partial\beta}{\partial\alpha}\Big)_{m,\lambda}$ is the anamorphic magnification computed as a ratio of the cosines of the incident and diffraction angles. The numerical result for the m=35 order is 3.629 pixels. Using the dispersion relation for pixel-to-wavelength conversion and the Doppler velocity formula described by Eq.\ref{doppler_eq}, we determine the resolution for the velocity measurement in km/s as cited in Table.\ref{spec_prop}.
+\\
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/single_neon}
+\caption{Above figure shows a single neon emission line. Since intensity distribution follows a normal distribution, the FWHM is computed by 2$\sigma\sqrt{2\ln(2)}$ where $\sigma$ is the standard deviation of cropped image containing a single neon line. Just like $\sigma$, the FWHM informs us about the width of a distribution. }
+\label{lambda_direction}
+\end{figure}
 \subsection{Wavelength Calibration}
-From the halogen spectrum we deduced that the cross-dispersion wavelength ( $\lambda_{cd}$)decreases along the direction of y axis and from the tilted order, we conclude that the wavelength from the echelle grating ($\lambda_{e}$) increase from right to left.
+From the halogen spectrum we deduced that the cross-dispersion wavelength ( $\lambda_{cd}$) decreases along the direction of y axis and from the tilted order, we conclude that the wavelength from the echelle grating ($\lambda_{e}$) increase from right to left.
 We took exposures where both the neon light and 635nm green laser was turned on in order to identify  where ----- .Since each order has a slightly different coefficient, we chose to calibrate the order containing the 635nm green laser. as a convient 
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/lambda_direction}
@@ -72,11 +96,13 @@ We see the effect of limb darkening by summing together the intensity of all pix
 \frac{I(\theta)}{I(\theta=0)}=\frac{I}{I_0}= \frac{2}{5}+\frac{3}{5}cos\theta
 \label{eddington_eq}
 \end{equation}
-where 
-By using trignometric relation 
-The relative 
-\section{Doppler Shift Determination}
 \subsection{Cross Correlation}
+\section{Doppler Shift Determination}
+\begin{equation}
+\delta\lambda=\frac{v}{c}\lambda_0
+\label{doppler_eq}
+\end{equation}
+
 \subsection{Angular Size Determination}
 \label{size_calc}
 \section{Conclusion}
