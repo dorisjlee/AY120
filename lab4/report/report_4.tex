@@ -92,22 +92,41 @@ The y-axis is normalized so that curve fitting corresponds to the model's output
 \\
 To avoid the arbitrary determination of the exposure that defines the start and end of the solar crossing, we fit our data to Eq.\ref{eddington_eq} with the center-to-limb time ($\Delta t$) as our varying parameter.  The lower figure in Fig.\ref{eddington_fit} shows the result of substituting the value of $\Delta t$ back into Eq.\ref{eddington_eq}, and ignoring the uneven data points on the two sides  (an artifact of the telescope) and the region before and after the solar crossing. Without this procedure, the fit would be largely distorted by the telescope artifact on the two sides and the ``dark" regions, which is not part of the stellar model. 
 \\
-We see the effect of limb darkening by summing together the intensity of all pixel in every CCD image in a full solar scan. Limb darkening results from the limitation that an observer can only see into a constant optical depth of 2/3. As the density and temperature of a star decreases radially outwards, the observer sees light originating from different regions of the star corresponding to the darkening effect. The time series data in Fig. --- shows the total intensity of each exposure scaled by the intensity at the central bright peak ($I_0$) which we set at the origin. By modelling intensity as a function of the incident viewing angle using the Eddington approximation for grey, plane-parallel stellar atmosphere and geometrically relating this with the Earth-sun distance and crossing times, we obtain the relation: 
+We see the effect of limb darkening by summing together the intensity of all pixel in every CCD image in a full solar scan. Limb darkening results from the limitation that an observer can only see into a constant optical depth of 2/3. As the density and temperature of a star decreases radially outwards, the observer sees light originating from different regions of the star corresponding to the darkening effect. The time series data in Fig.\ref{eddington_fit} shows the total intensity of each exposure scaled by the intensity at the central bright peak ($I_0$) which we set at the origin. By modelling intensity as a function of the incident viewing angle using the Eddington approximation for grey, plane-parallel stellar atmosphere and geometrically relating this with the Earth-sun distance and crossing times, we obtain the relation: 
 \begin{equation}
 \frac{I(\theta)}{I(\theta=0)}=\frac{I}{I_0}= \frac{2}{5}+\frac{3}{5}cos\theta
 \label{eddington_eq}
 \end{equation}
-\subsection{Cross Correlation}
-\section{Doppler Shift Determination}
+\section{Doppler Velocity Determination}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/process_corr_spectra}
+The cross correlation analysis is conducted by repeatedly trying different values of pixel lag to shift the a set of spectra and then computing its autocorrelation value with the ------  using Eq.\ref{autocovariance} 
+\begin{equation}
+s_j = \frac{1}{N-1}\Sigma_i \Bigg(x_i x_{i+j}\Bigg)-\frac{N}{N-1}(\bar{x})^2 
+\label{autocovariance}
+\end{equation}
+    ac = 1./(N-1)*sum(xi*xij)-N/float(N-1)*mean(xi)**2
+\caption{Since we are measuring fractional pixel shift, process our data to make ---- more precise ( ?) . 
+First, we subtract off the mean of the spectra so that all there is left is the deviation from the mean. This procedure preserves the shape of the peaks  but subtract out the ----- that exist in both datasets. Then, we multiply the resulting spectra by the Hanning window function (Bottom figure). Since the probability density function is normalized to one, the resulting spectra as shown in the middle figure is weighted by the window function. The weighing serves to put more emphasis on the data in the central region and ----- edge effect .   ----We have also tried doing this for .we average all the spectra in the solar scan }
+\label{process_corr_spectra}
+\end{figure}
+\subsection{Cross-Correlation Analysis}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/autocorr_curve}
+\caption{}
+\label{autocorr_curve}
+\end{figure}
 \begin{equation}
 \delta\lambda=\frac{v}{c}\lambda_0
 \label{doppler_eq}
 \end{equation}
+The RMS residual  computed for each scan yields an estimate of how good the linear fit is. So we can use this as an approximate error on the slope obtained from the fit
 
-\subsection{Angular Size Determination}
+Excluding the saturated or partially shaded \footnote{The shading effect could be seen from the decrease in intensity in the middle of the scan in the time series plot, which is clearly not an effect of limb darkening.} solar scans, we conducted this analysis on --- datasets of the same order. 
+\subsection{Angular Size of Sun}
 \label{size_calc}
 \section{Conclusion}
- 
+In this lab, we conveniently chose to use the 35$^\text{th}$ for wavelength calibration and conduct the doppler velocity determination. In order to obtain a more precise measurement, we can conduct wavelength calibration on other orders to increase the number of spectral lines used for each cross correlation analysis and thereby decreasing the quoted error bar on the measurement.
  \section*{References}
  \begin{footnotesize}
  \begin{itemize}
