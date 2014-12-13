@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 DEC 2014 02:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 DEC 2014 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -599,7 +599,7 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 24.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-<figures/processed.png, id=57, 460.8417pt x 131.5314pt>
+<figures/processed.png, id=53, 460.8417pt x 131.5314pt>
 File: figures/processed.png Graphic file (type png)
 
 <use figures/processed.png>
@@ -638,7 +638,7 @@ Underfull \hbox (badness 1546) in paragraph at lines 56--56
 []\OT1/txr/m/n/10 Table 1: |Com-puted spec-trom-e-ter in-for-ma-tion for
  []
 
-<figures/single_neon.png, id=61, 400.49625pt x 285.065pt>
+<figures/single_neon.png, id=57, 400.49625pt x 285.065pt>
 File: figures/single_neon.png Graphic file (type png)
 
 <use figures/single_neon.png>
@@ -658,7 +658,7 @@ Overfull \hbox (0.48402pt too wide) in paragraph at lines 62--70
 
 
  <./figures/processed.png>]
-<figures/lambda_direction.png, id=79, 391.7034pt x 310.2792pt>
+<figures/lambda_direction.png, id=75, 391.7034pt x 310.2792pt>
 File: figures/lambda_direction.png Graphic file (type png)
 
 <use figures/lambda_direction.png>
@@ -669,7 +669,7 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 74--75
 [][] 
  []
 
-<figures/wavelength_calib.png, id=80, 425.6703pt x 282.0939pt>
+<figures/wavelength_calib.png, id=76, 425.6703pt x 282.0939pt>
 File: figures/wavelength_calib.png Graphic file (type png)
 
 <use figures/wavelength_calib.png>
@@ -683,85 +683,96 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 79--80
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/eddington_fit.png, id=83, 424.7067pt x 314.1336pt>
-File: figures/eddington_fit.png Graphic file (type png)
 
-<use figures/eddington_fit.png>
-Package pdftex.def Info: figures/eddington_fit.png used on input line 87.
-(pdftex.def)             Requested size: 226.48395pt x 167.51578pt.
-
-Overfull \hbox (9.0pt too wide) in paragraph at lines 87--90
-[][] 
- []
-
-
-Overfull \hbox (13.55208pt too wide) in paragraph at lines 84--97
+Overfull \hbox (13.55208pt too wide) in paragraph at lines 84--89
 \OT1/txr/m/n/12 bright cen-tral re-gion for a more ac-cu-rate Doppler
  []
 
 
-Overfull \hbox (10.18005pt too wide) in paragraph at lines 84--97
+Overfull \hbox (10.18005pt too wide) in paragraph at lines 84--89
 \OT1/txr/m/n/12 the in-ten-sity at the cen-tral bright peak ($\OML/txmi/m/it/12
  I[]$\OT1/txr/m/n/12 ) which
  []
 
 [2 <./figures/single_neon.png> <./figures/lambda_direction.png>]
-<figures/process_corr_spectra.png, id=102, 394.5942pt x 294.6207pt>
+<figures/eddington_fit.png, id=95, 424.7067pt x 314.1336pt>
+File: figures/eddington_fit.png Graphic file (type png)
+
+<use figures/eddington_fit.png>
+Package pdftex.def Info: figures/eddington_fit.png used on input line 99.
+(pdftex.def)             Requested size: 226.48395pt x 167.51578pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 99--100
+[][] 
+ []
+
+<figures/process_corr_spectra.png, id=98, 394.5942pt x 294.6207pt>
 File: figures/process_corr_spectra.png Graphic file (type png)
 
 <use figures/process_corr_spectra.png>
 Package pdftex.def Info: figures/process_corr_spectra.png used on input line 10
-3.
+5.
 (pdftex.def)             Requested size: 226.48395pt x 169.10887pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 103--105
+Overfull \hbox (9.0pt too wide) in paragraph at lines 105--107
 [][]
  []
 
+! Undefined control sequence.
+l.108 s_j = \frac{1}{N-1}\Sum
+                             \lim_i \Big(x_i y_{i+j}\Big)-\frac{N}{N-1}(\bar...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--111
-\OT1/txr/m/n/12 ac = 1./(N-1)*sum(xi*xij)-N/float(N-
+
+Underfull \hbox (badness 1688) in paragraph at lines 110--114
+\OT1/txr/m/n/12 where $\OML/txmi/m/it/12 x[]$ \OT1/txr/m/n/12 is the 1D spec-tr
+a ac = 1./(N-
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/autocorr_curve.png, id=104, 403.5075pt x 280.1667pt>
+<figures/autocorr_curve.png, id=100, 403.5075pt x 280.1667pt>
 File: figures/autocorr_curve.png Graphic file (type png)
 
 <use figures/autocorr_curve.png>
-Package pdftex.def Info: figures/autocorr_curve.png used on input line 116.
+Package pdftex.def Info: figures/autocorr_curve.png used on input line 118.
 (pdftex.def)             Requested size: 226.48395pt x 157.25565pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 116--117
+Overfull \hbox (9.0pt too wide) in paragraph at lines 118--119
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/long_cord_dv.png, id=105, 403.5075pt x 270.00874pt>
+[3 <./figures/wavelength_calib.png> <./figures/eddington_fit.png>]
+<figures/long_cord_dv.png, id=109, 403.5075pt x 280.1667pt>
 File: figures/long_cord_dv.png Graphic file (type png)
 
 <use figures/long_cord_dv.png>
-Package pdftex.def Info: figures/long_cord_dv.png used on input line 126.
-(pdftex.def)             Requested size: 226.48395pt x 151.55405pt.
+Package pdftex.def Info: figures/long_cord_dv.png used on input line 128.
+(pdftex.def)             Requested size: 226.48395pt x 157.25565pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 126--127
+Overfull \hbox (9.0pt too wide) in paragraph at lines 128--129
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/short_cord_dv.png, id=106, 403.5075pt x 270.00874pt>
+<figures/short_cord_dv.png, id=110, 403.5075pt x 280.1667pt>
 File: figures/short_cord_dv.png Graphic file (type png)
 
 <use figures/short_cord_dv.png>
-Package pdftex.def Info: figures/short_cord_dv.png used on input line 131.
-(pdftex.def)             Requested size: 226.48395pt x 151.55405pt.
+Package pdftex.def Info: figures/short_cord_dv.png used on input line 133.
+(pdftex.def)             Requested size: 226.48395pt x 157.25565pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 131--132
+Overfull \hbox (9.0pt too wide) in paragraph at lines 133--134
 [][] 
  []
 
@@ -769,111 +780,106 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 131--132
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (2.17288pt too wide) in paragraph at lines 137--141
+Overfull \hbox (2.17288pt too wide) in paragraph at lines 139--143
 []\OT1/txr/m/n/12 Excluding the sat-u-rated or par-tially shaded
  []
 
 
-Overfull \hbox (7.25206pt too wide) in paragraph at lines 137--141
+Overfull \hbox (7.25206pt too wide) in paragraph at lines 139--143
 \OT1/txr/m/n/12 im-pact pa-ram-e-ter of the ob-server's line of sight,
  []
 
 
-Overfull \hbox (6.20804pt too wide) in paragraph at lines 137--141
+Overfull \hbox (6.20804pt too wide) in paragraph at lines 139--143
 \OT1/txr/m/n/12 km/$\OML/txmi/m/it/12 s[]$\OT1/txr/m/n/12 , which shows that th
 e gra-di-ents are fairly
  []
 
 
-Overfull \hbox (11.23604pt too wide) in paragraph at lines 137--141
+Overfull \hbox (11.23604pt too wide) in paragraph at lines 139--143
 \OT1/txr/m/n/12 con-stant, with an av-er-age value of 0.0118 km/$\OML/txmi/m/it
 /12 s[]$\OT1/txr/m/n/12 .
  []
 
-[3 <./figures/wavelength_calib.png> <./figures/eddington_fit.png>] [4 <./figure
-s/process_corr_spectra.png> <./figures/autocorr_curve.png> <./figures/long_cord
-_dv.png> <./figures/short_cord_dv.png>]
-Overfull \hbox (0.24406pt too wide) in paragraph at lines 159--163
+[4 <./figures/process_corr_spectra.png> <./figures/autocorr_curve.png> <./figur
+es/long_cord_dv.png> <./figures/short_cord_dv.png>]
+Overfull \hbox (0.24406pt too wide) in paragraph at lines 161--165
 \OT1/txr/m/n/12 axis of ro-ta-tion and $\OML/txmi/m/it/12 ^^X$\OT1/txr/m/n/12 -
 ---. By con-duct-ing these
  []
 
 
-Overfull \hbox (11.02007pt too wide) in paragraph at lines 159--163
+Overfull \hbox (11.02007pt too wide) in paragraph at lines 161--165
 \OT1/txr/m/n/12 co-or-di-nate trans-for-ma-tion on the mean ob-served
  []
 
 
-Overfull \hbox (31.21606pt too wide) in paragraph at lines 159--163
-\OT1/txr/m/n/12 ve-loc-ity cal-cu-lated in Sec.[]5[], we ob-tain 1.257[]0.0185
+Overfull \hbox (31.21606pt too wide) in paragraph at lines 161--165
+\OT1/txr/m/n/12 ve-loc-ity cal-cu-lated in Sec.[]3[], we ob-tain 1.257[]0.0185
  []
 
 
-Overfull \hbox (0.44417pt too wide) in paragraph at lines 166--167
+Overfull \hbox (0.44417pt too wide) in paragraph at lines 168--169
 []\OT1/txr/m/n/12 The RMS resid-ual com-puted for each scan
  []
 
 
-Overfull \hbox (4.51605pt too wide) in paragraph at lines 166--167
+Overfull \hbox (4.51605pt too wide) in paragraph at lines 168--169
 \OT1/txr/m/n/12 de-vi-ates from the model and in-forms how good
  []
 
 
-Overfull \hbox (2.27206pt too wide) in paragraph at lines 166--167
+Overfull \hbox (2.27206pt too wide) in paragraph at lines 168--169
 \OT1/txr/m/n/12 the lin-ear fit is. Us-ing the least squares method
  []
 
 
-Overfull \hbox (19.54004pt too wide) in paragraph at lines 170--172
+Overfull \hbox (19.54004pt too wide) in paragraph at lines 172--174
 \OT1/txr/m/n/12 tain the value of ob-served ve-loc-ity 0.3799 []0.0185
  []
 
 
-Overfull \hbox (7.60005pt too wide) in paragraph at lines 173--174
+Overfull \hbox (7.60005pt too wide) in paragraph at lines 175--176
 \OT1/txr/m/n/12 we can con-duct wave-length cal-i-bra-tion on other
  []
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 177.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 179.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 177.
-
-Overfull \hbox (2.64075pt too wide) in paragraph at lines 178--179
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 179.
+ [5]
+Overfull \hbox (2.64075pt too wide) in paragraph at lines 180--181
 \OT1/txr/m/it/10 In-tro-duc-tion to Ob-ser-va-tional As-tron-omy\OT1/txr/m/n/10
  . Cam-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
-[5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+[6
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
  (./report_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+Package rerunfilecheck Info: File `report_4.out' has not changed.
+(rerunfilecheck)             Checksum: B4D78D0A85647B9E276386DDE309D294;749.
 
-
-Package rerunfilecheck Warning: File `report_4.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report_4.out':
-(rerunfilecheck)             Before: C1F21075AA712FFAD8CEDD23781D4E14;801
-(rerunfilecheck)             After:  E9A0488C9D8B7836DE73523E4E0DA342;815.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 8820 strings out of 493117
- 128963 string characters out of 6135433
- 230670 words of memory out of 5000000
- 12077 multiletter control sequences out of 15000+600000
+ 8813 strings out of 493117
+ 128879 string characters out of 6135433
+ 229670 words of memory out of 5000000
+ 12076 multiletter control sequences out of 15000+600000
  42419 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,875b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,1077b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -883,29 +889,8 @@ pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{equation.4.4} has been referenced but does not exis
-t, replaced by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.3.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.4.5} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
-ist, replaced by a fixed one
 
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
@@ -916,10 +901,10 @@ fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on report_4.pdf (5 pages, 520002 bytes).
+Output written on report_4.pdf (6 pages, 581084 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 142 words of extra memory for PDF output out of 10000 (max. 10000000)
 

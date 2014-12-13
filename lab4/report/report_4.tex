@@ -83,35 +83,37 @@ We took exposures where both the neon light and 635nm green laser was turned on 
 \subsection{Limb Darkening}
 The data quality of the solar scan can be verified by the a time series plot as shown in Fig. \ref{eddington_fit}. Intensity fluctuation that deviates from the predicted effect of limb darkening indicates possible shading effect from presence of cloud or objects near the telescope such as a crossing observer. Qualitatively, this information can be used to visually reject entire shaded scans or pick out exposures in the bright central region for a more accurate Doppler shift determination. Quantitatively, we can also make use of the limb darkening effect to determine crossing time of the solar scan, used in our solar angular size calculation in Sec.\ref{size_calc}.
 \\
-\begin{figure}[h!]
-\includegraphics[width=0.5\textwidth]{figures/eddington_fit}
-\caption{ The time series 
-$t_0$ is the intensity of the central bright peak
-The y-axis is normalized so that curve fitting corresponds to the model's output I/$I_0$ . The clear improvement of the model fit after background subtraction is evident as some of the intensity fluctuation may be mitigated by systematic effects corrected in the dark and flat frames discussed in Sec.\ref{subtraction}. }
-\label{eddington_fit}
-\end{figure}
+To avoid the arbitrary determination of the exposure that defines the start and end of the solar crossing, we fit our data to Eq.\ref{eddington_eq} with the center-to-limb time ($\Delta t$) as our varying parameter.  The lower figure in Fig.\ref{eddington_fit} shows the result of substituting the value of $\Delta t$ back into Eq.\ref{eddington_eq}, and ignoring the uneven data points on the two sides  (an artifact of the telescope) and the region before and after the solar crossing. Without this procedure, the fit would be largely distorted by the telescope artifact on the two sides and the ``dark" regions, which is not part of the stellar model.  Note that, the fit in Fig.\ref{eddington_fit} also does not fully include the first two scans after the jump, yielding a more accurate estimate for the crossing time. This way of defining the boundaries of the stellar atmosphere is a more robust method than simply selecting the datapoint where the jump in intensity occurs and computing $\Delta t$ from the FITS header time information.
 \\
-To avoid the arbitrary determination of the exposure that defines the start and end of the solar crossing, we fit our data to Eq.\ref{eddington_eq} with the center-to-limb time ($\Delta t$) as our varying parameter.  The lower figure in Fig.\ref{eddington_fit} shows the result of substituting the value of $\Delta t$ back into Eq.\ref{eddington_eq}, and ignoring the uneven data points on the two sides  (an artifact of the telescope) and the region before and after the solar crossing. Without this procedure, the fit would be largely distorted by the telescope artifact on the two sides and the ``dark" regions, which is not part of the stellar model. 
-\\
-We see the effect of limb darkening by summing together the intensity of all pixel in every CCD image in a full solar scan. Limb darkening results from the limitation that an observer can only see into a constant optical depth of 2/3. As the density and temperature of a star decreases radially outwards, the observer sees light originating from different regions of the star corresponding to the darkening effect. The time series data in Fig.\ref{eddington_fit} shows the total intensity of each exposure scaled by the intensity at the central bright peak ($I_0$) which we set at the origin. By modelling intensity as a function of the incident viewing angle using the Eddington approximation for grey, plane-parallel stellar atmosphere and geometrically relating this with the Earth-sun distance and crossing times, we obtain the relation: 
+We see the effect of limb darkening by summing together the intensity of all pixel in every CCD image in a full solar scan. Limb darkening results from the limitation that an observer can only see into a constant optical depth of 2/3. As the density and temperature of a star decreases radially outwards, the observer sees light originating from different regions of the star corresponding to the darkening effect. The time series data in Fig.\ref{eddington_fit} shows the total intensity of each exposure scaled by the intensity at the central bright peak ($I_0$) which we set at the origin. By modelling intensity as a function of the incident viewing angle using the Eddington approximation for grey, plane-parallel stellar atmosphere, we obtain the relation: 
 \begin{equation}
 \frac{I(\theta)}{I(\theta=0)}=\frac{I}{I_0}= \frac{2}{5}+\frac{3}{5}cos\theta
 \label{eddington_eq}
 \end{equation}
-\section{Doppler Velocity Determination}
+By geometrically relating this with the Earth-sun distance and crossing times, we get: 
+\begin{equation}
+\cos \theta = \sqrt{1-(t-t_0)^2/\Delta t^2} 
+\end{equation}
+where $t_0$ is where the time of the central bright peak, t is the time of each scan and $\Delta t$ is the crossing time.
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/eddington_fit}
+\caption{ The y-axis is normalized so that curve fitting corresponds to the model's output I/$I_0$ . The clear improvement of the model fit after background subtraction is evident as some of the intensity fluctuation may be mitigated by systematic effects corrected in the dark and flat frames discussed in Sec.\ref{subtraction}.}
+\label{eddington_fit}
+\end{figure}
+\subsection{Cross-Correlation Analysis}
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/process_corr_spectra}
-The cross correlation analysis is conducted by repeatedly trying different values of pixel lag to shift the a set of spectra and then computing its autocorrelation value with the ------  using Eq.\ref{autocovariance} 
+The cross correlation analysis is conducted by repeatedly trying different values of pixel lag to shift the a set of spectra and then computing its cross-correlation value with the ------  using Eq.\ref{autocovariance} 
 \begin{equation}
-s_j = \frac{1}{N-1}\Sigma_i \Bigg(x_i x_{i+j}\Bigg)-\frac{N}{N-1}(\bar{x})^2 
+s_j = \frac{1}{N-1}\Sum\lim_i \Big(x_i y_{i+j}\Big)-\frac{N}{N-1}(\bar{x}\bar(y))
 \label{autocovariance}
 \end{equation}
+where $x_i$ is the 1D spectra
     ac = 1./(N-1)*sum(xi*xij)-N/float(N-1)*mean(xi)**2
 \caption{Since we are measuring fractional pixel shift, process our data to make ---- more precise ( ?) . 
 First, we subtract off the mean of the spectra so that all there is left is the deviation from the mean. This procedure preserves the shape of the peaks  but subtract out the ----- that exist in both datasets. Then, we multiply the resulting spectra by the Hanning window function (Bottom figure). Since the probability density function is normalized to one, the resulting spectra as shown in the middle figure is weighted by the window function. The weighing serves to put more emphasis on the data in the central region and ----- edge effect .   ----We have also tried doing this for .we average all the spectra in the solar scan }
 \label{process_corr_spectra}
 \end{figure}
-\subsection{Cross-Correlation Analysis}
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{figures/autocorr_curve}
 \caption{}
