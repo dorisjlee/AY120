@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 DEC 2014 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 DEC 2014 02:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,43 +443,43 @@ LaTeX Warning: Label `lambda_direction' multiply defined.
 )
 \openout1 = `report_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 14.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 14.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 15.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 15.
 
  (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 15.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 15.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 15.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 15.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -549,7 +549,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 14.
+Package hyperref Info: Link coloring OFF on input line 15.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -558,75 +558,75 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
 
 (./report_4.out) (./report_4.out)
 \@outlinefile=\write4
 \openout4 = `report_4.out'.
 
-LaTeX Info: Redefining \celsius on input line 14.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 14.
+LaTeX Info: Redefining \celsius on input line 15.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 15.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 14.
-Package gensymb Info: Using \Omega for \ohm on input line 14.
+LaTeX Info: Redefining \ohm on input line 15.
+Package gensymb Info: Using \Omega for \ohm on input line 15.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+txmia on input line 23.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 24.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 23.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 24.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 23.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 24.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 23.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 24.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-<figures/processed.png, id=45, 460.8417pt x 131.5314pt>
+<figures/processed.png, id=57, 460.8417pt x 131.5314pt>
 File: figures/processed.png Graphic file (type png)
 
 <use figures/processed.png>
-Package pdftex.def Info: figures/processed.png used on input line 36.
+Package pdftex.def Info: figures/processed.png used on input line 37.
 (pdftex.def)             Requested size: 226.48395pt x 64.64362pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 []\OT1/txr/m/n/12 When con-vert-ing the 2D im-ages to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 \OT1/txr/m/n/12 1D spec-tra, we took a 1024-by-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 \OT1/txr/m/n/12 1024 pixel slice of the im-age ar-ray
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 \OT1/txr/m/n/12 to trun-cate the 24 over-scan pix-els.
  []
 
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 35--37
+Overfull \hbox (9.0pt too wide) in paragraph at lines 36--38
 [] 
  []
 
@@ -634,23 +634,23 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 35--37
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 55--55
+Underfull \hbox (badness 1546) in paragraph at lines 56--56
 []\OT1/txr/m/n/10 Table 1: |Com-puted spec-trom-e-ter in-for-ma-tion for
  []
 
-<figures/single_neon.png, id=49, 400.49625pt x 285.065pt>
+<figures/single_neon.png, id=61, 400.49625pt x 285.065pt>
 File: figures/single_neon.png Graphic file (type png)
 
 <use figures/single_neon.png>
-Package pdftex.def Info: figures/single_neon.png used on input line 65.
+Package pdftex.def Info: figures/single_neon.png used on input line 66.
 (pdftex.def)             Requested size: 226.48395pt x 161.20992pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 65--66
+Overfull \hbox (9.0pt too wide) in paragraph at lines 66--67
 [][] 
  []
 
 
-Overfull \hbox (0.48402pt too wide) in paragraph at lines 61--69
+Overfull \hbox (0.48402pt too wide) in paragraph at lines 62--70
 \OT1/txr/m/n/12 to-wavelength con-ver-sion and the Doppler ve-
  []
 
@@ -658,82 +658,110 @@ Overfull \hbox (0.48402pt too wide) in paragraph at lines 61--69
 
 
  <./figures/processed.png>]
-<figures/lambda_direction.png, id=67, 391.7034pt x 310.2792pt>
+<figures/lambda_direction.png, id=79, 391.7034pt x 310.2792pt>
 File: figures/lambda_direction.png Graphic file (type png)
 
 <use figures/lambda_direction.png>
-Package pdftex.def Info: figures/lambda_direction.png used on input line 73.
+Package pdftex.def Info: figures/lambda_direction.png used on input line 74.
 (pdftex.def)             Requested size: 226.48395pt x 179.40813pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 73--74
+Overfull \hbox (9.0pt too wide) in paragraph at lines 74--75
 [][] 
  []
 
-<figures/wavelength_calib.png, id=68, 425.6703pt x 282.0939pt>
+<figures/wavelength_calib.png, id=80, 425.6703pt x 282.0939pt>
 File: figures/wavelength_calib.png Graphic file (type png)
 
 <use figures/wavelength_calib.png>
-Package pdftex.def Info: figures/wavelength_calib.png used on input line 78.
+Package pdftex.def Info: figures/wavelength_calib.png used on input line 79.
 (pdftex.def)             Requested size: 226.48395pt x 150.09444pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 78--79
+Overfull \hbox (9.0pt too wide) in paragraph at lines 79--80
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/eddington_fit.png, id=71, 424.7067pt x 314.1336pt>
+<figures/eddington_fit.png, id=83, 424.7067pt x 314.1336pt>
 File: figures/eddington_fit.png Graphic file (type png)
 
 <use figures/eddington_fit.png>
-Package pdftex.def Info: figures/eddington_fit.png used on input line 86.
+Package pdftex.def Info: figures/eddington_fit.png used on input line 87.
 (pdftex.def)             Requested size: 226.48395pt x 167.51578pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 86--89
+Overfull \hbox (9.0pt too wide) in paragraph at lines 87--90
 [][] 
  []
 
 
-Overfull \hbox (13.55208pt too wide) in paragraph at lines 83--96
+Overfull \hbox (13.55208pt too wide) in paragraph at lines 84--97
 \OT1/txr/m/n/12 bright cen-tral re-gion for a more ac-cu-rate Doppler
  []
 
 
-Overfull \hbox (10.18005pt too wide) in paragraph at lines 83--96
+Overfull \hbox (10.18005pt too wide) in paragraph at lines 84--97
 \OT1/txr/m/n/12 the in-ten-sity at the cen-tral bright peak ($\OML/txmi/m/it/12
  I[]$\OT1/txr/m/n/12 ) which
  []
 
 [2 <./figures/single_neon.png> <./figures/lambda_direction.png>]
-<figures/process_corr_spectra.png, id=89, 394.5942pt x 294.6207pt>
+<figures/process_corr_spectra.png, id=102, 394.5942pt x 294.6207pt>
 File: figures/process_corr_spectra.png Graphic file (type png)
 
 <use figures/process_corr_spectra.png>
 Package pdftex.def Info: figures/process_corr_spectra.png used on input line 10
-2.
+3.
 (pdftex.def)             Requested size: 226.48395pt x 169.10887pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 102--104
+Overfull \hbox (9.0pt too wide) in paragraph at lines 103--105
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--110
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
 \OT1/txr/m/n/12 ac = 1./(N-1)*sum(xi*xij)-N/float(N-
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/autocorr_curve.png, id=91, 403.5075pt x 280.1667pt>
+<figures/autocorr_curve.png, id=104, 403.5075pt x 280.1667pt>
 File: figures/autocorr_curve.png Graphic file (type png)
 
 <use figures/autocorr_curve.png>
-Package pdftex.def Info: figures/autocorr_curve.png used on input line 115.
+Package pdftex.def Info: figures/autocorr_curve.png used on input line 116.
 (pdftex.def)             Requested size: 226.48395pt x 157.25565pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 115--116
+Overfull \hbox (9.0pt too wide) in paragraph at lines 116--117
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/long_cord_dv.png, id=105, 403.5075pt x 270.00874pt>
+File: figures/long_cord_dv.png Graphic file (type png)
+
+<use figures/long_cord_dv.png>
+Package pdftex.def Info: figures/long_cord_dv.png used on input line 126.
+(pdftex.def)             Requested size: 226.48395pt x 151.55405pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 126--127
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/short_cord_dv.png, id=106, 403.5075pt x 270.00874pt>
+File: figures/short_cord_dv.png Graphic file (type png)
+
+<use figures/short_cord_dv.png>
+Package pdftex.def Info: figures/short_cord_dv.png used on input line 131.
+(pdftex.def)             Requested size: 226.48395pt x 151.55405pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 131--132
 [][] 
  []
 
@@ -741,66 +769,157 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 115--116
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (2.17288pt too wide) in paragraph at lines 125--126
+Overfull \hbox (2.17288pt too wide) in paragraph at lines 137--141
 []\OT1/txr/m/n/12 Excluding the sat-u-rated or par-tially shaded
  []
 
-[3 <./figures/wavelength_calib.png> <./figures/eddington_fit.png>]
-Overfull \hbox (7.60005pt too wide) in paragraph at lines 129--130
+
+Overfull \hbox (7.25206pt too wide) in paragraph at lines 137--141
+\OT1/txr/m/n/12 im-pact pa-ram-e-ter of the ob-server's line of sight,
+ []
+
+
+Overfull \hbox (6.20804pt too wide) in paragraph at lines 137--141
+\OT1/txr/m/n/12 km/$\OML/txmi/m/it/12 s[]$\OT1/txr/m/n/12 , which shows that th
+e gra-di-ents are fairly
+ []
+
+
+Overfull \hbox (11.23604pt too wide) in paragraph at lines 137--141
+\OT1/txr/m/n/12 con-stant, with an av-er-age value of 0.0118 km/$\OML/txmi/m/it
+/12 s[]$\OT1/txr/m/n/12 .
+ []
+
+[3 <./figures/wavelength_calib.png> <./figures/eddington_fit.png>] [4 <./figure
+s/process_corr_spectra.png> <./figures/autocorr_curve.png> <./figures/long_cord
+_dv.png> <./figures/short_cord_dv.png>]
+Overfull \hbox (0.24406pt too wide) in paragraph at lines 159--163
+\OT1/txr/m/n/12 axis of ro-ta-tion and $\OML/txmi/m/it/12 ^^X$\OT1/txr/m/n/12 -
+---. By con-duct-ing these
+ []
+
+
+Overfull \hbox (11.02007pt too wide) in paragraph at lines 159--163
+\OT1/txr/m/n/12 co-or-di-nate trans-for-ma-tion on the mean ob-served
+ []
+
+
+Overfull \hbox (31.21606pt too wide) in paragraph at lines 159--163
+\OT1/txr/m/n/12 ve-loc-ity cal-cu-lated in Sec.[]5[], we ob-tain 1.257[]0.0185
+ []
+
+
+Overfull \hbox (0.44417pt too wide) in paragraph at lines 166--167
+[]\OT1/txr/m/n/12 The RMS resid-ual com-puted for each scan
+ []
+
+
+Overfull \hbox (4.51605pt too wide) in paragraph at lines 166--167
+\OT1/txr/m/n/12 de-vi-ates from the model and in-forms how good
+ []
+
+
+Overfull \hbox (2.27206pt too wide) in paragraph at lines 166--167
+\OT1/txr/m/n/12 the lin-ear fit is. Us-ing the least squares method
+ []
+
+
+Overfull \hbox (19.54004pt too wide) in paragraph at lines 170--172
+\OT1/txr/m/n/12 tain the value of ob-served ve-loc-ity 0.3799 []0.0185
+ []
+
+
+Overfull \hbox (7.60005pt too wide) in paragraph at lines 173--174
 \OT1/txr/m/n/12 we can con-duct wave-length cal-i-bra-tion on other
  []
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 133.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 177.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 133.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 177.
 
-Overfull \hbox (2.64075pt too wide) in paragraph at lines 134--135
+Overfull \hbox (2.64075pt too wide) in paragraph at lines 178--179
 \OT1/txr/m/it/10 In-tro-duc-tion to Ob-ser-va-tional As-tron-omy\OT1/txr/m/n/10
  . Cam-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-[4 <./figures/process_corr_spectra.png> <./figures/autocorr_curve.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+ (./report_4.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 
-(./report_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
-Package rerunfilecheck Info: File `report_4.out' has not changed.
-(rerunfilecheck)             Checksum: BD7DAC00B1F7565F47A2F4D257CCC278;616.
 
+Package rerunfilecheck Warning: File `report_4.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report_4.out':
+(rerunfilecheck)             Before: C1F21075AA712FFAD8CEDD23781D4E14;801
+(rerunfilecheck)             After:  E9A0488C9D8B7836DE73523E4E0DA342;815.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 8776 strings out of 493117
- 128304 string characters out of 6135433
- 229492 words of memory out of 5000000
- 12059 multiletter control sequences out of 15000+600000
- 39559 words of font info for 101 fonts, out of 8000000 for 9000
+ 8820 strings out of 493117
+ 128963 string characters out of 6135433
+ 230670 words of memory out of 5000000
+ 12077 multiletter control sequences out of 15000+600000
+ 42419 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,40p,875b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.4.4} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.3.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.4.5} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on report_4.pdf (4 pages, 475328 bytes).
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on report_4.pdf (5 pages, 520002 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

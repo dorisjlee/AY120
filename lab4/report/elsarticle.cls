@@ -448,7 +448,7 @@
      \let\@oddhead\@empty
      \let\@evenhead\@empty
      \def\@oddfoot{\footnotesize\itshape
-      AY120: Asteroid Astrometry Lab\ifx\@journal\@empty 
+      AY120: Doppler Solar Rotation Lab\ifx\@journal\@empty 
        \else\@journal\fi\hfill\today}%
      \let\@evenfoot\@oddfoot}
 \def\@seccntDot{.}

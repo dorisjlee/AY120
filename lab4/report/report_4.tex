@@ -10,11 +10,12 @@
 \usepackage{url}
 %\renewcommand\thefootnote{\fnsymbol{\dagger}}
 \usepackage[symbol*]{footmisc}
-\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$}}
+\makeatletter
+\newcommand{\rpm}{\raisebox{.3ex}{$\scriptstyle\pm$}}
 \begin{document}
 %\footnote{This is a footnote}
 \begin{frontmatter}
-\title{Asteroid Astrometry from CCD Images}
+\title{Doppler Measurement of Solar Rotation}
 \author{\today \\ \quad \\Jung Lin (Doris) Lee\\ dorislee@berkeley.edu\\Group partners: Jennifer Ito, Manuel Silvia\\Prof. James Graham, UGSI Heechan Yuk, Isaac Domagalski}
 	\begin{abstract}
 In this experiment,  we------
@@ -79,7 +80,7 @@ We took exposures where both the neon light and 635nm green laser was turned on 
 \caption{The first order fit in the top figure shows that the dispersion is approximately linear ($\frac{d\lambda}{d\text{pixel}}$=0.0315 nm/pixel ). Since there is no notable patterns in linear residual and the magnitude of the residual is small, a linear relationship should be sufficient for pixel-to-wavelength conversion. From the bottom most quadratic figure, we see that the residual decrease by an order of magnitude.}
 \label{calib}
 \end{figure}
-\section{Limb Darkening}
+\subsection{Limb Darkening}
 The data quality of the solar scan can be verified by the a time series plot as shown in Fig. \ref{eddington_fit}. Intensity fluctuation that deviates from the predicted effect of limb darkening indicates possible shading effect from presence of cloud or objects near the telescope such as a crossing observer. Qualitatively, this information can be used to visually reject entire shaded scans or pick out exposures in the bright central region for a more accurate Doppler shift determination. Quantitatively, we can also make use of the limb darkening effect to determine crossing time of the solar scan, used in our solar angular size calculation in Sec.\ref{size_calc}.
 \\
 \begin{figure}[h!]
@@ -120,11 +121,54 @@ First, we subtract off the mean of the spectra so that all there is left is the 
 \delta\lambda=\frac{v}{c}\lambda_0
 \label{doppler_eq}
 \end{equation}
-The RMS residual  computed for each scan yields an estimate of how good the linear fit is. So we can use this as an approximate error on the slope obtained from the fit
+\section{Results}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/long_cord_dv}
+\caption{}
+\label{long_cord_dv}
+\end{figure}
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{figures/short_cord_dv}
+\caption{}
+\label{short_cord_dv}
+\end{figure}
 
-Excluding the saturated or partially shaded \footnote{The shading effect could be seen from the decrease in intensity in the middle of the scan in the time series plot, which is clearly not an effect of limb darkening.} solar scans, we conducted this analysis on --- datasets of the same order. 
+\label{results}
+Excluding the saturated or partially shaded \footnote{The shading effect could be seen from the decrease in intensity in the middle of the scan in the time series plot, which is clearly not an effect of limb darkening.} solar scans, we conducted this analysis on 8 datasets of the same order. 
+\\
+Since the crossing time of the scan depends impact parameter of the observer's line of sight, different scans should have the approximately gradient despite the different in the chord cut from  each drift scan. The standard deviation of the all the gradients obtained \footnote{with one outlier removed} is 0.0015 km/$s^2$, which shows that the gradients are fairly constant, with an average value of 0.0118 km/$s^2$. These gradients are used to calculate the observed velocity at the limb of the Sun by multiplying with the half crossing time (i.e. time for drift scan to drift from center to limb)
+This procedure, combined with the model fit for crossing time determination, is more statistically robust than simply taking the first and last Doppler velocities of the solar scan, since it is a continuous approximation of the velocity rather than a discrete selection . Also, due to the limbing effect, there are less photons received on the edges. Therefore, the errors on the velocity values measured are larger, which makes it even more unreliable to use the single measurements .
+\subsection{Coordinate transformation}
+rotational matrix
+\begin{equation}
+\bBigg@{4}(\begin{matrix}
+\cos\xi & 0 &\sin\xi \\ 
+0 &1  &0 \\ 
+-\sin\xi &0  &\cos\xi 
+\end{matrix}\bBigg@{4})
+\label{rotmatrix1}
+\end{equation}
+
+\begin{equation}
+\bBigg@{4}(\begin{matrix}
+1& 0 &0 \\ 
+0 &\cos\eta  &\sin\eta \\ 
+0 &\sin \eta  &\cos\eta 
+\end{matrix}\bBigg@{4})
+\label{rotmatrix2}
+\end{equation}
+We obtain the North pole angle($\eta$) and the observer sub-latitudes($\xi$) from the JPL Horizon web interface.
+$\eta$ describes tilt of the Sun's axis of rotation and $\xi $----.
+By conducting these coordinate transformation on the mean observed velocity calculated in Sec.\ref{results}, we obtain 1.257\rpm 0.0185 km/s for the solar radial velocity.
 \subsection{Angular Size of Sun}
 \label{size_calc}
+\subsection{Error Propagation}
+The RMS residual  computed for each scan yields an estimate of how much the datapoints deviates from the model and informs how good the linear fit is.  Using the least squares method on the linear model y=a+bx, we can derive an analytical relation to obtain the slope b as well as the error on the value of the slope as described by Press and Vetterling\footnote{Above equation is an expanded form of  Eq.15.2.9 in the referenced text.}  (1992): 
+\begin{equation}
+\sigma_b^2 = \frac{\sum\limits_{i=1}^N\frac{1}{\sigma_i^2}}{\sum\limits_{i=1}^N\frac{x_i^2}{\sigma_i^2}\sum\limits_{i=1}^N\frac{1}{\sigma_i^2}-\Big(\sum\limits_{i=1}^N\frac{x_i}{\sigma_i^2}\Big)^2}
+\label{ls}
+\end{equation}
+This value is computed by the a part of the regression algorithm\footnote{\texttt{scipy.stats.linregress}}, the average error on the slope is 0.000276km/$s^2$. The error is propagated when deriving the limb velocity to obtain the value of observed velocity  0.3799 \rpm 0.0185 km/s. (FINISH THIS BY PROPAGTING TO ANGULAR SIZE!)
 \section{Conclusion}
 In this lab, we conveniently chose to use the 35$^\text{th}$ for wavelength calibration and conduct the doppler velocity determination. In order to obtain a more precise measurement, we can conduct wavelength calibration on other orders to increase the number of spectral lines used for each cross correlation analysis and thereby decreasing the quoted error bar on the measurement.
  \section*{References}
