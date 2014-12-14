@@ -1,12 +1,14 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Data Reduction}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Dark, Bias, Flat Subtraction}{section.2}% 3
+\BOOKMARK [1][-]{section.2}{Hardware and Experiment}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Experimental setup}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Spectrometer details}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Wavelength Calibration}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Limb Darkening}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Cross-Correlation Analysis}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Results}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{Coordinate transformation}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Angular Size of Sun}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Error Propagation}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section.3}{Data Reduction}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Dark, Bias, Flat Subtraction}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Limb Darkening}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Cross-Correlation Analysis}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Results}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Doppler velocity calculation}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Coordinate transformation}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Error Propagation}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 14
